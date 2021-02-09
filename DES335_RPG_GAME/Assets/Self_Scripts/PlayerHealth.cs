@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
 
     public int health;
+    public GameObject[] healthUI;
     private RPGCharacterController RPGCC;
     private bool death = false;
 
@@ -21,13 +22,17 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             if (health > 0)
-                --health;
-            else if (health <= 0)
             {
-                if(!death)
+                --health;
+                healthUI[health].SetActive(false);
+
+                if (health <= 0)
                 {
-                    death = true;
-                    Death();
+                    if (!death)
+                    {
+                        death = true;
+                        Death();
+                    }
                 }
             }
         }
