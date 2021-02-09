@@ -7,6 +7,8 @@ public class Destructibles : MonoBehaviour
 
     public int health;
     public GameObject destroyedVersion;
+    
+    public GameObject[] lootDrop;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -33,6 +35,14 @@ public class Destructibles : MonoBehaviour
 
         // Remove the current object
         Destroy(gameObject);
+
+        // Spawn items
+        for(int i = 0; i < lootDrop.Length; ++i)
+        {
+            GameObject tempItem = Instantiate(lootDrop[i], transform.position, transform.rotation);
+
+            tempItem.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up * 10f, transform.position, ForceMode.Impulse);
+        }
 
         //Hide game object
         //gameObject.SetActive(false);    
