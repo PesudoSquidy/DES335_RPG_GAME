@@ -6,6 +6,7 @@ public class Destructibles : MonoBehaviour
 {
 
     public int health;
+    public GameObject destroyedVersion;
 
     void OnTriggerEnter(Collider collider)
     {
@@ -26,7 +27,14 @@ public class Destructibles : MonoBehaviour
     {
         Debug.Log("Drop LOOT!");
 
+        // Spawn the destroyed version
+        GameObject tempObj = Instantiate(destroyedVersion, transform.position, transform.rotation);
+        //tempObj.GetComponent<Transform>().localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+        // Remove the current object
+        Destroy(gameObject);
+
         //Hide game object
-        gameObject.SetActive(false);    
+        //gameObject.SetActive(false);    
     }
 }
