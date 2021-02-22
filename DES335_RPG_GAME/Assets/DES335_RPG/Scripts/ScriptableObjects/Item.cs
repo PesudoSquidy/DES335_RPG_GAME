@@ -14,4 +14,13 @@ public class Item : ScriptableObject
     public Sprite icon = null;
 
     public GameObject prefab = null;
+
+    public virtual void Use()
+    {
+
+        // Use the item
+        // Something might happen
+
+        Debug.Log("Using: " + name);
+    }
 }

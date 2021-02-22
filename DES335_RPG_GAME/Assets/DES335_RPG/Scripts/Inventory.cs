@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     private int space = 0;
 
     [SerializeField]
-    private List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>();
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
