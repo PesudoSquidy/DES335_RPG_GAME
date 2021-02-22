@@ -21,7 +21,9 @@ public class ItemPickup : MonoBehaviour
         if(col.gameObject == player)
         {
             Debug.Log("Player picked up: " + item.name);
-            Destroy(gameObject);
+            
+            if(Inventory.instance.Add(item))
+                Destroy(gameObject);
         }
     }
 }
