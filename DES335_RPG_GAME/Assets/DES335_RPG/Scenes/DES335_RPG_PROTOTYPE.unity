@@ -214,6 +214,7 @@ MonoBehaviour:
     type: 3}
   lootDrop:
   - {fileID: 5255145021078438007, guid: ef679ecc974249c4aac48d66eabdcb4f, type: 3}
+  - {fileID: 5255145021078438007, guid: ac3d3c76405b3574cb4f49e959c95a2e, type: 3}
 --- !u!65 &47522069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2925,6 +2926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 554113167}
+  inventoryUI: {fileID: 2060947724}
 --- !u!1001 &1423944088
 PrefabInstance:
   m_ObjectHideFlags: 0
