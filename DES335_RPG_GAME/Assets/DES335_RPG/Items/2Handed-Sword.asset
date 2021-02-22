@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: 2Handed-Sword
   m_EditorClassIdentifier: 
   name: 2Handed-Sword
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: b2f3327f47464544293b6b9018e1296e, type: 3}
   prefab: {fileID: 100050, guid: 8a7b78e82902d1b4eba2923c6a4cf1c7, type: 3}
+  equipSlot: 3
+  damageModifier: 1
+  armourModifier: 0

@@ -41,7 +41,8 @@ public class Destructibles : MonoBehaviour
         {
             GameObject tempItem = Instantiate(lootDrop[i], transform.position, transform.rotation);
 
-            tempItem.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up * 10f, transform.position, ForceMode.Impulse);
+            if(tempItem.GetComponent<Rigidbody>() != null)
+                tempItem.GetComponent<Rigidbody>().AddForceAtPosition(Vector3.up * 10f, transform.position, ForceMode.Impulse);
         }
 
         //Hide game object

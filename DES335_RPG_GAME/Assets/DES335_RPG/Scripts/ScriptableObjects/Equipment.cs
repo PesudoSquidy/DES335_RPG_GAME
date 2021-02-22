@@ -6,10 +6,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 
 
-public class Equipment : ScriptableObject
+public class Equipment : Item
 {
-    new public string name = "New Equipment";
-    public Sprite icon = null;
+    public EquipmentSlot equipSlot;
 
-    public GameObject prefab = null;
+    public int damageModifier;
+    public int armourModifier;
+
+    public override void Use()
+    {
+        base.Use();
+
+        EquipmentManager.instance.Equip(this);
+        RemoveFromInventory();
+        //Equip the item
+        //Remove from inventory
+    }
 }
+
+public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet}
