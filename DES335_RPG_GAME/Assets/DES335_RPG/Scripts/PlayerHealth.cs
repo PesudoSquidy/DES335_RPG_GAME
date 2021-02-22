@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-using RPGCharacterAnimsFREE;
-
 public class PlayerHealth : MonoBehaviour
 {
 
     [SerializeField] private int health;
-    private RPGCharacterController RPGCC;
     private bool death = false;
 
     // Handles the player Health UI
@@ -23,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        RPGCC = gameObject.GetComponent<RPGCharacterController>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -66,9 +61,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
-        if (RPGCC.CanStartAction("Death"))
-            RPGCC.StartAction("Death");
-        else if (RPGCC.CanEndAction("Death"))
-            RPGCC.EndAction("Death");
+        Debug.Log("Player dies");
     }
 }
