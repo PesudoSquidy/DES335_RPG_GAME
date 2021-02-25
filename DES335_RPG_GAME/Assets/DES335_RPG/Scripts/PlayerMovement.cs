@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private Transform trans;
-
-    public int moveSpeed;
+    private Rigidbody2D rb;
+    public float moveSpeed;
 
     private Animator anim;
 
@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (cam == null)
             cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        if (rb == null)
+            rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -50,8 +53,6 @@ public class PlayerMovement : MonoBehaviour
                 trans.localScale = new Vector3(-10, 10, 1);
                 
             }
-
-
             trans.position += Vector3.right * moveSpeed * Time.deltaTime * Input.GetAxisRaw("Horizontal");
         }
 
