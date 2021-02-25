@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.gameObject.tag == "Enemy")
@@ -32,6 +32,11 @@ public class PlayerHealth : MonoBehaviour
 
                 // Calculate where to update the health UI
                 //int hp_UI = health % 2;
+
+                if(healthUI.Length > health)
+                {
+                    healthUI[health].SetActive(false);
+                }
 
                 //if(hp_UI > 0)
                 //{

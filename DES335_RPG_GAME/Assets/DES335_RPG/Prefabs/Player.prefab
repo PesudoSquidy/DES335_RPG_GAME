@@ -130,11 +130,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1149457840187719075}
   - component: {fileID: 1149457840187719072}
-  - component: {fileID: 1149457840187719074}
   - component: {fileID: 1149457840187719077}
   - component: {fileID: 1149457840187719076}
   - component: {fileID: 1149457840187719079}
   - component: {fileID: 612568205}
+  - component: {fileID: 1149457840187719074}
   - component: {fileID: 612568212}
   m_Layer: 0
   m_Name: Player
@@ -211,20 +211,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1149457840187719074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149457840187719073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bb654297c8727e47a2c60303f84e165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  playerFaceDir: 0
 --- !u!95 &1149457840187719077
 Animator:
   serializedVersion: 3
@@ -308,6 +294,20 @@ MonoBehaviour:
     baseValue: 0
   armor:
     baseValue: 0
+--- !u!114 &1149457840187719074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149457840187719073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb654297c8727e47a2c60303f84e165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  playerFaceDir: 0
 --- !u!114 &612568212
 MonoBehaviour:
   m_ObjectHideFlags: 0
