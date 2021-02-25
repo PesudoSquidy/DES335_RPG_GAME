@@ -7,11 +7,13 @@ public class Tunnel : MonoBehaviour
     // Tunnel ID 
     private int tunnelID;
 
-    public Sprite tunnelImage = null;
+    private Sprite tunnelImage = null;
 
     private GameObject stuckedObject = null;
 
     private bool blocked = false;
+
+    private float activetime;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +30,20 @@ public class Tunnel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        activetime -= 1/60;
 
+        if (activetime < 0) 
+            gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     // Spawn Tunnel
-    public void SpawnTunnel(int id)
+    public void SpawnTunnel(int id, float time, Vector3 pos)
     {
         SetTunnelID(id);
         blocked = false;
+        activetime = time;
+        gameObject.GetComponent<Transform>().position = pos;
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     // Destory Tunnel 

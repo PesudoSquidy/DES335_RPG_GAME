@@ -9,7 +9,7 @@ public class TunnelManager : MonoBehaviour
 
     Tunnel[] activeTunnels;
 
-    public int maxTunnels;
+    [SerializeField] int maxTunnels;
 
     public Sprite TunnelImage;
 
@@ -29,13 +29,21 @@ public class TunnelManager : MonoBehaviour
 
     private int IDs = 0;
 
+    private GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        unactiveTunnels = new Tunnel[maxTunnels];
         for (int i = 0; i < maxTunnels; ++i)
+        {
+            unactiveTunnels[i] = new Tunnel();
             unactiveTunnels[i].Initailise(TunnelImage);
+        }
 
         DiggingMeter = MaxDiggingMeter;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -59,6 +67,7 @@ public class TunnelManager : MonoBehaviour
                     // Start Digging
                     diggingFlag = true;
                     DiggingMeter -= DiggingCost;
+                    unactiveTunnels[0].SpawnTunnel(IDs, 20.0f, player.GetComponent<Transform>().position);
                 }
             }
         }
