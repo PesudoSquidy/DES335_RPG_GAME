@@ -439,13 +439,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245353714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a73ced665170dd849a671026ac425934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxTunnels: 10
-  TunnelImage: {fileID: 0}
+  TunnelImage: {fileID: 21300000, guid: 13597b049430824468ca1d48477afb9b, type: 3}
   MaxDiggingMeter: 100
   DiggingMinimum: 30
   DiggingCost: 10
@@ -3981,6 +3981,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149457840187719079, guid: f1ed99d1f0d15854691355c658cf91e3,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
