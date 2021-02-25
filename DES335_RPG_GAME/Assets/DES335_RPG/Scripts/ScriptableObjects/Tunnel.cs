@@ -7,7 +7,6 @@ public class Tunnel : MonoBehaviour
     // Tunnel ID 
     private int tunnelID;
 
-    private Sprite tunnelImage = null;
 
     private GameObject stuckedObject = null;
 
@@ -21,19 +20,13 @@ public class Tunnel : MonoBehaviour
         
     }
 
-    // Initialise Tunnels
-    public void Initailise(Sprite image)
-    {
-        tunnelImage = image;
-    }
-
     // Update is called once per frame
     void Update()
     {
-        activetime -= 1/60;
+        activetime -= 0.016f;
 
-        if (activetime < 0) 
-            gameObject.GetComponent<Renderer>().enabled = false;
+        if (activetime < 0)
+            DestoryTunnel();
     }
 
     // Spawn Tunnel
@@ -43,13 +36,13 @@ public class Tunnel : MonoBehaviour
         blocked = false;
         activetime = time;
         gameObject.GetComponent<Transform>().position = pos;
-        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<Renderer>().enabled = true;
     }
 
     // Destory Tunnel 
     public void DestoryTunnel()
     {
-        
+        gameObject.GetComponent<Renderer>().enabled = false;
     }
 
     // Set Tunnel ID

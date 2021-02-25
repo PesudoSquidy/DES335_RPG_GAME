@@ -5,17 +5,9 @@ using UnityEngine;
 public class TunnelManager : MonoBehaviour
 {
 
-    Tunnel[] unactiveTunnels;
-
-    Tunnel[] activeTunnels;
-
     [SerializeField] int maxTunnels;
 
-    public Sprite TunnelImage;
-
     [SerializeField] int MaxDiggingMeter;
-
-    private int DiggingMeter;
 
     [SerializeField] int DiggingMinimum;
 
@@ -25,23 +17,31 @@ public class TunnelManager : MonoBehaviour
 
     [SerializeField] int DiggingIncrement;
 
+    private int DiggingMeter;
+
     private bool diggingFlag;
 
     private int IDs = 0;
 
     private GameObject player;
 
+    [SerializeField] GameObject tunnel;
+
+    GameObject[] inactiveTunnels;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        unactiveTunnels = new Tunnel[maxTunnels];
+        inactiveTunnels = new GameObject[maxTunnels];
+
         for (int i = 0; i < maxTunnels; ++i)
         {
-            unactiveTunnels[i] = new Tunnel();
-            unactiveTunnels[i].Initailise(TunnelImage);
+            inactiveTunnels[i] = Instantiate(tunnel);
         }
 
         DiggingMeter = MaxDiggingMeter;
+        diggingFlag = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -52,6 +52,7 @@ public class TunnelManager : MonoBehaviour
         // Check if Space bar is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("Space Pressed");
             // Check if player is digging 
             if (diggingFlag)
             {
@@ -67,7 +68,8 @@ public class TunnelManager : MonoBehaviour
                     // Start Digging
                     diggingFlag = true;
                     DiggingMeter -= DiggingCost;
-                    unactiveTunnels[0].SpawnTunnel(IDs, 20.0f, player.GetComponent<Transform>().position);
+                    inactiveTunnels[0].GetComponent<Tunnel>().SpawnTunnel(IDs, 5.0f, player.GetComponent<Transform>().position);
+                    Debug.Log("Create Tunnel");
                 }
             }
         }
