@@ -445,12 +445,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTunnels: 10
-  TunnelImage: {fileID: 21300000, guid: 13597b049430824468ca1d48477afb9b, type: 3}
   MaxDiggingMeter: 100
   DiggingMinimum: 30
   DiggingCost: 10
   DiggingDecrement: 1
   DiggingIncrement: 4
+  tunnel: {fileID: 1854405568}
 --- !u!1001 &342101055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2693,7 +2693,7 @@ PrefabInstance:
     - target: {fileID: 2542106825882574166, guid: d3a8ae910df6be74795770aa2af57bdf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 2.586
       objectReference: {fileID: 0}
     - target: {fileID: 2542106825882574166, guid: d3a8ae910df6be74795770aa2af57bdf,
         type: 3}
@@ -2743,7 +2743,7 @@ PrefabInstance:
     - target: {fileID: 8241838330313973492, guid: d3a8ae910df6be74795770aa2af57bdf,
         type: 3}
       propertyPath: m_Name
-      value: Tunnel
+      value: Tunnel_Hole
       objectReference: {fileID: 0}
     - target: {fileID: 8422984313222837325, guid: d3a8ae910df6be74795770aa2af57bdf,
         type: 3}
