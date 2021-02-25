@@ -17,4 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 100050, guid: 8a7b78e82902d1b4eba2923c6a4cf1c7, type: 3}
   equipSlot: 3
   damageModifier: 1
-  armourModifier: 0
+  armourModifier: 1
