@@ -16,8 +16,6 @@ public class ItemPickup : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Diamond was collided");
-
         if(col.gameObject == player)
         {
             Debug.Log("Player picked up: " + item.name);

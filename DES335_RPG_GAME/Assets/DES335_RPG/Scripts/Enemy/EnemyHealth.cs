@@ -24,13 +24,13 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log(gameObject.name + "Die");
+        //Debug.Log(gameObject.name + "Die");
         anim.SetTrigger("isDead");
     }
 
     void Dead()
     {
-        Debug.Log(gameObject.name + "Dead");
+        //Debug.Log(gameObject.name + "Dead");
         Destroy(gameObject);
     }
 }

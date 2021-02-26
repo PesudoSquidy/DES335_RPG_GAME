@@ -33,7 +33,6 @@ public class Bomb : MonoBehaviour
             timeBeforeExplosion -= Time.deltaTime;
         else if (timeBeforeExplosion <= 0 && anim != null)
         {
-            Debug.Log("Play animation");
             canDealDamage = true;
             anim.enabled = true;
         }

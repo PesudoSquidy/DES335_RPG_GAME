@@ -28,7 +28,7 @@ public class Arrow : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        Debug.Log(hitInfo.gameObject.name);
+        //Debug.Log(hitInfo.gameObject.name);
         Destroy(gameObject);
     }
 }
