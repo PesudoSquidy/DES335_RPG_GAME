@@ -41,6 +41,7 @@ public class Tunnel : MonoBehaviour
     // Spawn Tunnel
     public void SpawnTunnel(int id, float time, Vector3 pos)
     {
+        gameObject.SetActive(true);
         tunnelID = id;
         bBlocked = false;
         fActiveTime = time;
