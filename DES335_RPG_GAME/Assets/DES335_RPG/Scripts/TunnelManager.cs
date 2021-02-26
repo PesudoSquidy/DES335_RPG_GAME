@@ -7,20 +7,6 @@ public class TunnelManager : MonoBehaviour
 
     [SerializeField] int maxTunnels;
 
-    [SerializeField] int MaxDiggingMeter;
-
-    [SerializeField] int DiggingMinimum;
-
-    [SerializeField] int DiggingCost;
-
-    [SerializeField] int DiggingDecrement;
-
-    [SerializeField] int DiggingIncrement;
-
-    private int DiggingMeter;
-
-    private bool diggingFlag;
-
     private int IDs = 0;
 
     private GameObject player;
@@ -29,6 +15,8 @@ public class TunnelManager : MonoBehaviour
 
     GameObject[] inactiveTunnels;
 
+    private static Stamina _stamina;
+    bool _currentflag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +24,7 @@ public class TunnelManager : MonoBehaviour
         inactiveTunnels = new GameObject[maxTunnels];
 
         for (int i = 0; i < maxTunnels; ++i)
-        {
             inactiveTunnels[i] = Instantiate(tunnel);
-        }
-
-        DiggingMeter = MaxDiggingMeter;
-        diggingFlag = false;
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -50,45 +33,32 @@ public class TunnelManager : MonoBehaviour
     void Update()
     {
         // Check if Space bar is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (_currentflag != StaminaBar._stamina.bStaminaDrain)
         {
-            Debug.Log("Space Pressed");
-            // Check if player is digging 
-            if (diggingFlag)
+            if (_currentflag)
             {
-                // Stop Digging
-
-                diggingFlag = false;
+                CreateEndTunnel(IDs);
+                for (int i = 0; i < maxTunnels; ++i)
+                    if (inactiveTunnels[i].GetComponent<Tunnel>().tunnelID == IDs)
+                        inactiveTunnels[i].GetComponent<Tunnel>().bActive = true;
+                ++IDs;
+                if (IDs >= maxTunnels/2)
+                    IDs = 0;
             }
             else
-            {
-                // Check for minimum amount for digging
-                if (DiggingMeter > DiggingMinimum)
-                {
-                    // Start Digging
-                    diggingFlag = true;
-                    DiggingMeter -= DiggingCost;
-                    inactiveTunnels[0].GetComponent<Tunnel>().SpawnTunnel(IDs, 5.0f, player.GetComponent<Transform>().position);
-                    Debug.Log("Create Tunnel");
-                }
-            }
-        }
+                CreateStartTunnel(IDs);
 
-        // Decrease/Increase Digging Meter
-        if (diggingFlag)
-        {
-            DiggingMeter -= DiggingDecrement;
+            _currentflag = StaminaBar._stamina.bStaminaDrain;
+        }
+    }
 
-            // Check if Digging Meter Runs Out
-            if (DiggingMeter < 0)
-                diggingFlag = false;
-        }
-        else
-        {
-            if (DiggingMeter < MaxDiggingMeter)
-                DiggingMeter += DiggingIncrement;
-            else
-                DiggingMeter = MaxDiggingMeter;
-        }
+    void CreateStartTunnel(int id)
+    {
+        inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
+    }
+
+    void CreateEndTunnel(int id)
+    {
+        inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
     }
 }

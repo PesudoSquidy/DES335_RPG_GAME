@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Tunnel : MonoBehaviour
 {
-    // Tunnel ID 
-    private int tunnelID;
-
-
     private GameObject stuckedObject = null;
 
-    private bool blocked = false;
+    private bool bBlocked = false;
 
-    private float activetime;
+    private float fActiveTime;
+
+    public bool bActive = false;
+
+    // Tunnel ID 
+    public int tunnelID;
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +24,27 @@ public class Tunnel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        activetime -= 0.016f;
+        if (bActive)
+        {
+            fActiveTime -= 0.016f;
 
-        if (activetime < 0)
-            DestoryTunnel();
+            // Destroy Tunnel
+            if (fActiveTime < 0)
+                DestoryTunnel();
+
+            // Lock Enemy
+            if (bBlocked)
+                stuckedObject.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position;
+        }
     }
 
     // Spawn Tunnel
     public void SpawnTunnel(int id, float time, Vector3 pos)
     {
-        SetTunnelID(id);
-        blocked = false;
-        activetime = time;
+        tunnelID = id;
+        bBlocked = false;
+        fActiveTime = time;
+        bActive = false;
         gameObject.GetComponent<Transform>().position = pos;
         gameObject.GetComponent<Renderer>().enabled = true;
     }
@@ -45,16 +55,10 @@ public class Tunnel : MonoBehaviour
         gameObject.GetComponent<Renderer>().enabled = false;
     }
 
-    // Set Tunnel ID
-    void SetTunnelID(int id)
-    {
-        tunnelID = id;
-    }
-
     // Collided Enemy
     void TrapEnemy(GameObject enemy)
     {
         stuckedObject = enemy;
-        blocked = true;
+        bBlocked = true;
     }
 }

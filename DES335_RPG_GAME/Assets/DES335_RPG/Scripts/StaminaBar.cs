@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class StaminaBar : MonoBehaviour
 {
-    private Stamina _stamina;
+    public static Stamina _stamina;
     private Image _barImage;
 
     private void Awake()
@@ -18,26 +18,24 @@ public class StaminaBar : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!_stamina.bStaminaDrain)
-            {
-                _stamina.SpendStamina(20);
-            }
-            _stamina.ToggleDrain();
+            if (!_stamina.bStaminaDrain && _stamina.SpendStamina(20))
+                _stamina.DrainStamina();
+            else 
+                _stamina.RegenStamina();
         }
 
         _stamina.Update();
         _barImage.fillAmount = _stamina.GetStaminaNormalized();
     }
-    
 }
 
 public class Stamina
 {
     public bool bStaminaDrain;
-    public const int _MaxStamina = 100;
-    private float _CurrStamina;
-    private float _StaminaRegen;
-    private float _StaminaDrain;
+    [SerializeField] public const int _MaxStamina = 100;
+    [SerializeField] private float _CurrStamina;
+    [SerializeField] private float _StaminaRegen;
+    [SerializeField] private float _StaminaDrain;
     
 
     public Stamina()
@@ -55,7 +53,7 @@ public class Stamina
             _CurrStamina -= _StaminaDrain * Time.deltaTime;
             if (_CurrStamina <= 0)
             {
-                ToggleDrain();
+                RegenStamina();
             }
         }
         else // Stamina Regenerates
@@ -65,19 +63,27 @@ public class Stamina
         _CurrStamina = Mathf.Clamp(_CurrStamina, 0f, _MaxStamina);
     }
 
-    public void SpendStamina(int amount)
+    public bool SpendStamina(int amount)
     {
         if (_CurrStamina >= amount)
         {
             _CurrStamina -= amount;
+            return true;
         }
+
+        return false;
     }
     public float GetStaminaNormalized()
     {
         return _CurrStamina / _MaxStamina;    
     }
-    public void ToggleDrain()
+    public void RegenStamina()
     {
-        bStaminaDrain = !(bStaminaDrain);
+        bStaminaDrain = false;
+    }
+
+    public void DrainStamina()
+    {
+        bStaminaDrain = true;
     }
 }

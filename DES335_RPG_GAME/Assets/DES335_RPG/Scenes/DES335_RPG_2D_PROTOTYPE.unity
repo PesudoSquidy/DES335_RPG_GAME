@@ -638,17 +638,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245353714}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a73ced665170dd849a671026ac425934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTunnels: 10
-  MaxDiggingMeter: 100
-  DiggingMinimum: 30
-  DiggingCost: 10
-  DiggingDecrement: 1
-  DiggingIncrement: 4
+  maxTunnels: 2
   tunnel: {fileID: 1854405568}
 --- !u!1001 &342101055
 PrefabInstance:
@@ -4189,6 +4184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd64c18ae472ff4f955f570b542aba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bActive: 0
 --- !u!1001 &1859846488
 PrefabInstance:
   m_ObjectHideFlags: 0
