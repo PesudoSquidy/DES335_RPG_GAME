@@ -14,15 +14,12 @@ public class EnemyHealth : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    public void TakeDamage(int damage)
     {
-        if(col.gameObject.tag == "Weapon")
-        {
-            --health;
+        health -= damage;
 
-            if (health <= 0)
-                Die();
-        }
+        if (health <= 0)
+            Die();
     }
 
     void Die()
