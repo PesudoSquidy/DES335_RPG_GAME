@@ -15,7 +15,6 @@ public class TunnelManager : MonoBehaviour
 
     GameObject[] inactiveTunnels;
 
-    private static Stamina _stamina;
     bool _currentflag = false;
 
     // Start is called before the first frame update
