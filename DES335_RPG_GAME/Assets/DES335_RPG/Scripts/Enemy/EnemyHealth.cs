@@ -9,9 +9,16 @@ public class EnemyHealth : MonoBehaviour
 
     private Animator anim;
 
+    [SerializeField]
+    private LootDrop lootDrop;
+
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        if(anim == null)
+            anim = gameObject.GetComponent<Animator>();
+
+        if (lootDrop == null)
+            lootDrop = gameObject.GetComponent<LootDrop>();
     }
 
     public void TakeDamage(int damage)
@@ -31,6 +38,7 @@ public class EnemyHealth : MonoBehaviour
     void Dead()
     {
         //Debug.Log(gameObject.name + "Dead");
+        lootDrop.DropLoot();
         Destroy(gameObject);
     }
 }

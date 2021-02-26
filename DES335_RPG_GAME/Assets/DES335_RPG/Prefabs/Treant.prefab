@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4578094171116721364}
   - component: {fileID: 4578094171116721366}
   - component: {fileID: 4578094171116721353}
-  - component: {fileID: 4578094171116721352}
   - component: {fileID: 4578094171116721354}
+  - component: {fileID: 4578094171116721352}
+  - component: {fileID: 4578094172686579867}
   m_Layer: 0
   m_Name: Treant
   m_TagString: Enemy
@@ -132,19 +133,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4578094171116721352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4578094171116721365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9222670a9280abb4b9ad91fdf1cf5fcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
 --- !u!95 &4578094171116721354
 Animator:
   serializedVersion: 3
@@ -164,3 +152,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4578094171116721352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578094171116721365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9222670a9280abb4b9ad91fdf1cf5fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+--- !u!114 &4578094172686579867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4578094171116721365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfaac4a2369401418c81d9df96918b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootDrop:
+  - {fileID: 348580701574010042, guid: 889d9b900d0f371489edd189b753f21c, type: 3}
+  - {fileID: 5089566428416921248, guid: d6ab01161e47e3a4f991a1d96465dcab, type: 3}
+  dropRate: 0
+  dropAmount: 1

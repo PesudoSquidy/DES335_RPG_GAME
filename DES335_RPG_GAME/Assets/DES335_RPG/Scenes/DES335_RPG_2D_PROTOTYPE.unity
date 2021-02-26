@@ -4121,6 +4121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bActive: 0
+  tunnelID: 0
 --- !u!1001 &1859846488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10213,6 +10214,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Diamond
       objectReference: {fileID: 0}
+    - target: {fileID: 348580701574010042, guid: 889d9b900d0f371489edd189b753f21c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889d9b900d0f371489edd189b753f21c, type: 3}
 --- !u!1001 &1149457840637844721
@@ -10296,6 +10302,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 4056761803907750673, guid: fd9f0e02225e7e248808f406bc7c5c6c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4056761803907750675, guid: fd9f0e02225e7e248808f406bc7c5c6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10375,16 +10386,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treant
       objectReference: {fileID: 0}
-    - target: {fileID: 4578094171116721366, guid: 46ede1df7c4073d4d8992ba4ce4d37aa,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4578094171116721366, guid: 46ede1df7c4073d4d8992ba4ce4d37aa,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 4578094171116721367, guid: 46ede1df7c4073d4d8992ba4ce4d37aa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10440,8 +10441,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    - target: {fileID: 4578094172686579867, guid: 46ede1df7c4073d4d8992ba4ce4d37aa,
+        type: 3}
+      propertyPath: dropAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4578094172686579867, guid: 46ede1df7c4073d4d8992ba4ce4d37aa,
+        type: 3}
+      propertyPath: dropRate
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ede1df7c4073d4d8992ba4ce4d37aa, type: 3}
 --- !u!1001 &4789488037147236753
 PrefabInstance:
@@ -10454,6 +10464,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Item_Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 5089566428416921248, guid: d6ab01161e47e3a4f991a1d96465dcab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5089566428416921250, guid: d6ab01161e47e3a4f991a1d96465dcab,
         type: 3}
