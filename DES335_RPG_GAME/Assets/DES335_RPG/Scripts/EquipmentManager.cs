@@ -12,6 +12,8 @@ public class EquipmentManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+
+
     }
 
     #endregion
@@ -23,12 +25,17 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory inventory;
 
+    public Equipment defaultEquipment;
+
     void Start()
     {
         inventory = Inventory.instance;
 
         int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
         currEquipment = new Equipment[numSlots];
+
+        if (defaultEquipment != null)
+            Equip(defaultEquipment);
     }
 
     public void Equip(Equipment newItem)

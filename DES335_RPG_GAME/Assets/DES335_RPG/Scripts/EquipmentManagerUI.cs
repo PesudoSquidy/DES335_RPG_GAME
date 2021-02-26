@@ -21,6 +21,8 @@ public class EquipmentManagerUI : MonoBehaviour
         equipmentManager.onEquipmentChanged += UpdateEquipmentUI;
  
         slots = equipmentParent.GetComponentsInChildren<InventorySlot>();
+
+        UpdateEquipmentUI(null, null);
     }
 
     void Update()
@@ -31,7 +33,6 @@ public class EquipmentManagerUI : MonoBehaviour
         }
     }
 
-    
     void UpdateEquipmentUI(Equipment newItem, Equipment oldItem)
     {
         for (int i = 0; i < slots.Length; ++i)

@@ -602,6 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEquipment: []
+  defaultEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305, type: 2}
 --- !u!114 &245353716
 MonoBehaviour:
   m_ObjectHideFlags: 0
