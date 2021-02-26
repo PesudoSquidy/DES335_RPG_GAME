@@ -12,11 +12,14 @@ public class Bomb : MonoBehaviour
     private float timeBeforeExplosion;
 
     [SerializeField]
+    private float timeTillDestroyGameobject;
+
+    [SerializeField]
     private Animator anim;
 
     private bool canDealDamage;
 
-    void Start()
+    void Start() 
     {
         canDealDamage = false;
 
@@ -56,6 +59,8 @@ public class Bomb : MonoBehaviour
     void Dead()
     {
         //Destroy(gameObject);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, timeTillDestroyGameobject);
     }
 }

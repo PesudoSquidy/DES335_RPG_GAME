@@ -13,6 +13,9 @@ public class Arrow : MonoBehaviour
     [SerializeField]
     private float lifeTime;
 
+    [SerializeField]
+    private int damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,13 @@ public class Arrow : MonoBehaviour
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
         //Debug.Log(hitInfo.gameObject.name);
+
+        if(hitInfo.gameObject.tag == "Enemy")
+        {
+            if (hitInfo.gameObject.GetComponent<EnemyHealth>() != null)
+                hitInfo.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+        }
+
         Destroy(gameObject);
     }
 }

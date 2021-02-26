@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e810083f9b963974f97cbd01e9b6ab56, type: 3}
-  m_Name: Spear
+  m_Name: Bomb
   m_EditorClassIdentifier: 
-  name: Spear
-  icon: {fileID: 21300000, guid: bf28d1ab5e5c42e4aa2c9b729c09fce3, type: 3}
-  prefab: {fileID: 1104592969248026, guid: 041293af2c793d745a3e5a370322d635, type: 3}
+  name: Bomb
+  icon: {fileID: 21300000, guid: 14b69e3ee353a574abd9c882593e74ea, type: 3}
+  prefab: {fileID: 6656126214236512463, guid: 3d9cddc15e12fda43ade20879ea9c482, type: 3}
   equipSlot: 0
-  damageModifier: 1
-  armourModifier: 1
+  damageModifier: 2
+  armourModifier: 0

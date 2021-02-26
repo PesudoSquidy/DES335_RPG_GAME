@@ -22,15 +22,13 @@ public class LootDrop : MonoBehaviour
             for(int i = 0; i < dropAmount; ++i)
             {
                 int randNo = Random.Range(0, dropRate);
-                float randPosX = Random.Range(0.0f, 2.0f) + gameObject.transform.position.x;
-                float randPosY = Random.Range(0.0f, 2.0f) + gameObject.transform.position.y;
+                float randPosX = Random.Range(0.0f, 0.5f) + gameObject.transform.position.x;
+                float randPosY = Random.Range(0.0f, 0.5f) + gameObject.transform.position.y;
 
                 Vector3 randPos = new Vector3(randPosX, randPosY, gameObject.transform.position.z);
 
-
                 if(randNo > lootDrop.Count)
                     randNo %= lootDrop.Count;
-
 
                 Instantiate(lootDrop[randNo], randPos, gameObject.transform.rotation);
             }

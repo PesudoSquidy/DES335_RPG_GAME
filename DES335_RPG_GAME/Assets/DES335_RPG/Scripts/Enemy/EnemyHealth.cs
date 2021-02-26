@@ -8,8 +8,6 @@ public class EnemyHealth : MonoBehaviour
     private int health;
 
     private Animator anim;
-
-    [SerializeField]
     private LootDrop lootDrop;
 
     void Start()

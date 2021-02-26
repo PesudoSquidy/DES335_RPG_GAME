@@ -53,11 +53,13 @@ public class TunnelManager : MonoBehaviour
 
     void CreateStartTunnel(int id)
     {
-        inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
+        if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
+            inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
     }
 
     void CreateEndTunnel(int id)
     {
-        inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
+        if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
+            inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
     }
 }

@@ -16,6 +16,8 @@ public class PlayerAttack : MonoBehaviour
 
     private PlayerMovement playerMovement;
 
+    private EquipmentManager equipmentManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,29 @@ public class PlayerAttack : MonoBehaviour
             anim = gameObject.GetComponent<Animator>();
         if (playerMovement == null)
             playerMovement = gameObject.GetComponent<PlayerMovement>();
+
+        if (equipmentManager == null)
+            equipmentManager = EquipmentManager.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        // Left Mouse Click
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetTrigger("isAttacking");
-            SpawnArrow();
+
+            if (equipmentManager.mainEquipment().name == "Bow")
+            {
+                anim.SetTrigger("isAttacking");
+                SpawnArrow();
+            }
+            else if(equipmentManager.mainEquipment().name == "Bomb")
+            {
+                GameObject bomb = equipmentManager.mainEquipment().prefab;
+
+                Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+            }
         }
     }
 

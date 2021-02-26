@@ -31,7 +31,7 @@ public class EquipmentManager : MonoBehaviour
     {
         inventory = Inventory.instance;
 
-        int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
+        int numSlots = System.Enum.GetNames(typeof(Equipment.EquipmentSlot)).Length;
         currEquipment = new Equipment[numSlots];
 
         if (defaultEquipment != null)
@@ -82,5 +82,13 @@ public class EquipmentManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.U))
             UnequipAll();
+    }
+
+    public Equipment mainEquipment()
+    {
+        if ((int)Equipment.EquipmentSlot.Main_Weapon < currEquipment.Length)
+            return currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
+        else
+            return null;
     }
 }

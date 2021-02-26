@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Earth
   icon: {fileID: 21300000, guid: a34a8f8870f46c04dbe86c7ed173ba1f, type: 3}
-  prefab: {fileID: 5255145021078438007, guid: ef679ecc974249c4aac48d66eabdcb4f, type: 3}
+  prefab: {fileID: 5089566428416921248, guid: d6ab01161e47e3a4f991a1d96465dcab, type: 3}

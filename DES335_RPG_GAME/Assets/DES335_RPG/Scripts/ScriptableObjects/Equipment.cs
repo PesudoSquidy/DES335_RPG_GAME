@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class Equipment : Item
 {
+    public enum EquipmentSlot { Main_Weapon, Side_Weapon }
+
     public EquipmentSlot equipSlot;
 
     public int damageModifier;
@@ -25,4 +27,4 @@ public class Equipment : Item
 }
 
 //public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet}
-public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield}
+//public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield}
