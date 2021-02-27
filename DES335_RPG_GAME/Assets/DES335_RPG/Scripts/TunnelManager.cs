@@ -5,7 +5,7 @@ using UnityEngine;
 public class TunnelManager : MonoBehaviour
 {
 
-    [SerializeField] int maxTunnels;
+    [SerializeField] int maxPassages;
 
     private int IDs = 0;
 
@@ -20,10 +20,13 @@ public class TunnelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inactiveTunnels = new GameObject[maxTunnels];
+        inactiveTunnels = new GameObject[maxPassages * 2];
 
-        for (int i = 0; i < maxTunnels; ++i)
+        for (int i = 0; i < maxPassages * 2; ++i)
+        {
             inactiveTunnels[i] = Instantiate(tunnel);
+            inactiveTunnels[i].GetComponent<Tunnel>().DestoryTunnel();
+        }
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -37,11 +40,11 @@ public class TunnelManager : MonoBehaviour
             if (_currentflag)
             {
                 CreateEndTunnel(IDs);
-                for (int i = 0; i < maxTunnels; ++i)
-                    if (inactiveTunnels[i].GetComponent<Tunnel>().tunnelID == IDs)
-                        inactiveTunnels[i].GetComponent<Tunnel>().bActive = true;
-                ++IDs;
-                if (IDs >= maxTunnels/2)
+
+                inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs+1].GetComponent<Transform>().position);
+                inactiveTunnels[IDs+1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs].GetComponent<Transform>().position);
+                IDs += 2;
+                if (IDs >= maxPassages * 2)
                     IDs = 0;
             }
             else

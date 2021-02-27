@@ -15,10 +15,12 @@ public class Tunnel : MonoBehaviour
     // Tunnel ID 
     public int tunnelID;
 
+    private Vector3 otherEnd;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameObject.AddComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -50,10 +52,20 @@ public class Tunnel : MonoBehaviour
         gameObject.GetComponent<Renderer>().enabled = true;
     }
 
+    // Activate Tunnel
+    public void ActivateTunnel(Vector3 tunnelPos)
+    {
+        bActive = true;
+        otherEnd = tunnelPos;
+    }
+
+
     // Destory Tunnel 
     public void DestoryTunnel()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
+        bActive = false;
+        bBlocked = false;
     }
 
     // Collided Enemy
@@ -61,5 +73,11 @@ public class Tunnel : MonoBehaviour
     {
         stuckedObject = enemy;
         bBlocked = true;
+    }
+
+    // Transport Object
+    void Transport(GameObject obj)
+    {
+        obj.GetComponent<Transform>().position = otherEnd;
     }
 }
