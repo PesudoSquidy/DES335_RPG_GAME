@@ -40,7 +40,7 @@ public class Stamina
 
     public Stamina()
     {
-        _CurrStamina = 0;
+        _CurrStamina = _MaxStamina;
         _StaminaRegen = 30f;
         _StaminaDrain = 5f;
         bStaminaDrain = false;

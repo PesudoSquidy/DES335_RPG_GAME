@@ -12,24 +12,33 @@ public class EquipmentManagerUI : MonoBehaviour
 
     public GameObject equipmentUI;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         equipmentManager = EquipmentManager.instance;
 
         // Add new callback fn
         equipmentManager.onEquipmentChanged += UpdateEquipmentUI;
- 
-        slots = equipmentParent.GetComponentsInChildren<InventorySlot>();
 
-        UpdateEquipmentUI(null, null);
+        slots = equipmentParent.GetComponentsInChildren<InventorySlot>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
     }
 
     void Update()
-    {
+    { 
         if(Input.GetButtonDown("Equipment"))
         {
-            equipmentUI.SetActive(!equipmentUI.activeSelf);
+            //equipmentUI.SetActive(!equipmentUI.activeSelf);
+
+            // Swap Equipment
+            if(equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon] != null  && equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon] != null)
+            {
+                equipmentManager.SwapMainEquipment();
+            }
         }
     }
 

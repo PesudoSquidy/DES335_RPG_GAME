@@ -25,7 +25,8 @@ public class EquipmentManager : MonoBehaviour
 
     Inventory inventory;
 
-    public Equipment defaultEquipment;
+    public Equipment defaultMainEquipment;
+    public Equipment defaultSideEquipment;
 
     void Start()
     {
@@ -34,8 +35,10 @@ public class EquipmentManager : MonoBehaviour
         int numSlots = System.Enum.GetNames(typeof(Equipment.EquipmentSlot)).Length;
         currEquipment = new Equipment[numSlots];
 
-        if (defaultEquipment != null)
-            Equip(defaultEquipment);
+        if (defaultMainEquipment != null)
+            Equip(defaultMainEquipment);
+        if (defaultSideEquipment != null)
+            Equip(defaultSideEquipment);
     }
 
     public void Equip(Equipment newItem)
@@ -90,5 +93,18 @@ public class EquipmentManager : MonoBehaviour
             return currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
         else
             return null;
+    }
+
+    public void SwapMainEquipment()
+    {
+        Debug.Log("Swap Weapon");
+        Equipment tempEquipment = currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
+        currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon] = currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon];
+        currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon] = tempEquipment;
+
+
+        // Event call
+        if (onEquipmentChanged != null)
+            onEquipmentChanged.Invoke(null, null);
     }
 }

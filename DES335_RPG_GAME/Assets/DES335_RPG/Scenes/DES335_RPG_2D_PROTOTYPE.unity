@@ -843,7 +843,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEquipment: []
-  defaultEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305, type: 2}
+  defaultMainEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305,
+    type: 2}
+  defaultSideEquipment: {fileID: 11400000, guid: 765800a27b00d70439ea0402ea2cc4ed,
+    type: 2}
 --- !u!114 &245353716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,8 +861,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
-  testEquipment: {fileID: 11400000, guid: 765800a27b00d70439ea0402ea2cc4ed, type: 2}
-  testEquipment2: {fileID: 0}
 --- !u!4 &245353717
 Transform:
   m_ObjectHideFlags: 0
@@ -3040,19 +3041,6 @@ MonoBehaviour:
   - {fileID: 2036184424}
   - {fileID: 2070529305}
   - {fileID: 1195534336}
---- !u!114 &926060675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926060665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b39003305c1e9459f7307f5a3e25e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objTransported: 0
 --- !u!1 &966441479
 GameObject:
   m_ObjectHideFlags: 0
