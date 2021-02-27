@@ -14,6 +14,8 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField]
     private int diggingStaminaCost;
 
+    private BoxCollider2D boxCol2D;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerSkill : MonoBehaviour
 
         anim = GetComponent<Animator>();
         stamina = GetComponent<PlayerStamina>();
+        boxCol2D = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -28,12 +31,18 @@ public class PlayerSkill : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Player digging");
-
             if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
+            {
+                Debug.Log("Player digging");
+
+                boxCol2D.enabled = false;
                 stamina.bStaminaDrain = true;
+            }
             else
+            {
+                boxCol2D.enabled = true;
                 stamina.bStaminaDrain = false;
+            }
         }
     }
 }
