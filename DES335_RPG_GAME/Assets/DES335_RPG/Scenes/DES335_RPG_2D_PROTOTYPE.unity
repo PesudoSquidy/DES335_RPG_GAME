@@ -3147,7 +3147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
-  testEquipment: {fileID: 0}
+  testEquipment: {fileID: 11400000, guid: b97d801aed7aaa544a5c703cd40994e4, type: 2}
 --- !u!4 &245353717
 Transform:
   m_ObjectHideFlags: 0

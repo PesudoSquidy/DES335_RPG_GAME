@@ -8,6 +8,7 @@ TagManager:
   - Collide
   - Weapon
   - Enemy
+  - Bomb
   layers:
   - Default
   - TransparentFX
