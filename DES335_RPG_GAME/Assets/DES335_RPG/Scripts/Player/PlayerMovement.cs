@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Calculating Mouse position in world space with respect to the player's pos from Camera
-        Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
-        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        //Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+        //Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
         // Input
         movement.x = Input.GetAxisRaw("Horizontal");

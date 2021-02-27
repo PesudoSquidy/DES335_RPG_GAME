@@ -16,20 +16,28 @@ public abstract class Enemy_AI : MonoBehaviour
     int curretWaypoint = 0;
     //bool reachedEndOfPath = false;
 
-    public Transform enemyGFX;
-
     Seeker seeker;
     Rigidbody2D rb;
+
+    protected Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
+
+        if (anim == null)
+            anim = GetComponent<Animator>();
+
+        if (seeker == null)
+            seeker = GetComponent<Seeker>();
+        
+        if(rb == null)
+            rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        if(target == null)
+            target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void UpdatePath()
