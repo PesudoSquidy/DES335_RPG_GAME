@@ -33,7 +33,7 @@ public class Arrow : MonoBehaviour
     {
         //Debug.Log(hitInfo.gameObject.name);
 
-        if(hitInfo.gameObject.CompareTag("Enemy"))
+        if(hitInfo.gameObject.CompareTag("Enemy") || hitInfo.gameObject.CompareTag("FlyingEnemy"))
         {
             Debug.Log(hitInfo.gameObject.name);
 
