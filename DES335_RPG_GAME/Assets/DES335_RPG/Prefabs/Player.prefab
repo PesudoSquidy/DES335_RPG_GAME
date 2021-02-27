@@ -136,6 +136,9 @@ GameObject:
   - component: {fileID: 612568205}
   - component: {fileID: 1149457840187719074}
   - component: {fileID: 612568212}
+  - component: {fileID: 926060666}
+  - component: {fileID: 926060667}
+  - component: {fileID: 926060675}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -306,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb654297c8727e47a2c60303f84e165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   playerFaceDir: 0
 --- !u!114 &612568212
 MonoBehaviour:
@@ -325,3 +328,49 @@ MonoBehaviour:
   firePoint_Right: {fileID: 824779263}
   firePoint_Up: {fileID: 1594226571}
   firePoint_Down: {fileID: 1032289277}
+--- !u!114 &926060666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149457840187719073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ae833ab0b98ff4ebb848cd21c81f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  healthUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &926060667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149457840187719073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccbc605b9db60b45a618b70f743e821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diggingStaminaCost: 20
+--- !u!114 &926060675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149457840187719073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd7eee52d62454ab070592ea20adc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bStaminaDrain: 0
+  _CurrStamina: 100
+  _StaminaRegen: 30
+  _StaminaDrain: 5

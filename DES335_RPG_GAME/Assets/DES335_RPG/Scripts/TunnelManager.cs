@@ -5,6 +5,17 @@ using UnityEngine;
 public class TunnelManager : MonoBehaviour
 {
 
+    #region Singleton
+
+    public static TunnelManager instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     [SerializeField] int maxPassages;
 
     private int IDs = 0;

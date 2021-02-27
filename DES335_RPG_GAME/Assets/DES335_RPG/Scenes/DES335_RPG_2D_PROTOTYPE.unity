@@ -10870,12 +10870,41 @@ MonoBehaviour:
   - {fileID: 2036184424}
   - {fileID: 2070529305}
   - {fileID: 1195534336}
+--- !u!114 &926060667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926060665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccbc605b9db60b45a618b70f743e821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diggingStaminaCost: 20
 --- !u!4 &926060674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1149457840187719075, guid: f1ed99d1f0d15854691355c658cf91e3,
     type: 3}
   m_PrefabInstance: {fileID: 1149457840637844721}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &926060675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926060665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bd7eee52d62454ab070592ea20adc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bStaminaDrain: 0
+  _CurrStamina: 100
+  _StaminaRegen: 30
+  _StaminaDrain: 5
 --- !u!1 &930378187
 GameObject:
   m_ObjectHideFlags: 0
@@ -31191,7 +31220,7 @@ PrefabInstance:
     - target: {fileID: 1149457840187719075, guid: f1ed99d1f0d15854691355c658cf91e3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1149457840187719075, guid: f1ed99d1f0d15854691355c658cf91e3,
         type: 3}

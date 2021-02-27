@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
     private Animator anim;
 
     public GameObject arrow;
