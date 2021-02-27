@@ -17,12 +17,8 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
-    private bool canDealDamage;
-
     void Start() 
     {
-        canDealDamage = false;
-
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
 
@@ -35,24 +31,19 @@ public class Bomb : MonoBehaviour
         if(timeBeforeExplosion > 0)
             timeBeforeExplosion -= Time.deltaTime;
         else if (timeBeforeExplosion <= 0 && anim != null)
-        {
-            canDealDamage = true;
             anim.enabled = true;
-        }
     }
 
     void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.CompareTag("Enemy"))
         {
-            if (canDealDamage)
+            if (anim.enabled)
             {
-                canDealDamage = false;
                 EnemyHealth enemyHP_Script = collider2D.GetComponent<EnemyHealth>();
 
                 if (enemyHP_Script != null)
                 {
-                    Debug.Log(collider2D.gameObject.name + " " + damage);
                     enemyHP_Script.TakeDamage(damage);
                 }
             }
@@ -61,9 +52,6 @@ public class Bomb : MonoBehaviour
 
     void Dead()
     {
-        //Destroy(gameObject);
-        //gameObject.SetActive(false);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject, timeTillDestroyGameobject);
+        Destroy(gameObject);
     }
 }

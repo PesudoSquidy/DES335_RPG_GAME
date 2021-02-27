@@ -7,11 +7,13 @@ public abstract class EnemyHealth : MonoBehaviour
     [SerializeField]
     private int health;
 
+    [SerializeField]
     protected Animator anim;
+
+    [SerializeField]
     private LootDrop lootDrop;
 
     private bool dieOnce;
-
 
     void Start()
     {
@@ -37,11 +39,10 @@ public abstract class EnemyHealth : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log("Enemy dead");
         Dead();
     }
 
-    void Dead()
+    public void Dead()
     {
         if(lootDrop !=null)
             lootDrop.DropLoot();

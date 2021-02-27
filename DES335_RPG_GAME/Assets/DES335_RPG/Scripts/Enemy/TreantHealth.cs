@@ -6,7 +6,6 @@ public class TreantHealth : EnemyHealth
 {
     public override void Die()
     {
-        Debug.Log("Treant dead");
         anim.SetTrigger("isDead");
     }
 }

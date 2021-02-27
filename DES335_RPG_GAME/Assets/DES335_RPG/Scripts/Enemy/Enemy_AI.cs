@@ -14,7 +14,7 @@ public abstract class Enemy_AI : MonoBehaviour
 
     Path path;
     int curretWaypoint = 0;
-    bool reachedEndOfPath = false;
+    //bool reachedEndOfPath = false;
 
     public Transform enemyGFX;
 
@@ -55,13 +55,13 @@ public abstract class Enemy_AI : MonoBehaviour
         
         if(curretWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             return;
         }
-        else
-        {
-            reachedEndOfPath = false;
-        }
+        //else
+        //{
+        //    reachedEndOfPath = false;
+        //}
 
         Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
