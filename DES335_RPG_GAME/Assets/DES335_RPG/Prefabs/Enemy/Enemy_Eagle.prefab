@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  anim: {fileID: 0}
-  lootDrop: {fileID: 0}
+  anim: {fileID: 1154346044}
+  lootDrop: {fileID: 5522848121618790664}
 --- !u!114 &5522848121618790664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,9 +146,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfaac4a2369401418c81d9df96918b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootDrop: []
-  dropRate: 0
-  dropAmount: 0
+  lootDrop:
+  - {fileID: 570310531762812522, guid: 28fb202bc4d53b84c8395692b0f7250a, type: 3}
+  - {fileID: 300962924529664348, guid: 4d89ffd5e0ea845419aa29e84415dff0, type: 3}
+  - {fileID: 2785815953439280400, guid: 4c33dbd4175c0e94ebe56b7c27256ffe, type: 3}
+  dropRate: 3
+  dropAmount: 1
 --- !u!212 &1154346045
 SpriteRenderer:
   m_ObjectHideFlags: 0
