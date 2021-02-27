@@ -86,7 +86,7 @@ public class Tunnel : MonoBehaviour
     // Transport Object
     void Transport(GameObject obj)
     {
-        Debug.Log("Player teleport " + obj.GetComponent<Transportable>().objTransported);
+       // Debug.Log("Player teleport " + obj.GetComponent<Transportable>().objTransported);
 
         obj.GetComponent<Transform>().position = otherEnd;
     }
@@ -102,7 +102,7 @@ public class Tunnel : MonoBehaviour
             {
                 if(col.gameObject.GetComponent<Transportable>().objTransported == 0)
                 {
-                    Debug.Log("Player is on the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
+                    //Debug.Log("Player is on the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
 
                     ++col.gameObject.GetComponent<Transportable>().objTransported;
                     ++col.gameObject.GetComponent<Transportable>().objTransported;
@@ -111,13 +111,27 @@ public class Tunnel : MonoBehaviour
                 }
             }   
         }
+        else if(col.tag == "Bomb")
+        {
+            if (col.gameObject.GetComponent<Transportable>() == null)
+                col.gameObject.AddComponent<Transportable>();
+
+            if (col.gameObject.GetComponent<Transportable>() != null)
+            {
+                if (col.gameObject.GetComponent<Transportable>().objTransported == 0)
+                {
+                    ++col.gameObject.GetComponent<Transportable>().objTransported;
+                    Transport(col.gameObject);
+                }
+            }
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.tag == "Player")
         {
-            Debug.Log("Player exits the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
+            //Debug.Log("Player exits the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
 
             if (col.gameObject.GetComponent<Transportable>() != null)
             {

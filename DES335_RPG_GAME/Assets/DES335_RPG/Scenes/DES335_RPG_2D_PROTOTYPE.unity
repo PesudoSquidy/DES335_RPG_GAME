@@ -9119,6 +9119,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &781584890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6656126214236512463, guid: 3d9cddc15e12fda43ade20879ea9c482,
+    type: 3}
+  m_PrefabInstance: {fileID: 1734091636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &781584891
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781584890}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &782266629
 GameObject:
   m_ObjectHideFlags: 0
@@ -20690,6 +20717,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 6656126214236512463, guid: 3d9cddc15e12fda43ade20879ea9c482,
+        type: 3}
+      propertyPath: m_TagString
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d9cddc15e12fda43ade20879ea9c482, type: 3}
