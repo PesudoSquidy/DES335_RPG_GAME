@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Bomb
   icon: {fileID: 21300000, guid: 14b69e3ee353a574abd9c882593e74ea, type: 3}
   prefab: {fileID: 6656126214236512463, guid: 3d9cddc15e12fda43ade20879ea9c482, type: 3}
-  equipSlot: 1
+  equipSlot: 0
   damageModifier: 2
   armourModifier: 0

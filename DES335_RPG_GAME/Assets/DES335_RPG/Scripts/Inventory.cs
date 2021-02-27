@@ -30,19 +30,19 @@ public class Inventory : MonoBehaviour
     #endregion
 
     //Testing Purpose
-    //public Item testEquipment;
+    public Item testEquipment;
     //public Item testEquipment2;
 
     void Start()
     {
-        //if (testEquipment != null)
-        //{
-        //    items.Add(testEquipment);
+        if (testEquipment != null)
+        {
+            items.Add(testEquipment);
 
-        //    //Event call
-        //    if (onItemChangedCallback != null)
-        //        onItemChangedCallback.Invoke();
-        //}
+            //Event call
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
+        }
 
         //if (testEquipment2 != null)
         //{
