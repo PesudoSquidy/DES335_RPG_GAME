@@ -50,7 +50,6 @@ public class Tunnel : MonoBehaviour
     // Spawn Tunnel
     public void SpawnTunnel(int id, float time, Vector3 pos)
     {
-        gameObject.SetActive(true);
         tunnelID = id;
         bBlocked = false;
         fActiveTime = time;
@@ -72,6 +71,7 @@ public class Tunnel : MonoBehaviour
     public void DeactiveTunnel()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         bActive = false;
         bBlocked = false;
     }
