@@ -34,9 +34,8 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         // Left Mouse Click
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-
             if (equipmentManager.mainEquipment().name == "Bow")
             {
                 anim.SetTrigger("isAttacking");
