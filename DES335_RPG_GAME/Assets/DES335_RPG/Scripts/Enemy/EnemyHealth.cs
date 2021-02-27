@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public abstract class EnemyHealth : MonoBehaviour
 {
     [SerializeField]
     private int health;
 
-    private Animator anim;
+    protected Animator anim;
     private LootDrop lootDrop;
+
+    private bool dieOnce;
+
 
     void Start()
     {
@@ -17,24 +20,32 @@ public class EnemyHealth : MonoBehaviour
 
         if (lootDrop == null)
             lootDrop = gameObject.GetComponent<LootDrop>();
+
+        dieOnce = false;
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
 
-        if (health <= 0)
+        if (health <= 0 && dieOnce == false)
+        {
+            dieOnce = true;
             Die();
+        }
     }
 
-    void Die()
+    virtual public void Die()
     {
-        anim.SetTrigger("isDead");
+        Debug.Log("Enemy dead");
+        Dead();
     }
 
     void Dead()
     {
-        lootDrop.DropLoot();
+        if(lootDrop !=null)
+            lootDrop.DropLoot();
+
         Destroy(gameObject);
     }
 }

@@ -33,8 +33,10 @@ public class Arrow : MonoBehaviour
     {
         //Debug.Log(hitInfo.gameObject.name);
 
-        if(hitInfo.gameObject.tag == "Enemy")
+        if(hitInfo.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log(hitInfo.gameObject.name);
+
             if (hitInfo.gameObject.GetComponent<EnemyHealth>() != null)
                 hitInfo.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
         }

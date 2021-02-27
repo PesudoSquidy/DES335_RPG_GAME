@@ -43,7 +43,7 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collider2D)
     {
-        if (collider2D.gameObject.tag == "Enemy")
+        if (collider2D.gameObject.CompareTag("Enemy"))
         {
             if (canDealDamage)
             {
@@ -51,7 +51,10 @@ public class Bomb : MonoBehaviour
                 EnemyHealth enemyHP_Script = collider2D.GetComponent<EnemyHealth>();
 
                 if (enemyHP_Script != null)
+                {
+                    Debug.Log(collider2D.gameObject.name + " " + damage);
                     enemyHP_Script.TakeDamage(damage);
+                }
             }
         }
     }
