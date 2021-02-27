@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 
 
-public class Enemy_AI : MonoBehaviour
+public abstract class Enemy_AI : MonoBehaviour
 {
 
     public Transform target;
@@ -28,6 +28,8 @@ public class Enemy_AI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void UpdatePath()
@@ -73,16 +75,10 @@ public class Enemy_AI : MonoBehaviour
             ++curretWaypoint;
         }
 
-        // Moving toward to the right
-        if (force.x >= 0.01f)
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
+        Animation(force);
+    }
+    public virtual void Animation(Vector2 force)
+    {
 
-        // Moving towards left
-        else if (force.x <= -0.01f)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
     }
 }

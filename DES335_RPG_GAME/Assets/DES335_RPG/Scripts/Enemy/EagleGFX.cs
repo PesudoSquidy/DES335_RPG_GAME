@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-public class EnemyGFX : MonoBehaviour
+public class EagleGFX : MonoBehaviour
 {
     public AIPath aiPath;
 

@@ -35,7 +35,7 @@ public abstract class EnemyHealth : MonoBehaviour
         }
     }
 
-    virtual public void Die()
+    public virtual void Die()
     {
         Debug.Log("Enemy dead");
         Dead();
