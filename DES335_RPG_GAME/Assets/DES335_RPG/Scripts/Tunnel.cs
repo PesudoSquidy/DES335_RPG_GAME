@@ -8,6 +8,7 @@ public class Tunnel : MonoBehaviour
 
     private bool bBlocked = false;
 
+    [SerializeField]
     private float fActiveTime;
 
     public bool bActive = false;
@@ -17,14 +18,20 @@ public class Tunnel : MonoBehaviour
 
     private Vector3 otherEnd;
 
+    private BoxCollider2D col2D;
+
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.AddComponent<BoxCollider2D>();
+        if(gameObject.GetComponent<BoxCollider2D>() !=null)
+        {
+            col2D = gameObject.GetComponent<BoxCollider2D>();
+            col2D.enabled = false;
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() 
     {
         if (bActive)
         {
@@ -32,7 +39,7 @@ public class Tunnel : MonoBehaviour
 
             // Destroy Tunnel
             if (fActiveTime < 0)
-                DestoryTunnel();
+                DeactiveTunnel();
 
             // Lock Enemy
             if (bBlocked)
@@ -57,11 +64,12 @@ public class Tunnel : MonoBehaviour
     {
         bActive = true;
         otherEnd = tunnelPos;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 
-    // Destory Tunnel 
-    public void DestoryTunnel()
+    // Deactive Tunnel 
+    public void DeactiveTunnel()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
         bActive = false;
@@ -78,6 +86,43 @@ public class Tunnel : MonoBehaviour
     // Transport Object
     void Transport(GameObject obj)
     {
+        Debug.Log("Player teleport " + obj.GetComponent<Transportable>().objTransported);
+
         obj.GetComponent<Transform>().position = otherEnd;
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            if(col.gameObject.GetComponent<Transportable>() == null)
+                col.gameObject.AddComponent<Transportable>();
+
+            if (col.gameObject.GetComponent<Transportable>() != null)
+            {
+                if(col.gameObject.GetComponent<Transportable>().objTransported == 0)
+                {
+                    Debug.Log("Player is on the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
+
+                    ++col.gameObject.GetComponent<Transportable>().objTransported;
+                    ++col.gameObject.GetComponent<Transportable>().objTransported;
+
+                    Transport(col.gameObject);
+                }
+            }   
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Player")
+        {
+            Debug.Log("Player exits the Tunnel: " + col.gameObject.GetComponent<Transportable>().objTransported);
+
+            if (col.gameObject.GetComponent<Transportable>() != null)
+            {
+                --col.gameObject.GetComponent<Transportable>().objTransported;
+            }
+        }
     }
 }

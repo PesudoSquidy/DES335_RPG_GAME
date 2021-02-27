@@ -520,8 +520,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73ced665170dd849a671026ac425934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTunnels: 2
+  maxPassages: 1
   tunnel: {fileID: 8241838330313973492, guid: d3a8ae910df6be74795770aa2af57bdf, type: 3}
+  tunnelTime: 300
 --- !u!1001 &342101055
 PrefabInstance:
   m_ObjectHideFlags: 0

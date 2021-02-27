@@ -12,7 +12,7 @@ public class TunnelManager : MonoBehaviour
     private GameObject player;
 
     [SerializeField] GameObject tunnel;
-
+    [SerializeField] private float tunnelTime;
     GameObject[] inactiveTunnels;
 
     bool _currentflag = false;
@@ -25,7 +25,7 @@ public class TunnelManager : MonoBehaviour
         for (int i = 0; i < maxPassages * 2; ++i)
         {
             inactiveTunnels[i] = Instantiate(tunnel);
-            inactiveTunnels[i].GetComponent<Tunnel>().DestoryTunnel();
+            inactiveTunnels[i].GetComponent<Tunnel>().DeactiveTunnel();
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
@@ -57,12 +57,12 @@ public class TunnelManager : MonoBehaviour
     void CreateStartTunnel(int id)
     {
         if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
-            inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
+            inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, tunnelTime, player.GetComponent<Transform>().position);
     }
 
     void CreateEndTunnel(int id)
     {
         if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
-            inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, 10, player.GetComponent<Transform>().position);
+            inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, tunnelTime, player.GetComponent<Transform>().position);
     }
 }
