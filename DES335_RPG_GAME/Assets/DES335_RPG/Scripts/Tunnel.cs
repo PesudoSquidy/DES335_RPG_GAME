@@ -121,7 +121,8 @@ public class Tunnel : MonoBehaviour
 
             if (col.gameObject.GetComponent<Transportable>() != null)
             {
-                --col.gameObject.GetComponent<Transportable>().objTransported;
+                if(col.gameObject.GetComponent<Transportable>().objTransported > 0)
+                    --col.gameObject.GetComponent<Transportable>().objTransported;
             }
         }
     }

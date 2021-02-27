@@ -886,8 +886,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73ced665170dd849a671026ac425934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPassages: 10
+  maxPassages: 4
   tunnel: {fileID: 8241838330313973492, guid: d3a8ae910df6be74795770aa2af57bdf, type: 3}
+  tunnelTime: 300
 --- !u!1 &287981854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,7 +3052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b39003305c1e9459f7307f5a3e25e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bTransported: 0
+  objTransported: 0
 --- !u!1 &966441479
 GameObject:
   m_ObjectHideFlags: 0
