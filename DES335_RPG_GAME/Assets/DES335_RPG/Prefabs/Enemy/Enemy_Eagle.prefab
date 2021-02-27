@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1154346044}
   m_Layer: 0
   m_Name: Enemy_Eagle
-  m_TagString: Enemy
+  m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,6 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 400
   nextWaypointDistance: 3
-  enemyGFX: {fileID: 0}
 --- !u!114 &865497327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +149,6 @@ MonoBehaviour:
   - {fileID: 570310531762812522, guid: 28fb202bc4d53b84c8395692b0f7250a, type: 3}
   - {fileID: 300962924529664348, guid: 4d89ffd5e0ea845419aa29e84415dff0, type: 3}
   - {fileID: 2785815953439280400, guid: 4c33dbd4175c0e94ebe56b7c27256ffe, type: 3}
-  dropRate: 3
   dropAmount: 1
 --- !u!212 &1154346045
 SpriteRenderer:

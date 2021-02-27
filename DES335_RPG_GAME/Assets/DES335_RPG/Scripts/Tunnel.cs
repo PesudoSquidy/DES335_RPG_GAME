@@ -6,7 +6,7 @@ public class Tunnel : MonoBehaviour
 {
     private GameObject stuckedObject = null;
 
-    private bool bBlocked = false;
+    public bool bBlocked = false;
 
     [SerializeField]
     private float fActiveTime;
@@ -42,7 +42,7 @@ public class Tunnel : MonoBehaviour
                 DeactiveTunnel();
 
             // Lock Enemy
-            if (bBlocked)
+            if (bBlocked && stuckedObject != null)
                 stuckedObject.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position;
         }
     }
@@ -54,6 +54,7 @@ public class Tunnel : MonoBehaviour
         bBlocked = false;
         fActiveTime = time;
         bActive = false;
+        stuckedObject = null;
         gameObject.GetComponent<Transform>().position = pos;
         gameObject.GetComponent<Renderer>().enabled = true;
     }
@@ -113,15 +114,26 @@ public class Tunnel : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player")
+        if (!bBlocked)
         {
-            PrepareTransport(col.gameObject);
-            Transport(col.gameObject); 
+            if (col.tag == "Player")
+            {
+                PrepareTransport(col.gameObject);
+                Transport(col.gameObject);
+            }
+            else if (col.tag == "Bomb")
+            {
+                PrepareTransport(col.gameObject);
+                Transport(col.gameObject);
+            }
         }
-        else if(col.tag == "Bomb")
+
+        if (!stuckedObject)
         {
-            PrepareTransport(col.gameObject);
-            Transport(col.gameObject);
+            if (col.tag == "Enemy")
+            {
+                TrapEnemy(col.gameObject);
+            }
         }
     }
 

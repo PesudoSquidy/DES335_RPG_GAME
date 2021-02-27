@@ -63,6 +63,18 @@ public class TunnelManager : MonoBehaviour
 
             _currentflag = StaminaBar._stamina.bStaminaDrain;
         }
+
+        for (int i = 0; i < maxPassages * 2; i += 2)
+        {
+            if (inactiveTunnels[i].GetComponent<Tunnel>().bActive)
+            {
+                if (inactiveTunnels[i].GetComponent<Tunnel>().bBlocked || inactiveTunnels[i + 1].GetComponent<Tunnel>().bBlocked)
+                {
+                    inactiveTunnels[i].GetComponent<Tunnel>().bBlocked = true;
+                    inactiveTunnels[i+1].GetComponent<Tunnel>().bBlocked = true;
+                }
+            }
+        }
     }
 
     void CreateStartTunnel(int id)
