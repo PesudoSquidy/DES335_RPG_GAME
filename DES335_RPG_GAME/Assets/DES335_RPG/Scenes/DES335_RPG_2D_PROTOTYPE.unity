@@ -5407,7 +5407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPassages: 4
   tunnel: {fileID: 8241838330313973492, guid: d3a8ae910df6be74795770aa2af57bdf, type: 3}
-  tunnelTime: 30
+  tunnelTime: 8
+  tunnel_Passage: {fileID: 1553802221868310010, guid: 8c4cd65d2b2f8b542a8a1279461dbf2d,
+    type: 3}
 --- !u!1 &254248031
 GameObject:
   m_ObjectHideFlags: 0

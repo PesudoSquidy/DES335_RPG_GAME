@@ -9,14 +9,14 @@ public class Tunnel : MonoBehaviour
     public bool bBlocked = false;
 
     [SerializeField]
-    private float fActiveTime;
+    public float fActiveTime;
 
     public bool bActive = false;
 
     // Tunnel ID 
     public int tunnelID;
 
-    private Vector3 otherEnd;
+    private GameObject otherEnd;
 
     private BoxCollider2D col2D;
 
@@ -35,7 +35,7 @@ public class Tunnel : MonoBehaviour
     {
         if (bActive)
         {
-            fActiveTime -= 0.016f;
+            fActiveTime -= Time.deltaTime;
 
             // Destroy Tunnel
             if (fActiveTime < 0)
@@ -60,10 +60,10 @@ public class Tunnel : MonoBehaviour
     }
 
     // Activate Tunnel
-    public void ActivateTunnel(Vector3 tunnelPos)
+    public void ActivateTunnel(GameObject theOtherTunnel)
     {
         bActive = true;
-        otherEnd = tunnelPos;
+        otherEnd = theOtherTunnel;
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
@@ -89,7 +89,9 @@ public class Tunnel : MonoBehaviour
     {
         if (obj.GetComponent<Transportable>() != null && obj.GetComponent<Transportable>().objTransported == 0)
         {
-            obj.GetComponent<Transform>().position = otherEnd;
+            if(otherEnd.GetComponent<Tunnel>().bActive)
+                obj.GetComponent<Transform>().position = otherEnd.transform.position;
+
             FinishTransport(obj);
         }
     }

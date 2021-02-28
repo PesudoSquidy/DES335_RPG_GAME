@@ -46,5 +46,10 @@ public class PlayerSkill : MonoBehaviour
                 isDigging = false;
             }
         }
+        else if(stamina.bStaminaDrain == false)
+        {
+            boxCol2D.enabled = true;
+            isDigging = false;
+        }
     }
 }

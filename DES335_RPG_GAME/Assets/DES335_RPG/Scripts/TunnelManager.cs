@@ -28,6 +28,11 @@ public class TunnelManager : MonoBehaviour
 
     bool _currentflag = false;
 
+    [SerializeField] GameObject tunnel_Passage;
+
+    Queue<GameObject> tunnelPassageHandler;
+    int[] tunnelPassageID;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,9 @@ public class TunnelManager : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+
+        tunnelPassageHandler = new Queue<GameObject>();
+        tunnelPassageID = new int[maxPassages * 2];
     }
 
     // Update is called once per frame
@@ -52,18 +60,35 @@ public class TunnelManager : MonoBehaviour
             {
                 CreateEndTunnel(IDs);
 
-                inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs+1].GetComponent<Transform>().position);
-                inactiveTunnels[IDs+1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs].GetComponent<Transform>().position);
+                inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs + 1]);
+                inactiveTunnels[IDs + 1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs]);
+
+                CancelInvoke("SpawnTunnelPassage");
+
+                // Activate all tunnel passage
+                for (int i = 0; i < tunnelPassageID[IDs]; ++i)
+                {
+                    TunnelPassage tempScript = tunnelPassageHandler.Dequeue().GetComponent<TunnelPassage>();
+                    tempScript.fActiveTime = inactiveTunnels[IDs].GetComponent<Tunnel>().fActiveTime + (i * 0.08f);
+                    tempScript.bActive = true;
+                }
+
+                inactiveTunnels[IDs + 1].GetComponent<Tunnel>().fActiveTime += tunnelPassageID[IDs] * 0.08f;
+                tunnelPassageID[IDs] = 0;
+
                 IDs += 2;
                 if (IDs >= maxPassages * 2)
                     IDs = 0;
             }
             else
+            {
                 CreateStartTunnel(IDs);
+                InvokeRepeating("SpawnTunnelPassage", 0.1f, 0.1f);
+            }
 
             _currentflag = StaminaBar._stamina.bStaminaDrain;
-        }
 
+        }
         for (int i = 0; i < maxPassages * 2; i += 2)
         {
             if (inactiveTunnels[i].GetComponent<Tunnel>().bActive)
@@ -77,6 +102,15 @@ public class TunnelManager : MonoBehaviour
         }
     }
 
+    void SpawnTunnelPassage()
+    {
+        if (tunnel_Passage != null)
+        {
+            tunnelPassageHandler.Enqueue(Instantiate(tunnel_Passage, player.transform.position, Quaternion.identity));
+            ++(tunnelPassageID[IDs]);
+        }
+    }
+    
     void CreateStartTunnel(int id)
     {
         if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
