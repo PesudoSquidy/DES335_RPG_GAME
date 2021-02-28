@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb == null)
             rb = gameObject.GetComponent<Rigidbody2D>();
+
+        playerFaceDir = faceDir.Right;
     }
 
     // Update is called once per frame

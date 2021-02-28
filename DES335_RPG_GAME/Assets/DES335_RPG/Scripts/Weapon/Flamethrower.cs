@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Flamethrower : MonoBehaviour
 {
+
+    private Animator anim;
+
+    void Start()
+    {
+        if (anim == null)
+            anim = gameObject.GetComponent<Animator>();
+    }
+
     void OnTriggerEnter2D(Collider2D col2D)
     {
         if (col2D.gameObject.CompareTag("Enemy") || col2D.gameObject.CompareTag("FlyingEnemy"))
@@ -18,5 +27,10 @@ public class Flamethrower : MonoBehaviour
     void Dead()
     {
         Destroy(gameObject);
+    }
+
+    public void Animate()
+    {
+
     }
 }
