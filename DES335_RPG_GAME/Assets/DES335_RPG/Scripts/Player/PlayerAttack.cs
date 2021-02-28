@@ -81,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
             else if (rangedProjectile.name == flamethrower.name)
             {
                 if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Left)
-                    Instantiate(rangedProjectile, firePoint.position, firePoint.rotation).GetComponent<Transform>().localScale = new Vector2(-1, 1);
+                    Instantiate(rangedProjectile, firePoint.position, firePoint.rotation).GetComponent<Transform>().localScale = new Vector2(-Mathf.Abs(rangedProjectile.transform.localScale.x), rangedProjectile.transform.localScale.y);
                 else
                     Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
             }

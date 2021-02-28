@@ -43,9 +43,7 @@ public class Bomb : MonoBehaviour
                 EnemyHealth enemyHP_Script = collider2D.GetComponent<EnemyHealth>();
 
                 if (enemyHP_Script != null)
-                {
                     enemyHP_Script.TakeDamage(damage);
-                }
             }
         }
     }

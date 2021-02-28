@@ -71,7 +71,7 @@ TagManager:
   - name: New Layer
     uniqueID: 2834703561
     locked: 0
-  - name: Enemy
+  - name: Weapon
     uniqueID: 2653050127
     locked: 0
   - name: Status_Effect
