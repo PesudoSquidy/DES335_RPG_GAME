@@ -64,7 +64,6 @@ public abstract class EnemyHealth : MonoBehaviour
             health -= damage;
         else if(newStatus == StatusCondition.Burn)
         {
-            Debug.Log(gameObject.name + " is on Fire!");
             currStatusCondition = StatusCondition.Burn;
             statusConditionTimer = burnDuration;
 
@@ -86,10 +85,7 @@ public abstract class EnemyHealth : MonoBehaviour
         if (currStatusCondition == StatusCondition.None)
             return;
         if (currStatusCondition == StatusCondition.Burn)
-        {
-            Debug.Log(gameObject.name + " takes status effect");
             health -= burnDamage;
-        }
 
         if (health <= 0 && dieOnce == false)
         {

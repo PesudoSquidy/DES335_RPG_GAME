@@ -18,23 +18,29 @@ public class PlayerAttack : MonoBehaviour
 
     private EquipmentManager equipmentManager;
 
+    [SerializeField]
+    private PlayerSkill playerSkill;
+
     // Start is called before the first frame update
     void Start()
     {
         if (anim == null)
-            anim = gameObject.GetComponent<Animator>();
+            anim = GetComponent<Animator>();
         if (playerMovement == null)
-            playerMovement = gameObject.GetComponent<PlayerMovement>();
+            playerMovement = GetComponent<PlayerMovement>();
 
         if (equipmentManager == null)
             equipmentManager = EquipmentManager.instance;
+
+        if (playerSkill == null)
+            playerSkill = GetComponent<PlayerSkill>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Left Mouse Click
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && playerSkill.isDigging == false)
         {
             if (equipmentManager.mainEquipment().name == "Bow")
             {
@@ -49,9 +55,6 @@ public class PlayerAttack : MonoBehaviour
             }
             else if (equipmentManager.mainEquipment().name == "Flamethrower")
             {
-                //GameObject bomb = equipmentManager.mainEquipment().prefab;
-
-                Debug.Log("Shoot Flamethrower");
                 SpawnRangedProjectile(flamethrower);
             }
         }

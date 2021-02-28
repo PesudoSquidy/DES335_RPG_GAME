@@ -200,8 +200,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 144464061
-  m_SortingLayer: 5
+  m_SortingLayerID: 295031443
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2521b6229a37c4a56b4fd4e12227c2fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -329,6 +329,7 @@ MonoBehaviour:
   firePoint_Right: {fileID: 824779263}
   firePoint_Up: {fileID: 1594226571}
   firePoint_Down: {fileID: 1032289277}
+  playerSkill: {fileID: 0}
 --- !u!114 &926060666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diggingStaminaCost: 20
+  isDigging: 0
 --- !u!114 &926060675
 MonoBehaviour:
   m_ObjectHideFlags: 0

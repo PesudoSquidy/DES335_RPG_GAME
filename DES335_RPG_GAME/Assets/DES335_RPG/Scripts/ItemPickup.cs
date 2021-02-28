@@ -10,8 +10,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            Debug.Log("Player picked up: " + item.name);
-
+            //Debug.Log("Player picked up: " + item.name);
             if (Inventory.instance.Add(item))
                 Destroy(gameObject);
         }

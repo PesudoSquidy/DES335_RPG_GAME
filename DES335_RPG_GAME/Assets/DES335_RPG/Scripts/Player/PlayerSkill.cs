@@ -16,6 +16,8 @@ public class PlayerSkill : MonoBehaviour
 
     private BoxCollider2D boxCol2D;
 
+    public bool isDigging;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +35,15 @@ public class PlayerSkill : MonoBehaviour
         {
             if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
             {
-                Debug.Log("Player digging");
-
                 boxCol2D.enabled = false;
                 stamina.bStaminaDrain = true;
+                isDigging = true;
             }
             else
             {
                 boxCol2D.enabled = true;
                 stamina.bStaminaDrain = false;
+                isDigging = false;
             }
         }
     }
