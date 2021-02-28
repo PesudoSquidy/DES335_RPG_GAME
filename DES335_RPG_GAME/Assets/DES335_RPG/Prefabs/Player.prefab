@@ -154,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149457840187719073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.26, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 824779263}
@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 4056761803907750673, guid: fd9f0e02225e7e248808f406bc7c5c6c, type: 3}
+  flamethrower: {fileID: 0}
   firePoint_Left: {fileID: 229932831}
   firePoint_Right: {fileID: 824779263}
   firePoint_Up: {fileID: 1594226571}

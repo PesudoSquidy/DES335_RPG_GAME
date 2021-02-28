@@ -59,6 +59,24 @@ TagManager:
   - name: Enemy
     uniqueID: 696064525
     locked: 0
-  - name: Player
+  - name: 
     uniqueID: 144464061
+    locked: 0
+  - name: 
+    uniqueID: 4187825829
+    locked: 0
+  - name: New Layer
+    uniqueID: 845475853
+    locked: 0
+  - name: New Layer
+    uniqueID: 2834703561
+    locked: 0
+  - name: Enemy
+    uniqueID: 2653050127
+    locked: 0
+  - name: Status_Effect
+    uniqueID: 625754857
+    locked: 0
+  - name: Player
+    uniqueID: 295031443
     locked: 0

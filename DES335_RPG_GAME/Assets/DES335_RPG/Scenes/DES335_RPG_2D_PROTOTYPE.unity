@@ -3825,7 +3825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currEquipment: []
-  defaultMainEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305,
+  defaultMainEquipment: {fileID: 11400000, guid: f37464093e051d941b2dfd0250ff7af2,
     type: 2}
   defaultSideEquipment: {fileID: 11400000, guid: 765800a27b00d70439ea0402ea2cc4ed,
     type: 2}
@@ -3843,7 +3843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
-  testEquipment: {fileID: 11400000, guid: b97d801aed7aaa544a5c703cd40994e4, type: 2}
+  testEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305, type: 2}
 --- !u!4 &245353717
 Transform:
   m_ObjectHideFlags: 0
@@ -35752,6 +35752,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612568212, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: flamethrower
+      value: 
+      objectReference: {fileID: 5429407679164346440, guid: e8bfee347b33fdb448e7f6ce9bcf49ab,
+        type: 3}
     - target: {fileID: 926060666, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
       propertyPath: healthUI.Array.data[0]
       value: 
