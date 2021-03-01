@@ -65,7 +65,7 @@ public class PlayerSkill : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            if (tunnel != null)
+            if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
             {
                 tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
                 //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
