@@ -22,6 +22,10 @@ public class PlayerAttack : MonoBehaviour
 
     private EquipmentManager equipmentManager;
 
+
+    //Weapon - Cooldown
+    public float bombCooldown;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +57,6 @@ public class PlayerAttack : MonoBehaviour
                 else if (equipmentManager.mainEquipment().name == "Bomb")
                 {
                     GameObject bomb = equipmentManager.mainEquipment().prefab;
-
                     Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
                 }
             }
@@ -75,8 +78,6 @@ public class PlayerAttack : MonoBehaviour
                     SpawnRangedProjectile(flamethrower);
                 }
             }
-
-
         }
     }
 
