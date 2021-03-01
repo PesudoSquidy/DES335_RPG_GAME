@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (equipmentManager.mainEquipment().name == "Flamethrower")
                 {
-                    Debug.Log("Player can change face dir");
+                    //Debug.Log("Player can change face dir");
                     playerMovement.lockFaceDir = false;
                 }
             }
@@ -70,7 +70,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (equipmentManager.mainEquipment().name == "Flamethrower")
                 {
-                    Debug.Log("Player cannot change face dir");
+                    //Debug.Log("Player cannot change face dir");
                     playerMovement.lockFaceDir = true;
                     SpawnRangedProjectile(flamethrower);
                 }
