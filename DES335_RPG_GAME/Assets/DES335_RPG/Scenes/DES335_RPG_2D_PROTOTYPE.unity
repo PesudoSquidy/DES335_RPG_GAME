@@ -77271,7 +77271,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2098884973}
-  - component: {fileID: 2098884974}
   m_Layer: 0
   m_Name: Combat_Rooms
   m_TagString: Untagged
@@ -77294,21 +77293,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2098884974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098884972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e99971af7efc7b4dad83fc24eefc6c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyAmount: 0
-  enemyPrefabs: []
-  spawnPoints: []
 --- !u!1 &2100355800
 GameObject:
   m_ObjectHideFlags: 0

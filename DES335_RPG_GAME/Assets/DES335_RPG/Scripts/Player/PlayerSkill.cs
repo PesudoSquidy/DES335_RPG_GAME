@@ -57,6 +57,7 @@ public class PlayerSkill : MonoBehaviour
         }
         else if(stamina.bStaminaDrain == false)
         {
+            sprRender.enabled = true;
             boxCol2D.enabled = true;
 
             isDigging = false;
