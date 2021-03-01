@@ -14,12 +14,13 @@ public class PlayerAttack : MonoBehaviour
     public Transform firePoint_Up;
     public Transform firePoint_Down;
 
+    [SerializeField]
     private PlayerMovement playerMovement;
-
-    private EquipmentManager equipmentManager;
 
     [SerializeField]
     private PlayerSkill playerSkill;
+
+    private EquipmentManager equipmentManager;
 
     // Start is called before the first frame update
     void Start()
@@ -40,23 +41,42 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         // Left Mouse Click
-        if (Input.GetKeyDown(KeyCode.J) && playerSkill.isDigging == false)
+        if (playerSkill.isDigging == false)
         {
-            if (equipmentManager.mainEquipment().name == "Bow")
+            if (Input.GetKeyDown(KeyCode.J))
             {
-                anim.SetTrigger("isAttacking");
-                SpawnRangedProjectile(arrow);
-            }
-            else if(equipmentManager.mainEquipment().name == "Bomb")
-            {
-                GameObject bomb = equipmentManager.mainEquipment().prefab;
+                if (equipmentManager.mainEquipment().name == "Bow")
+                {
+                    anim.SetTrigger("isAttacking");
+                    SpawnRangedProjectile(arrow);
+                }
+                else if (equipmentManager.mainEquipment().name == "Bomb")
+                {
+                    GameObject bomb = equipmentManager.mainEquipment().prefab;
 
-                Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+                    Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+                }
             }
-            else if (equipmentManager.mainEquipment().name == "Flamethrower")
+            else if(Input.GetKeyUp(KeyCode.J))
             {
-                SpawnRangedProjectile(flamethrower);
+                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                {
+                    Debug.Log("Player can change face dir");
+                    playerMovement.lockFaceDir = false;
+                }
             }
+
+            if (Input.GetKey(KeyCode.J))
+            {
+                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                {
+                    Debug.Log("Player cannot change face dir");
+                    playerMovement.lockFaceDir = true;
+                    SpawnRangedProjectile(flamethrower);
+                }
+            }
+
+
         }
     }
 

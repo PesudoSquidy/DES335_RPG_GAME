@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     public faceDir playerFaceDir;
 
+    public bool lockFaceDir;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             rb = gameObject.GetComponent<Rigidbody2D>();
 
         playerFaceDir = faceDir.Right;
+        lockFaceDir = false;
     }
 
     // Update is called once per frame
@@ -45,39 +47,43 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        anim.SetFloat("horizontalSpeed", movement.x);
-        anim.SetFloat("verticalSpeed", movement.y);
+        if (lockFaceDir == false)
+        {
+            anim.SetFloat("horizontalSpeed", movement.x);
+            anim.SetFloat("verticalSpeed", movement.y);
+
+            if (movement.x > 0)
+                SetDirectionFacing("Right");
+            else if (movement.x < 0)
+                SetDirectionFacing("Left");
+            if (movement.y > 0)
+                SetDirectionFacing("Up");
+            else if (movement.y < 0)
+                SetDirectionFacing("Down");
+        }
+        else
+        {
+            if(playerFaceDir == faceDir.Left)
+                anim.SetFloat("horizontalSpeed", -1f);
+            else if (playerFaceDir == faceDir.Right)
+                anim.SetFloat("horizontalSpeed", 1f);
+            else if (playerFaceDir == faceDir.Up)
+                anim.SetFloat("verticalSpeed", 1f);
+            else if (playerFaceDir == faceDir.Right)
+                anim.SetFloat("vericalSpeed", -1f);
+        }
+
         anim.SetFloat("speed", movement.sqrMagnitude);
 
-        if (movement.x > 0)
-        {
-            SetDirectionFacing("Right");
-            playerFaceDir = faceDir.Right;
-        }
-        else if (movement.x < 0)
-        {
-            SetDirectionFacing("Left");
-            playerFaceDir = faceDir.Left;
-        }
-        if (movement.y > 0)
-        {
-            SetDirectionFacing("Up");
-            playerFaceDir = faceDir.Up;
-        }
-        else if (movement.y < 0)
-        {
-            SetDirectionFacing("Down");
-            playerFaceDir = faceDir.Down;
-        }
-        if (Input.GetButtonDown("Horizontal"))
-        {
-            //anim.SetBool("faceHorizontal", true);
-        }
-        else if (Input.GetButtonDown("Vertical"))
-        {
-            //anim.SetBool("faceHorizontal", false);
-        }
 
+        //if (Input.GetButtonDown("Horizontal"))
+        //{
+        //    //anim.SetBool("faceHorizontal", true);
+        //}
+        //else if (Input.GetButtonDown("Vertical"))
+        //{
+        //    //anim.SetBool("faceHorizontal", false);
+        //}
     }
 
     void FixedUpdate()
@@ -94,14 +100,25 @@ public class PlayerMovement : MonoBehaviour
          * 3 - Up
          * 4 - Down
         */
-
         if (str == "Left")
+        {
             anim.SetInteger("faceDir", 1);
+            playerFaceDir = faceDir.Left;
+        }
         else if (str == "Right")
+        {
             anim.SetInteger("faceDir", 2);
+            playerFaceDir = faceDir.Right;
+        }
         else if (str == "Up")
+        {
             anim.SetInteger("faceDir", 3);
+            playerFaceDir = faceDir.Up;
+        }
         else if (str == "Down")
+        {
             anim.SetInteger("faceDir", 4);
+            playerFaceDir = faceDir.Down;
+        }
     }
 }
