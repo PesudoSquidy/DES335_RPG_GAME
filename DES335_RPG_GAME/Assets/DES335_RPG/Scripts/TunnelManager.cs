@@ -33,6 +33,8 @@ public class TunnelManager : MonoBehaviour
     Queue<GameObject> tunnelPassageHandler;
     int[] tunnelPassageID;
 
+    GameObject tunnelPassageEnd;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,7 @@ public class TunnelManager : MonoBehaviour
                 inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs + 1]);
                 inactiveTunnels[IDs + 1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs]);
 
-                CancelInvoke("SpawnTunnelPassage");
+                // CancelInvoke("SpawnTunnelPassage");
 
                 // Activate all tunnel passage
                 for (int i = 0; i < tunnelPassageID[IDs]; ++i)
@@ -83,7 +85,7 @@ public class TunnelManager : MonoBehaviour
             else
             {
                 CreateStartTunnel(IDs);
-                InvokeRepeating("SpawnTunnelPassage", 0.1f, 0.1f);
+                // InvokeRepeating("SpawnTunnelPassage", 0.1f, 0.1f);
             }
 
             _currentflag = StaminaBar._stamina.bStaminaDrain;
@@ -100,13 +102,22 @@ public class TunnelManager : MonoBehaviour
                 }
             }
         }
+
+        if (_currentflag)
+        {
+            if (Vector3.Distance(player.GetComponent<Transform>().position, tunnelPassageEnd.GetComponent<Transform>().position) > 1)
+                SpawnTunnelPassage();
+        }
+
+
     }
 
     void SpawnTunnelPassage()
     {
         if (tunnel_Passage != null)
         {
-            tunnelPassageHandler.Enqueue(Instantiate(tunnel_Passage, player.transform.position, Quaternion.identity));
+            tunnelPassageEnd = Instantiate(tunnel_Passage, player.transform.position, Quaternion.identity);
+            tunnelPassageHandler.Enqueue(tunnelPassageEnd);
             ++(tunnelPassageID[IDs]);
         }
     }
@@ -115,6 +126,8 @@ public class TunnelManager : MonoBehaviour
     {
         if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
             inactiveTunnels[id].GetComponent<Tunnel>().SpawnTunnel(id, tunnelTime, player.GetComponent<Transform>().position);
+
+        tunnelPassageEnd = inactiveTunnels[id];
     }
 
     void CreateEndTunnel(int id)
