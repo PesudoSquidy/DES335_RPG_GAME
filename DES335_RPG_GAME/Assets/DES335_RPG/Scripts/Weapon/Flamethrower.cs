@@ -26,7 +26,7 @@ public class Flamethrower : MonoBehaviour
 
     void Dead()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     public void Animate()

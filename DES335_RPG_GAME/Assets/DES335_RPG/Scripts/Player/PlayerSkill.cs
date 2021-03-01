@@ -18,9 +18,8 @@ public class PlayerSkill : MonoBehaviour
     private BoxCollider2D boxCol2D;
 
     public bool isDigging;
-    public bool onTunnel;
 
-    private GameObject tunnel;
+    public GameObject tunnel;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +30,6 @@ public class PlayerSkill : MonoBehaviour
         boxCol2D = GetComponent<BoxCollider2D>();
         sprRender = GetComponent<SpriteRenderer>();
 
-        onTunnel = false;
         isDigging = false;
     }
 

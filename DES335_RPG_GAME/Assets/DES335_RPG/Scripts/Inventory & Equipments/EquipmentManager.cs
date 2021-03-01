@@ -97,7 +97,6 @@ public class EquipmentManager : MonoBehaviour
 
     public void SwapMainEquipment()
     {
-        Debug.Log("Swap Weapon");
         Equipment tempEquipment = currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
         currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon] = currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon];
         currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon] = tempEquipment;

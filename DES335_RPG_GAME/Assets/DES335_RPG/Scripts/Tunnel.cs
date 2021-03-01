@@ -16,7 +16,7 @@ public class Tunnel : MonoBehaviour
     // Tunnel ID 
     public int tunnelID;
 
-    private GameObject otherEnd;
+    public GameObject otherEnd;
 
     private BoxCollider2D col2D;
 

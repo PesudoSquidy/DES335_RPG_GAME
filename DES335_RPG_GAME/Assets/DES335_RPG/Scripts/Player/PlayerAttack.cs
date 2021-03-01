@@ -84,14 +84,20 @@ public class PlayerAttack : MonoBehaviour
     {
         Transform firePoint = null;
 
-        if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Right)
-            firePoint = firePoint_Right;
-        else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Left)
-            firePoint = firePoint_Left;
-        else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Up)
-            firePoint = firePoint_Up;
-        else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Down)
-            firePoint = firePoint_Down;
+        if (playerSkill.tunnel != null && playerSkill.tunnel.GetComponent<Tunnel>().otherEnd != null)
+            firePoint = playerSkill.tunnel.GetComponent<Tunnel>().otherEnd.transform;
+
+        if (firePoint == null)
+        {
+            if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Right)
+                firePoint = firePoint_Right;
+            else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Left)
+                firePoint = firePoint_Left;
+            else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Up)
+                firePoint = firePoint_Up;
+            else if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Down)
+                firePoint = firePoint_Down;
+        }
 
 
         if (firePoint != null && rangedProjectile != null)
