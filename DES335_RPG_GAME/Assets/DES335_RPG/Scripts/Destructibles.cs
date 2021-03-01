@@ -12,7 +12,7 @@ public class Destructibles : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Weapon")
+        if (collider.gameObject.CompareTag("Weapon"))
         {
             --health;
 
@@ -27,7 +27,7 @@ public class Destructibles : MonoBehaviour
 
     void DropLoot()
     {
-        Debug.Log("Drop LOOT!");
+        //Debug.Log("Drop LOOT!");
 
         // Spawn the destroyed version
         GameObject tempObj = Instantiate(destroyedVersion, transform.position, transform.rotation);
