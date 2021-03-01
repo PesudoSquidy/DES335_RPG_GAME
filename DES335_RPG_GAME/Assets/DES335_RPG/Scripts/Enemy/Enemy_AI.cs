@@ -20,6 +20,7 @@ public abstract class Enemy_AI : MonoBehaviour
     Rigidbody2D rb;
 
     protected Animator anim;
+    private bool canMove;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public abstract class Enemy_AI : MonoBehaviour
 
         if(target == null)
             target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        canMove = false;
     }
 
     void UpdatePath()
@@ -71,22 +74,30 @@ public abstract class Enemy_AI : MonoBehaviour
         //    reachedEndOfPath = false;
         //}
 
-        Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
-
-        rb.AddForce(force);
-
-        float distance = Vector2.Distance(rb.position, path.vectorPath[curretWaypoint]);
-
-        if(distance < nextWaypointDistance)
+        if (canMove)
         {
-            ++curretWaypoint;
-        }
+            Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
+            Vector2 force = direction * speed * Time.deltaTime;
 
-        Animation(force);
+            rb.AddForce(force);
+
+            float distance = Vector2.Distance(rb.position, path.vectorPath[curretWaypoint]);
+
+            if (distance < nextWaypointDistance)
+            {
+                ++curretWaypoint;
+            }
+
+            Animation(force);
+        }
     }
     public virtual void Animation(Vector2 force)
     {
 
+    }
+
+    public virtual void StartMoving()
+    {
+        canMove = true;
     }
 }

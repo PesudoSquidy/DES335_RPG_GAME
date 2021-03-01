@@ -28,6 +28,8 @@ public class Tunnel : MonoBehaviour
             col2D = gameObject.GetComponent<BoxCollider2D>();
             col2D.enabled = false;
         }
+
+        otherEnd = null;
     }
 
     // Update is called once per frame
