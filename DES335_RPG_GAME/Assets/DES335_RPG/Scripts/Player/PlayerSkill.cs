@@ -6,6 +6,7 @@ public class PlayerSkill : MonoBehaviour
 {
 
     private Animator anim;
+    private SpriteRenderer sprRender;
 
     private TunnelManager tunnelManager;
 
@@ -17,7 +18,9 @@ public class PlayerSkill : MonoBehaviour
     private BoxCollider2D boxCol2D;
 
     public bool isDigging;
+    public bool onTunnel;
 
+    private GameObject tunnel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,10 @@ public class PlayerSkill : MonoBehaviour
         anim = GetComponent<Animator>();
         stamina = GetComponent<PlayerStamina>();
         boxCol2D = GetComponent<BoxCollider2D>();
+        sprRender = GetComponent<SpriteRenderer>();
+
+        onTunnel = false;
+        isDigging = false;
     }
 
     // Update is called once per frame
@@ -35,13 +42,17 @@ public class PlayerSkill : MonoBehaviour
         {
             if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
             {
+                sprRender.enabled = false;
                 boxCol2D.enabled = false;
+
                 stamina.bStaminaDrain = true;
                 isDigging = true;
             }
             else
             {
+                sprRender.enabled = true;
                 boxCol2D.enabled = true;
+
                 stamina.bStaminaDrain = false;
                 isDigging = false;
             }
@@ -49,7 +60,37 @@ public class PlayerSkill : MonoBehaviour
         else if(stamina.bStaminaDrain == false)
         {
             boxCol2D.enabled = true;
+
             isDigging = false;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            if (tunnel != null)
+            {
+                tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
+                //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
+                tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Tunnel"))
+        {
+            //Debug.Log("On Tunnel");
+            tunnel = col.gameObject;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Tunnel"))
+        {
+            //Debug.Log("Off Tunnel");
+            tunnel = null;
         }
     }
 }

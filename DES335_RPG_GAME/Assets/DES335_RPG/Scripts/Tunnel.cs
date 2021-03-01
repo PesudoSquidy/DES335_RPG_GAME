@@ -85,7 +85,7 @@ public class Tunnel : MonoBehaviour
     }
 
     // Transport Object
-    void Transport(GameObject obj)
+    public void Transport(GameObject obj)
     {
         if (obj.GetComponent<Transportable>() != null && obj.GetComponent<Transportable>().objTransported == 0)
         {
@@ -96,7 +96,13 @@ public class Tunnel : MonoBehaviour
         }
     }
 
-    void PrepareTransport(GameObject obj)
+    public void Transport_2(GameObject obj)
+    {
+        if (obj.GetComponent<Transportable>() != null)
+            obj.GetComponent<Transform>().position = otherEnd.transform.position;
+    }
+
+    public void PrepareTransport(GameObject obj)
     {
         if (obj.GetComponent<Transportable>() == null)
             obj.AddComponent<Transportable>();
@@ -108,7 +114,7 @@ public class Tunnel : MonoBehaviour
         ++obj.GetComponent<Transportable>().objTransported;
     }
 
-    void ResetTransport(GameObject obj)
+    public void ResetTransport(GameObject obj)
     {
         if (obj.GetComponent<Transportable>() !=null && obj.GetComponent<Transportable>().objTransported > 0)
             --obj.GetComponent<Transportable>().objTransported;
@@ -118,12 +124,12 @@ public class Tunnel : MonoBehaviour
     {
         if (!bBlocked)
         {
-            if (col.tag == "Player")
+            if (col.CompareTag("Player"))
             {
-                PrepareTransport(col.gameObject);
-                Transport(col.gameObject);
+                //PrepareTransport(col.gameObject);
+                //Transport(col.gameObject);
             }
-            else if (col.tag == "Bomb")
+            else if (col.CompareTag("Bomb"))
             {
                 PrepareTransport(col.gameObject);
                 Transport(col.gameObject);
@@ -132,7 +138,7 @@ public class Tunnel : MonoBehaviour
 
         if (!stuckedObject)
         {
-            if (col.tag == "Enemy")
+            if (col.CompareTag("Enemy"))
             {
                 TrapEnemy(col.gameObject);
             }
@@ -141,7 +147,7 @@ public class Tunnel : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.tag == "Player")
+        if (col.CompareTag("Player"))
         {
             ResetTransport(col.gameObject);
         }
