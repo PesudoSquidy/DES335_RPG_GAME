@@ -79713,6 +79713,22 @@ PrefabInstance:
       propertyPath: healthUI.Array.data[2]
       value: 
       objectReference: {fileID: 1195534336}
+    - target: {fileID: 926060675, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: _StaminaDrain
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 926060675, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: _StaminaRegen
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 926060675, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: _CurrStamina
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 926060675, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: _MaxStamina
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1149457840187719073, guid: f1ed99d1f0d15854691355c658cf91e3,
         type: 3}
       propertyPath: m_Name

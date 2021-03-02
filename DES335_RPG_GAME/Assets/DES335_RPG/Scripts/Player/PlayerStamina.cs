@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStamina : MonoBehaviour
 {
     public bool bStaminaDrain;
-    [SerializeField] public const int _MaxStamina = 100;
+    [SerializeField] public int _MaxStamina;
     [SerializeField] private float _CurrStamina;
     [SerializeField] private float _StaminaRegen;
     [SerializeField] private float _StaminaDrain;
@@ -37,7 +37,7 @@ public class PlayerStamina : MonoBehaviour
 
     public bool SpendStamina(int amount)
     {
-        if (_CurrStamina >= amount)
+        if (_CurrStamina >= amount + 20)
         {
             _CurrStamina -= amount;
             return true;
