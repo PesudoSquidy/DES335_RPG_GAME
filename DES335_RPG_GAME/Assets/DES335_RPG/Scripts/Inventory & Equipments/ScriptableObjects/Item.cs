@@ -14,6 +14,8 @@ public class Item : ScriptableObject
     public Sprite icon = null;
 
     public GameObject prefab = null;
+    
+    public float coolDown;
 
     public virtual void Use()
     {

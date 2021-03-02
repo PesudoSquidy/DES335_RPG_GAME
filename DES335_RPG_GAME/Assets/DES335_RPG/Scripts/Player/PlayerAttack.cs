@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private PlayerSkill playerSkill;
 
-    private EquipmentManager equipmentManager;
+    public EquipmentManager equipmentManager;
 
 
     //Weapon - Cooldown
@@ -39,11 +39,16 @@ public class PlayerAttack : MonoBehaviour
 
         if (playerSkill == null)
             playerSkill = GetComponent<PlayerSkill>();
+
+        bombCooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (bombCooldown > 0)
+            bombCooldown -= Time.deltaTime;
+
         // Left Mouse Click
         if (playerSkill.isDigging == false)
         {
@@ -54,9 +59,10 @@ public class PlayerAttack : MonoBehaviour
                     anim.SetTrigger("isAttacking");
                     SpawnRangedProjectile(arrow);
                 }
-                else if (equipmentManager.mainEquipment().name == "Bomb")
+                else if (equipmentManager.mainEquipment().name == "Bomb" && bombCooldown <= 0)
                 {
                     GameObject bomb = equipmentManager.mainEquipment().prefab;
+                    bombCooldown = equipmentManager.mainEquipment().coolDown;
                     Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
                 }
             }

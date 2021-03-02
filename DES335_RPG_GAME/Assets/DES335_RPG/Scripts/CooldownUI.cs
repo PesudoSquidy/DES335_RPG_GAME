@@ -14,33 +14,43 @@ public class CooldownUI : MonoBehaviour
     PlayerAttack playerAttack;
 
     [SerializeField]
-    Item item;
+    InventorySlot inventorySlot;
+
+    private Item item;
 
     void Start()
     {
+        if(playerAttack == null)
+            playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+
         imageCooldown.fillAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        item = GetComponent<InventorySlot>().item;
+        item = inventorySlot.item;
 
         if(item != null)
-        {
-            if (item.name == "Bomb")
-                cooldown = playerAttack.bombCooldown;
-        }
+            cooldown = item.coolDown;
 
         //if(Input.GetKeyDown(KeyCode.P))
         //{
         //    isCooldown = true;
         //}
 
-        if (isCooldown)
+        if (item.name == "Bomb" && playerAttack.bombCooldown > 0)
         {
-            imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+            if (playerAttack.bombCooldown == item.coolDown)
+                imageCooldown.fillAmount = 1;
+            else
+            {
+                imageCooldown.fillAmount = playerAttack.bombCooldown / cooldown;
+                //imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+            }
         }
+        else
+            imageCooldown.fillAmount = 0;
     }
 
     public void Cooldown(float newCooldown)
