@@ -18,6 +18,7 @@ public class PlayerSkill : MonoBehaviour
     private BoxCollider2D boxCol2D;
 
     public bool isDigging;
+    public bool isUnderObject;
 
     public GameObject tunnel;
 
@@ -42,18 +43,27 @@ public class PlayerSkill : MonoBehaviour
             if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
             {
                 sprRender.enabled = false;
-                boxCol2D.enabled = false;
+                //boxCol2D.enabled = false;
+                //boxCol2D.isTrigger = true;
+
+                Physics2D.IgnoreLayerCollision(11, 12, true);
 
                 stamina.bStaminaDrain = true;
                 isDigging = true;
             }
             else
             {
+                if (isUnderObject && tunnel != null)
+                    gameObject.transform.position = tunnel.transform.position;
+
                 sprRender.enabled = true;
-                boxCol2D.enabled = true;
+                //boxCol2D.enabled = true;
+                //boxCol2D.isTrigger = false;
 
                 stamina.bStaminaDrain = false;
                 isDigging = false;
+
+                Physics2D.IgnoreLayerCollision(11, 12, false);
             }
         }
         else if(stamina.bStaminaDrain == false)
@@ -83,14 +93,22 @@ public class PlayerSkill : MonoBehaviour
             //Debug.Log("On Tunnel");
             tunnel = col.gameObject;
         }
+        else if(col.CompareTag("Obstacle") && isDigging)
+        {
+            isUnderObject = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.CompareTag("Tunnel"))
+        if (col.CompareTag("Tunnel") && isDigging == false)
         {
             //Debug.Log("Off Tunnel");
             tunnel = null;
+        }
+        else if (col.CompareTag("Obstacle") && isDigging)
+        {
+            isUnderObject = false;
         }
     }
 }

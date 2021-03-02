@@ -47,7 +47,24 @@ public class EquipmentManager : MonoBehaviour
 
         Equipment oldItem = null;
 
-        if(currEquipment[slotIndex] != null)
+        // Searches if there is an empty space in equipment slot
+        for (int i = 0; i < System.Enum.GetNames(typeof(Equipment.EquipmentSlot)).Length; ++i)
+        {
+            // Find the next null equipment slot
+            if (currEquipment[i] == null)
+            {
+                currEquipment[i] = newItem;
+                
+                // Event call (Callback function)
+                if (onEquipmentChanged != null)
+                    onEquipmentChanged.Invoke(newItem, oldItem);
+
+                return;
+            }
+        }
+
+        // There is no empty slot.
+        if (currEquipment[slotIndex] != null)
         {
             oldItem = currEquipment[slotIndex];
             inventory.Add(oldItem);

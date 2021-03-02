@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229932831}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firePoint_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 824779263}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firePoint_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1032289277}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firePoint_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594226571}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: firePoint_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 926060666}
   - component: {fileID: 926060667}
   - component: {fileID: 926060675}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   playerFaceDir: 0
+  lockFaceDir: 0
 --- !u!114 &612568212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +330,10 @@ MonoBehaviour:
   firePoint_Right: {fileID: 824779263}
   firePoint_Up: {fileID: 1594226571}
   firePoint_Down: {fileID: 1032289277}
+  playerMovement: {fileID: 0}
   playerSkill: {fileID: 0}
+  equipmentManager: {fileID: 0}
+  bombCooldown: 0
 --- !u!114 &926060666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diggingStaminaCost: 20
   isDigging: 0
+  isUnderObject: 0
+  tunnel: {fileID: 0}
 --- !u!114 &926060675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bStaminaDrain: 0
+  _MaxStamina: 0
   _CurrStamina: 100
   _StaminaRegen: 30
   _StaminaDrain: 5

@@ -35,6 +35,8 @@ public class TunnelManager : MonoBehaviour
 
     GameObject tunnelPassageEnd;
 
+    [SerializeField] PlayerSkill playerSkill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,8 @@ public class TunnelManager : MonoBehaviour
         }
 
         player = GameObject.FindGameObjectWithTag("Player");
+        playerSkill = player.GetComponent<PlayerSkill>();
+
 
         tunnelPassageHandler = new Queue<GameObject>();
         tunnelPassageID = new int[maxPassages * 2];
@@ -56,18 +60,23 @@ public class TunnelManager : MonoBehaviour
     void Update()
     {
         // Check if Space bar is pressed
-        if (_currentflag != StaminaBar._stamina.bStaminaDrain)
+        if (_currentflag !=  playerSkill.isDigging)//StaminaBar._stamina.bStaminaDrain)
         {
             if (_currentflag)
             {
-                CreateEndTunnel(IDs);
+                if (playerSkill.isUnderObject == false)
+                {
+                    CreateEndTunnel(IDs);
 
-                inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs + 1]);
-                inactiveTunnels[IDs + 1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs]);
+                    inactiveTunnels[IDs].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs + 1]);
+                    inactiveTunnels[IDs + 1].GetComponent<Tunnel>().ActivateTunnel(inactiveTunnels[IDs]);
+                }
+                else
+                    inactiveTunnels[IDs].GetComponent<Tunnel>().bActive = true;
 
                 // CancelInvoke("SpawnTunnelPassage");
 
-                // Activate all tunnel passage
+                    // Activate all tunnel passage
                 for (int i = 0; i < tunnelPassageID[IDs]; ++i)
                 {
                     TunnelPassage tempScript = tunnelPassageHandler.Dequeue().GetComponent<TunnelPassage>();
@@ -88,8 +97,8 @@ public class TunnelManager : MonoBehaviour
                 // InvokeRepeating("SpawnTunnelPassage", 0.1f, 0.1f);
             }
 
-            _currentflag = StaminaBar._stamina.bStaminaDrain;
-
+            //_currentflag = StaminaBar._stamina.bStaminaDrain;
+            _currentflag = playerSkill.isDigging;
         }
         for (int i = 0; i < maxPassages * 2; i += 2)
         {

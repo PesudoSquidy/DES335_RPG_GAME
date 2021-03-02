@@ -31,26 +31,28 @@ public class CooldownUI : MonoBehaviour
     {
         item = inventorySlot.item;
 
-        if(item != null)
+        if (item != null)
+        {
             cooldown = item.coolDown;
 
-        //if(Input.GetKeyDown(KeyCode.P))
-        //{
-        //    isCooldown = true;
-        //}
+            //if(Input.GetKeyDown(KeyCode.P))
+            //{
+            //    isCooldown = true;
+            //}
 
-        if (item.name == "Bomb" && playerAttack.bombCooldown > 0)
-        {
-            if (playerAttack.bombCooldown == item.coolDown)
-                imageCooldown.fillAmount = 1;
-            else
+            if (item.name == "Bomb" && playerAttack.bombCooldown > 0)
             {
-                imageCooldown.fillAmount = playerAttack.bombCooldown / cooldown;
-                //imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+                if (playerAttack.bombCooldown == item.coolDown)
+                    imageCooldown.fillAmount = 1;
+                else
+                {
+                    imageCooldown.fillAmount = playerAttack.bombCooldown / cooldown;
+                    //imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+                }
             }
+            else
+                imageCooldown.fillAmount = 0;
         }
-        else
-            imageCooldown.fillAmount = 0;
     }
 
     public void Cooldown(float newCooldown)

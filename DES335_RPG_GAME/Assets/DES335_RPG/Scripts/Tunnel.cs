@@ -46,6 +46,10 @@ public class Tunnel : MonoBehaviour
             // Lock Enemy
             if (bBlocked && stuckedObject != null)
                 stuckedObject.GetComponent<Transform>().position = gameObject.GetComponent<Transform>().position;
+
+            if (otherEnd != null && otherEnd.GetComponent<Tunnel>() != null)
+                if (otherEnd.GetComponent<Tunnel>().bActive == false)
+                    otherEnd = null;
         }
     }
 
@@ -59,6 +63,7 @@ public class Tunnel : MonoBehaviour
         stuckedObject = null;
         gameObject.GetComponent<Transform>().position = pos;
         gameObject.GetComponent<Renderer>().enabled = true;
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     // Activate Tunnel
@@ -66,7 +71,6 @@ public class Tunnel : MonoBehaviour
     {
         bActive = true;
         otherEnd = theOtherTunnel;
-        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
 
@@ -77,6 +81,7 @@ public class Tunnel : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         bActive = false;
         bBlocked = false;
+        otherEnd = null;
     }
 
     // Collided Enemy
@@ -91,7 +96,7 @@ public class Tunnel : MonoBehaviour
     {
         if (obj.GetComponent<Transportable>() != null && obj.GetComponent<Transportable>().objTransported == 0)
         {
-            if(otherEnd.GetComponent<Tunnel>().bActive)
+            if(otherEnd != null && otherEnd.GetComponent<Tunnel>().bActive)
                 obj.GetComponent<Transform>().position = otherEnd.transform.position;
 
             FinishTransport(obj);

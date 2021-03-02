@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5522848121618790664}
   - component: {fileID: 1154346045}
   - component: {fileID: 1154346044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy_Eagle
   m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
@@ -306,6 +306,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Burn_Status_Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511487308795594006, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fa31c91d4ced3e40a2c67a3724a974e, type: 3}

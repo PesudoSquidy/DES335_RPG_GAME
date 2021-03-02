@@ -11,6 +11,7 @@ TagManager:
   - Bomb
   - FlyingEnemy
   - Tunnel
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - TempCast
   - Walkable
   - Obstacle
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 

@@ -5370,6 +5370,7 @@ GameObject:
   - component: {fileID: 245353716}
   - component: {fileID: 245353715}
   - component: {fileID: 245353718}
+  - component: {fileID: 245353719}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5440,6 +5441,20 @@ MonoBehaviour:
   tunnelTime: 8
   tunnel_Passage: {fileID: 1553802221868310010, guid: 8c4cd65d2b2f8b542a8a1279461dbf2d,
     type: 3}
+  playerSkill: {fileID: 0}
+--- !u!114 &245353719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245353714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31339fad3762cc44a494227d04cbba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclesObj: []
 --- !u!1 &254248031
 GameObject:
   m_ObjectHideFlags: 0
@@ -9061,7 +9076,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512350573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e99971af7efc7b4dad83fc24eefc6c1, type: 3}
   m_Name: 
@@ -77746,7 +77761,7 @@ GameObject:
   - component: {fileID: 2069629679}
   m_Layer: 10
   m_Name: Rock_Monument
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
