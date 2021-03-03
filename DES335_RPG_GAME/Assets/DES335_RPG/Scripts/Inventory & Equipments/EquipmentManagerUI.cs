@@ -30,7 +30,7 @@ public class EquipmentManagerUI : MonoBehaviour
 
     void Update()
     { 
-        if(Input.GetButtonDown("Equipment"))
+        if(Input.GetButtonDown("SwapEquipment"))
         {
             //equipmentUI.SetActive(!equipmentUI.activeSelf);
 

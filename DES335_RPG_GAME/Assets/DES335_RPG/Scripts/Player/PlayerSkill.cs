@@ -43,19 +43,16 @@ public class PlayerSkill : MonoBehaviour
             if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
             {
                 tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
-                //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
                 tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
             }
             else if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
             {
                 sprRender.enabled = false;
-                //boxCol2D.enabled = false;
-                //boxCol2D.isTrigger = true;
-
-                Physics2D.IgnoreLayerCollision(11, 12, true);
-
+                
                 stamina.bStaminaDrain = true;
                 isDigging = true;
+
+                Physics2D.IgnoreLayerCollision(11, 12, true);
             }
             else
             {
@@ -63,8 +60,6 @@ public class PlayerSkill : MonoBehaviour
                     gameObject.transform.position = tunnel.transform.position;
 
                 sprRender.enabled = true;
-                //boxCol2D.enabled = true;
-                //boxCol2D.isTrigger = false;
 
                 stamina.bStaminaDrain = false;
                 isDigging = false;
@@ -74,33 +69,26 @@ public class PlayerSkill : MonoBehaviour
         }
         else if(stamina.bStaminaDrain == false)
         {
+            if (isUnderObject && tunnel != null)
+                gameObject.transform.position = tunnel.transform.position;
+
             sprRender.enabled = true;
             boxCol2D.enabled = true;
 
             isDigging = false;
         }
-
-
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
-        //    {
-        //        tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
-        //        //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
-        //        tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
-        //    }
-        //}
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Tunnel") && !isDigging)
+        if (col.CompareTag("Tunnel"))
         {
             //Debug.Log("On Tunnel");
             tunnel = col.gameObject;
         }
         else if(col.CompareTag("Obstacle") && isDigging)
         {
+            //Debug.Log("On Obstacle");
             isUnderObject = true;
         }
     }
@@ -114,6 +102,7 @@ public class PlayerSkill : MonoBehaviour
         }
         else if (col.CompareTag("Obstacle") && isDigging)
         {
+            //Debug.Log("Off Obstacle");
             isUnderObject = false;
         }
     }

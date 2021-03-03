@@ -13,7 +13,7 @@ public class Flamethrower : MonoBehaviour
             anim = gameObject.GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D col2D)
+    void OnTriggerStay2D(Collider2D col2D)
     {
         if (col2D.gameObject.CompareTag("Enemy") || col2D.gameObject.CompareTag("FlyingEnemy"))
         {
@@ -26,7 +26,13 @@ public class Flamethrower : MonoBehaviour
 
     void Dead()
     {
-        Destroy(transform.parent.gameObject);
+        //Destroy(transform.parent.gameObject);
+        gameObject.SetActive(false);
+    }
+
+    void Alive()
+    {
+        gameObject.SetActive(true);
     }
 
     public void Animate()

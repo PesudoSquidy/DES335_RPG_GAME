@@ -25,6 +25,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Weapon - Cooldown
     public float bombCooldown;
+    public bool isAttacking;
 
     GameObject weaponDirection;
 
@@ -42,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
         if (playerSkill == null)
             playerSkill = GetComponent<PlayerSkill>();
 
+        isAttacking = false;
         bombCooldown = 0;
     }
 
@@ -79,17 +81,38 @@ public class PlayerAttack : MonoBehaviour
 
             if (Input.GetKey(KeyCode.J))
             {
-                if (equipmentManager.mainEquipment().name == "Flamethrower" && !weaponDirection)
-                {
-                    //Debug.Log("Player cannot change face dir");
-                    //playerMovement.lockFaceDir = true;
-                    //SpawnRangedProjectile(flamethrower);
+                isAttacking = true;
 
-                    weaponDirection = Instantiate(flamethrower);
+                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                {
+                    playerMovement.lockFaceDir = true;
+                    
+                    if (weaponDirection == null)
+                        weaponDirection = Instantiate(flamethrower);
+                    else
+                    {
+                        for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+                            weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+                        weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", true);
+                    }
                 }
             }
-            else
-                weaponDirection = null;
+            else if (Input.GetKeyUp(KeyCode.J) )
+            {
+                isAttacking = false;
+
+
+                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                {
+                    playerMovement.lockFaceDir = false;
+
+                    for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+                        weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+                    weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", false);
+                }
+            }
 
             if(weaponDirection && Input.GetKey(KeyCode.J))
                 UpdateWeaponDirection();

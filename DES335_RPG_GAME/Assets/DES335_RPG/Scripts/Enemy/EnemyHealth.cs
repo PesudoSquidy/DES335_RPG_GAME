@@ -62,7 +62,7 @@ public abstract class EnemyHealth : MonoBehaviour
     {
         if(newStatus == StatusCondition.None)
             health -= damage;
-        else if(newStatus == StatusCondition.Burn)
+        else if(newStatus == StatusCondition.Burn && currStatusCondition != StatusCondition.Burn)
         {
             currStatusCondition = StatusCondition.Burn;
             statusConditionTimer = burnDuration;

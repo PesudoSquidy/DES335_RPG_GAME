@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
 
     public bool lockFaceDir;
 
+    private PlayerAttack playerAttack;
+
+    [SerializeField][Range(0,1)]
+    public float slowSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb == null)
             rb = gameObject.GetComponent<Rigidbody2D>();
+
+        if(playerAttack == null)
+            playerAttack = gameObject.GetComponent<PlayerAttack>();
 
         playerFaceDir = faceDir.Right;
         lockFaceDir = false;
@@ -44,8 +52,16 @@ public class PlayerMovement : MonoBehaviour
         //Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
         // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        if (playerAttack.isAttacking)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal") * slowSpeed;
+            movement.y = Input.GetAxisRaw("Vertical") * slowSpeed;
+        }
+        else
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+        }
 
         if (lockFaceDir == false)
         {
