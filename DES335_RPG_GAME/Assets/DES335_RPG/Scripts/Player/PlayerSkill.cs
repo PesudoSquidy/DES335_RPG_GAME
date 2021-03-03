@@ -15,7 +15,7 @@ public class PlayerSkill : MonoBehaviour
     [SerializeField]
     private int diggingStaminaCost;
 
-    private BoxCollider2D boxCol2D;
+    //private BoxCollider2D boxCol2D;
 
     public bool isDigging;
     public bool isUnderObject;
@@ -29,7 +29,7 @@ public class PlayerSkill : MonoBehaviour
 
         anim = GetComponent<Animator>();
         stamina = GetComponent<PlayerStamina>();
-        boxCol2D = GetComponent<BoxCollider2D>();
+        //boxCol2D = GetComponent<BoxCollider2D>();
         sprRender = GetComponent<SpriteRenderer>();
 
         isDigging = false;
@@ -77,8 +77,8 @@ public class PlayerSkill : MonoBehaviour
             }
 
             sprRender.enabled = true;
-            boxCol2D.enabled = true;
 
+            Physics2D.IgnoreLayerCollision(11, 12, false);
             isDigging = false;
         }
     }
