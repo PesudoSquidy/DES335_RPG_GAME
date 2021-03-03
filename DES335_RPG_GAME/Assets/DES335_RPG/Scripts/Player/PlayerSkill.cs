@@ -40,7 +40,13 @@ public class PlayerSkill : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
+            if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
+            {
+                tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
+                //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
+                tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
+            }
+            else if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
             {
                 sprRender.enabled = false;
                 //boxCol2D.enabled = false;
@@ -75,20 +81,20 @@ public class PlayerSkill : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
-            {
-                tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
-                //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
-                tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
+        //    {
+        //        tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
+        //        //tunnel.gameObject.GetComponent<Tunnel>().Transport(gameObject);
+        //        tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
+        //    }
+        //}
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Tunnel"))
+        if (col.CompareTag("Tunnel") && !isDigging)
         {
             //Debug.Log("On Tunnel");
             tunnel = col.gameObject;
