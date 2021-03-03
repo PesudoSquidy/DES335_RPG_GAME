@@ -72,6 +72,7 @@ public class PlayerSkill : MonoBehaviour
             if (isUnderObject && tunnel != null)
             {
                 gameObject.transform.position = tunnel.transform.position;
+                tunnel.gameObject.GetComponent<Tunnel>().otherEnd = tunnel.gameObject;
                 isUnderObject = false;
             }
 
@@ -84,7 +85,7 @@ public class PlayerSkill : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Tunnel"))
+        if (col.CompareTag("Tunnel") && !tunnel)
         {
             //Debug.Log("On Tunnel");
             tunnel = col.gameObject;
