@@ -189,7 +189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootDrop:
   - {fileID: 570310531762812522, guid: 28fb202bc4d53b84c8395692b0f7250a, type: 3}
-  - {fileID: 2785815953439280400, guid: 4c33dbd4175c0e94ebe56b7c27256ffe, type: 3}
   - {fileID: 300962924529664348, guid: 4d89ffd5e0ea845419aa29e84415dff0, type: 3}
   dropAmount: 1
 --- !u!114 &5581934120208794485
