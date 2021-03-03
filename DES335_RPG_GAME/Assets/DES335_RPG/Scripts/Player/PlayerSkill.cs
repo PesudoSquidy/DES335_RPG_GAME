@@ -70,7 +70,10 @@ public class PlayerSkill : MonoBehaviour
         else if(stamina.bStaminaDrain == false)
         {
             if (isUnderObject && tunnel != null)
+            {
                 gameObject.transform.position = tunnel.transform.position;
+                isUnderObject = false;
+            }
 
             sprRender.enabled = true;
             boxCol2D.enabled = true;
