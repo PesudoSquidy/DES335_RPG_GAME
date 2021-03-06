@@ -8,8 +8,13 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private int space = 0;
 
-    [SerializeField]
+    
     public List<Item> items = new List<Item>();
+
+    // Not going for efficiceny but for more safety & understandable to the reader
+    public Dictionary<string, int> itemsCount = new Dictionary<string, int>();
+    
+
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -37,7 +42,7 @@ public class Inventory : MonoBehaviour
     {
         if (testEquipment != null)
         {
-            items.Add(testEquipment);
+            Add(testEquipment);
 
             //Event call
             if (onItemChangedCallback != null)
@@ -54,17 +59,24 @@ public class Inventory : MonoBehaviour
         //}
     }
 
-
     public bool Add(Item item)
     {
         if (items.Count >= space)
         {
-            Debug.Log("Inventory not enough space");
             return false;
         }
         else
         {
-            items.Add(item);
+            if (itemsCount.ContainsKey(item.name))
+            {
+                if(!item.isEquipment)
+                    ++itemsCount[item.name];
+            }
+            else
+            {
+                items.Add(item);
+                itemsCount.Add(item.name, 1);
+            }
 
             if(onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
@@ -76,6 +88,12 @@ public class Inventory : MonoBehaviour
     public void Remove(Item item)
     {
         items.Remove(item);
+
+        if (itemsCount.ContainsKey(item.name))
+        {
+            if (--itemsCount[item.name] == 0)
+                itemsCount.Remove(item.name);
+        }
 
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();

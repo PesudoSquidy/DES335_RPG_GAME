@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Player") && item != null)
         {
             //Debug.Log("Player picked up: " + item.name);
             if (Inventory.instance.Add(item))

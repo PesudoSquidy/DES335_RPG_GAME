@@ -13,6 +13,24 @@ public class InventorySlot : MonoBehaviour
     [SerializeField]
     private Button removeButton;
 
+    [SerializeField]
+    private Text itemCountText;
+
+    public void AddItem(Item newItem, int newItemCount)
+    {
+        item = newItem;
+
+        icon.sprite = item.icon;
+        icon.enabled = true;
+        removeButton.interactable = true;
+
+        if (itemCountText != null)
+        {
+            itemCountText.enabled = true;
+            itemCountText.text = newItemCount.ToString();
+        }
+    }
+
     public void AddItem(Item newItem)
     {
         item = newItem;
@@ -20,6 +38,9 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = item.icon;
         icon.enabled = true;
         removeButton.interactable = true;
+
+        if (itemCountText != null)
+            itemCountText.enabled = false;
     }
 
     public void ClearSlot()
@@ -30,6 +51,9 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = false;
 
         removeButton.interactable = false;
+
+        if(itemCountText != null)
+            itemCountText.enabled = false;
     }
 
     public void OnRemoveButton()
