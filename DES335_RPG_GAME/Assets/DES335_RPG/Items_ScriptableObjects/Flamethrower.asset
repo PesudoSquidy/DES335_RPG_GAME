@@ -16,7 +16,9 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 80e159dab3e6f1142bc5062eb184ccaf, type: 3}
   prefab: {fileID: 0}
   isEquipment: 1
+  isAugment: 0
   coolDown: 0
   equipSlot: 0
   damageModifier: 0
   armourModifier: 0
+  augment: {fileID: 11400000, guid: 795d11cd82f06b44ba37c4fc3cda953d, type: 2}

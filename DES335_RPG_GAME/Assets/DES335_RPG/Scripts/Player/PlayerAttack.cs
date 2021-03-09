@@ -58,15 +58,15 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                if (equipmentManager.mainEquipment().name == "Bow")
+                if (equipmentManager.MainEquipment().name == "Bow")
                 {
                     anim.SetTrigger("isAttacking");
                     SpawnRangedProjectile(arrow);
                 }
-                else if (equipmentManager.mainEquipment().name == "Bomb" && bombCooldown <= 0)
+                else if (equipmentManager.MainEquipment().name == "Bomb" && bombCooldown <= 0)
                 {
-                    GameObject bomb = equipmentManager.mainEquipment().prefab;
-                    bombCooldown = equipmentManager.mainEquipment().coolDown;
+                    GameObject bomb = equipmentManager.MainEquipment().prefab;
+                    bombCooldown = equipmentManager.MainEquipment().coolDown;
                     Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
                 }
             }
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 isAttacking = true;
 
-                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                if (equipmentManager.MainEquipment().name == "Flamethrower")
                 {
                     playerMovement.lockFaceDir = true;
                     
@@ -103,7 +103,7 @@ public class PlayerAttack : MonoBehaviour
                 isAttacking = false;
 
 
-                if (equipmentManager.mainEquipment().name == "Flamethrower")
+                if (equipmentManager.MainEquipment().name == "Flamethrower")
                 {
                     playerMovement.lockFaceDir = false;
 

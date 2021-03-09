@@ -35,7 +35,7 @@ public class Arrow : MonoBehaviour
 
         if(hitInfo.gameObject.CompareTag("Enemy") || hitInfo.gameObject.CompareTag("FlyingEnemy"))
         {
-            Debug.Log(hitInfo.gameObject.name);
+            //Debug.Log(hitInfo.gameObject.name);
 
             if (hitInfo.gameObject.GetComponent<EnemyHealth>() != null)
                 hitInfo.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);

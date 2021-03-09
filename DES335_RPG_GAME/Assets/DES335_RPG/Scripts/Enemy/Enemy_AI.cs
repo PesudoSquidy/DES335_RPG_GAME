@@ -22,6 +22,8 @@ public abstract class Enemy_AI : MonoBehaviour
     protected Animator anim;
     private bool canMove;
 
+    private EnemyHealth enemyHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,9 @@ public abstract class Enemy_AI : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player").transform;
 
         canMove = false;
+
+        if (enemyHealth == null)
+            enemyHealth = GetComponent<EnemyHealth>();
     }
 
     void UpdatePath()
@@ -74,7 +79,7 @@ public abstract class Enemy_AI : MonoBehaviour
         //    reachedEndOfPath = false;
         //}
 
-        if (canMove)
+        if (canMove && enemyHealth.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
         {
             Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;

@@ -10,13 +10,15 @@ public class CooldownUI : MonoBehaviour
     public float cooldown;
     bool isCooldown;
 
-    [SerializeField]
-    PlayerAttack playerAttack;
+    [SerializeField] PlayerAttack playerAttack;
 
-    [SerializeField]
-    InventorySlot inventorySlot;
+    //[SerializeField] InventorySlot inventorySlot;
 
-    private Item item;
+    [SerializeField] EquipmentSlot equipmentSlot;
+
+    //private Item item;
+
+    private Equipment equipment;
 
     void Start()
     {
@@ -29,20 +31,24 @@ public class CooldownUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        item = inventorySlot.item;
+        //item = inventorySlot.item;
 
-        if (item != null)
+        equipment = equipmentSlot.equipment;
+
+        //if (item != null)
+        if (equipment != null)
         {
-            cooldown = item.coolDown;
+            //cooldown = item.coolDown;
+            cooldown = equipment.coolDown;
 
             //if(Input.GetKeyDown(KeyCode.P))
             //{
             //    isCooldown = true;
             //}
 
-            if (item.name == "Bomb" && playerAttack.bombCooldown > 0)
+            if (equipment.name == "Bomb" && playerAttack.bombCooldown > 0)
             {
-                if (playerAttack.bombCooldown == item.coolDown)
+                if (playerAttack.bombCooldown == equipment.coolDown)
                     imageCooldown.fillAmount = 1;
                 else
                 {

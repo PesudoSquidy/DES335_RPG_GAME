@@ -8,24 +8,35 @@ public class EquipmentManagerUI : MonoBehaviour
     EquipmentManager equipmentManager;
 
     public Transform equipmentParent;
-    InventorySlot[] slots;
+    //InventorySlot[] slots;
+
+    EquipmentSlot[] slots;
 
     public GameObject equipmentUI;
 
+    #region Singleton
+
+    public static EquipmentManagerUI instance;
+
     void Awake()
     {
+        instance = this;
+
         equipmentManager = EquipmentManager.instance;
 
         // Add new callback fn
         equipmentManager.onEquipmentChanged += UpdateEquipmentUI;
 
-        slots = equipmentParent.GetComponentsInChildren<InventorySlot>();
+        //slots = equipmentParent.GetComponentsInChildren<InventorySlot>();
+        slots = equipmentParent.GetComponentsInChildren<EquipmentSlot>();
     }
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-
+      
     }
 
     void Update()
@@ -42,14 +53,15 @@ public class EquipmentManagerUI : MonoBehaviour
         }
     }
 
-    void UpdateEquipmentUI(Equipment newItem, Equipment oldItem)
+    public void UpdateEquipmentUI(Equipment newItem, Equipment oldItem)
     {
         for (int i = 0; i < slots.Length; ++i)
         {
             if (i < equipmentManager.currEquipment.Length)
             {
                 if (equipmentManager.currEquipment[i] != null)
-                    slots[i].AddItem((Item)equipmentManager.currEquipment[i]);
+                    //slots[i].AddItem((Item)equipmentManager.currEquipment[i]);
+                    slots[i].AddEquipment(equipmentManager.currEquipment[i]);
                 else
                     slots[i].ClearSlot();
             }

@@ -5410,6 +5410,9 @@ MonoBehaviour:
   space: 20
   items: []
   testEquipment: {fileID: 11400000, guid: 8a04d201d6582ef4c8cd83023c4b3305, type: 2}
+  testEquipment2: {fileID: 11400000, guid: 9c55101be2e1af1409010958e7a31bc9, type: 2}
+  testEquipment3: {fileID: 11400000, guid: 795d11cd82f06b44ba37c4fc3cda953d, type: 2}
+  nullItem: {fileID: 11400000, guid: c87e32dc52d5a7e45a28ef0abb3be139, type: 2}
 --- !u!4 &245353717
 Transform:
   m_ObjectHideFlags: 0
@@ -13822,7 +13825,7 @@ PrefabInstance:
     - target: {fileID: 2889832663867563318, guid: c0c14e23e89d1b647bebf91c9e1090ce,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2889832663867563318, guid: c0c14e23e89d1b647bebf91c9e1090ce,
         type: 3}
@@ -15315,7 +15318,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -10, y: 10}
-  m_SizeDelta: {x: 299.99524, y: 371.01074}
+  m_SizeDelta: {x: 300, y: 371}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &798229928
 GameObject:
@@ -78846,7 +78849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 15
+    m_Left: 20
     m_Right: 15
     m_Top: 27
     m_Bottom: 15

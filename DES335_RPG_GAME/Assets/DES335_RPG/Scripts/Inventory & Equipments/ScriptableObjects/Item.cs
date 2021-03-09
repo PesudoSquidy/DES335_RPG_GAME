@@ -14,6 +14,7 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public GameObject prefab = null;
     public bool isEquipment = false;
+    public bool isAugment = false;
     public float coolDown;
 
     public virtual void Use()
@@ -26,5 +27,10 @@ public class Item : ScriptableObject
     public void RemoveFromInventory()
     {
         Inventory.instance.Remove(this);
+    }
+
+    public void AddToInventory()
+    {
+        Inventory.instance.Add(this);
     }
 }

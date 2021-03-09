@@ -104,12 +104,10 @@ public class EquipmentManager : MonoBehaviour
         //    UnequipAll();
     }
 
-    public Equipment mainEquipment()
+    public Equipment MainEquipment()
     {
-        if ((int)Equipment.EquipmentSlot.Main_Weapon < currEquipment.Length)
-            return currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
-        else
-            return null;
+        //if ((int)Equipment.EquipmentSlot.Main_Weapon < currEquipment.Length)
+        return currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
     }
 
     public void SwapMainEquipment()

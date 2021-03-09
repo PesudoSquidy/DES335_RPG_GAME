@@ -10,8 +10,7 @@ public abstract class EnemyHealth : MonoBehaviour
 
     private bool dieOnce;
 
-    //public enum StatusCondition { None, Burn, Freeze};
-    public enum StatusCondition { None, Burn };
+    public enum StatusCondition { None, Burn, Freeze };
 
     public StatusCondition currStatusCondition;
 
@@ -21,8 +20,11 @@ public abstract class EnemyHealth : MonoBehaviour
 
     private float statusConditionTimer;
 
+    [SerializeField] private float freezeDuration;
+
     // Health Status Condition Part - To be seperated
     [SerializeField] private GameObject burnStatusAnim;
+    [SerializeField] private GameObject freezeStatusAnim;
 
     void Awake()
     {
@@ -38,11 +40,14 @@ public abstract class EnemyHealth : MonoBehaviour
 
         if (burnStatusAnim != null)
             burnStatusAnim.SetActive(false);
+
+        if(freezeStatusAnim != null)
+            freezeStatusAnim.SetActive(false);
     }
 
     void Update()
     {
-        if(currStatusCondition == StatusCondition.Burn && statusConditionTimer > 0)
+        if(currStatusCondition != StatusCondition.None && statusConditionTimer > 0)
         {
             statusConditionTimer -= Time.deltaTime;
 
@@ -54,6 +59,9 @@ public abstract class EnemyHealth : MonoBehaviour
 
                 if(burnStatusAnim != null)
                     burnStatusAnim.SetActive(false);
+
+                if (freezeStatusAnim != null)
+                    freezeStatusAnim.SetActive(false);
             }
         }
     }
@@ -72,6 +80,14 @@ public abstract class EnemyHealth : MonoBehaviour
 
             InvokeRepeating("StatusDamage", 0.0f, burnTick);
         }
+        else if(newStatus == StatusCondition.Freeze && currStatusCondition != StatusCondition.Freeze)
+        {
+            currStatusCondition = StatusCondition.Freeze;
+            statusConditionTimer = freezeDuration;
+
+            if (freezeStatusAnim != null)
+                freezeStatusAnim.SetActive(true);
+        }
 
         if (health <= 0 && dieOnce == false)
         {
@@ -82,7 +98,7 @@ public abstract class EnemyHealth : MonoBehaviour
 
     void StatusDamage()
     {
-        if (currStatusCondition == StatusCondition.None)
+        if (currStatusCondition == StatusCondition.None || currStatusCondition == StatusCondition.Freeze)
             return;
         if (currStatusCondition == StatusCondition.Burn)
             health -= burnDamage;

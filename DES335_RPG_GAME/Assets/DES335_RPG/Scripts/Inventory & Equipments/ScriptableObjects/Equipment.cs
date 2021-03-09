@@ -12,8 +12,10 @@ public class Equipment : Item
 
     public EquipmentSlot equipSlot;
 
-    public int damageModifier;
-    public int armourModifier;
+    [HideInInspector] public int damageModifier;
+    [HideInInspector] public int armourModifier;
+
+    public Augment augment = null;
 
     public override void Use()
     {

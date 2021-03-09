@@ -42,10 +42,10 @@ public class InventoryUI : MonoBehaviour
         {
             if(i < inventory.items.Count)
             {
-                if (!inventory.items[i].isEquipment)
-                    slots[i].AddItem(inventory.items[i], inventory.itemsCount[inventory.items[i].name]);
-                else
+                if (inventory.items[i].isEquipment)
                     slots[i].AddItem(inventory.items[i]);
+                else
+                    slots[i].AddItem(inventory.items[i], inventory.itemsCount[inventory.items[i].name]);
             }
             else
             {

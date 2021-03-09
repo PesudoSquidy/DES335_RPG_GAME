@@ -2,19 +2,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+using UnityEngine.EventSystems;
+
+public class InventorySlot : MonoBehaviour, IDropHandler
 {
 
     public Item item;
     
-    [SerializeField]
-    private Image icon;
+    [SerializeField] private Image icon;
 
-    [SerializeField]
-    private Button removeButton;
+    [SerializeField] private Button removeButton;
 
-    [SerializeField]
-    private Text itemCountText;
+    [SerializeField] private Text itemCountText;
+
+    [SerializeField] private Button itemButton;
+
+    private Inventory inventory;
+
+    private void Awake()
+    {
+        inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+    }
 
     public void AddItem(Item newItem, int newItemCount)
     {
@@ -22,7 +30,11 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = item.icon;
         icon.enabled = true;
+
         removeButton.interactable = true;
+
+        if (itemButton != null)
+            itemButton.interactable = true;
 
         if (itemCountText != null)
         {
@@ -37,7 +49,11 @@ public class InventorySlot : MonoBehaviour
 
         icon.sprite = item.icon;
         icon.enabled = true;
+
         removeButton.interactable = true;
+
+        if(itemButton != null)
+            itemButton.interactable = true;
 
         if (itemCountText != null)
             itemCountText.enabled = false;
@@ -52,8 +68,31 @@ public class InventorySlot : MonoBehaviour
 
         removeButton.interactable = false;
 
-        if(itemCountText != null)
+        if(itemButton != null)
+            itemButton.interactable = false;
+
+        if (itemCountText != null)
             itemCountText.enabled = false;
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        //Debug.Log("On Drop: " + gameObject.name);
+
+        if(eventData.pointerDrag != null)
+        {
+            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+
+            // Reset position
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = eventData.pointerDrag.GetComponent<DragDrop>().startPos;
+
+            // Swap item
+            Item newItem = eventData.pointerDrag.transform.GetComponentInParent<InventorySlot>().item;
+
+            if(newItem != null && item != null)
+                inventory.SwapItem(newItem, item);
+        }
+
     }
 
     public void OnRemoveButton()
