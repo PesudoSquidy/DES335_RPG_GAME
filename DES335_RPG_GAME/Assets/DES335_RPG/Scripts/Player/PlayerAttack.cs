@@ -70,14 +70,6 @@ public class PlayerAttack : MonoBehaviour
                     Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
                 }
             }
-            //else if(Input.GetKeyUp(KeyCode.J))
-            //{
-            //    if (equipmentManager.mainEquipment().name == "Flamethrower")
-            //    {
-            //        //Debug.Log("Player can change face dir");
-            //        playerMovement.lockFaceDir = false;
-            //    }
-            //}
 
             if (Input.GetKey(KeyCode.J))
             {
@@ -86,7 +78,7 @@ public class PlayerAttack : MonoBehaviour
                 if (equipmentManager.MainEquipment().name == "Flamethrower")
                 {
                     playerMovement.lockFaceDir = true;
-                    
+
                     if (weaponDirection == null)
                         weaponDirection = Instantiate(flamethrower);
                     else
@@ -98,10 +90,9 @@ public class PlayerAttack : MonoBehaviour
                     }
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.J) )
+            else if (Input.GetKeyUp(KeyCode.J))
             {
                 isAttacking = false;
-
 
                 if (equipmentManager.MainEquipment().name == "Flamethrower")
                 {
@@ -114,7 +105,25 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
-            if(weaponDirection && Input.GetKey(KeyCode.J))
+            if (weaponDirection && Input.GetKey(KeyCode.J))
+                UpdateWeaponDirection();
+        }
+        else if (playerSkill.isDigging && isAttacking)
+        {
+            // Turn off any variable related to attacking - Diggging takes priority
+            isAttacking = false;
+
+            if (equipmentManager.MainEquipment().name == "Flamethrower")
+            {
+                playerMovement.lockFaceDir = false;
+
+                for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+                    weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+                weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", false);
+            }
+
+            if (weaponDirection)
                 UpdateWeaponDirection();
         }
     }

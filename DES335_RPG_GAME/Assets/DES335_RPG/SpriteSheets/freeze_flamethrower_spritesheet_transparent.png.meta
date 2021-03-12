@@ -1,0 +1,695 @@
+fileFormatVersion: 2
+guid: a84a0f73b90c18343b364371d319bc67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8699655542154468454
+    second: freeze_flamethrower_spritesheet_transparent_0
+  - first:
+      213: -8893382432352364621
+    second: freeze_flamethrower_spritesheet_transparent_1
+  - first:
+      213: -174313906894295296
+    second: freeze_flamethrower_spritesheet_transparent_2
+  - first:
+      213: -4107280682477785612
+    second: freeze_flamethrower_spritesheet_transparent_3
+  - first:
+      213: 4068094476757190393
+    second: freeze_flamethrower_spritesheet_transparent_4
+  - first:
+      213: -1757624253613731389
+    second: freeze_flamethrower_spritesheet_transparent_5
+  - first:
+      213: -8299889055854552194
+    second: freeze_flamethrower_spritesheet_transparent_6
+  - first:
+      213: 1748340688517153502
+    second: freeze_flamethrower_spritesheet_transparent_7
+  - first:
+      213: 1074628428482721181
+    second: freeze_flamethrower_spritesheet_transparent_8
+  - first:
+      213: 2974036089021859382
+    second: freeze_flamethrower_spritesheet_transparent_9
+  - first:
+      213: 6357718109352449062
+    second: freeze_flamethrower_spritesheet_transparent_10
+  - first:
+      213: 7935433807254581490
+    second: freeze_flamethrower_spritesheet_transparent_11
+  - first:
+      213: -3575347219549734570
+    second: freeze_flamethrower_spritesheet_transparent_12
+  - first:
+      213: -4636958140108634973
+    second: freeze_flamethrower_spritesheet_transparent_13
+  - first:
+      213: 3490788920765357431
+    second: freeze_flamethrower_spritesheet_transparent_14
+  - first:
+      213: 2245868425681411567
+    second: freeze_flamethrower_spritesheet_transparent_15
+  - first:
+      213: 756417183676612341
+    second: freeze_flamethrower_spritesheet_transparent_16
+  - first:
+      213: 5665705031690158796
+    second: freeze_flamethrower_spritesheet_transparent_17
+  - first:
+      213: 5143956172417011600
+    second: freeze_flamethrower_spritesheet_transparent_18
+  - first:
+      213: -7199101407369772242
+    second: freeze_flamethrower_spritesheet_transparent_19
+  - first:
+      213: -659421013588292528
+    second: freeze_flamethrower_spritesheet_transparent_20
+  - first:
+      213: -8078507657995984914
+    second: freeze_flamethrower_spritesheet_transparent_21
+  - first:
+      213: 5778699181207548538
+    second: freeze_flamethrower_spritesheet_transparent_22
+  - first:
+      213: -4884032238491631105
+    second: freeze_flamethrower_spritesheet_transparent_23
+  - first:
+      213: -4435658184655102330
+    second: freeze_flamethrower_spritesheet_transparent_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_1
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 41, z: 0, w: 60}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b710f30ccb549480800000000000000
+      internalID: -8893382432352364621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fa72cdc66b49df0800000000000000
+      internalID: -174313906894295296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_3
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd66180bf10007c0800000000000000
+      internalID: -4107280682477785612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_4
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f647d77f56c47830800000000000000
+      internalID: 4068094476757190393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1087
+        width: 290
+        height: 250
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4830791}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c11ebabd0aab97e0800000000000000
+      internalID: -1757624253613731389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_6
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1041
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b13aed0eed0dc80800000000000000
+      internalID: -8299889055854552194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_7
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 1000
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed24d65d79a534810800000000000000
+      internalID: 1748340688517153502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_8
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1000
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95bf31bcd8d9ee00800000000000000
+      internalID: 1074628428482721181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_9
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 1000
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636075bd016e54920800000000000000
+      internalID: 2974036089021859382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 839
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62455029fe62b3850800000000000000
+      internalID: 6357718109352449062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_11
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 809
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0f8040103502e60800000000000000
+      internalID: 7935433807254581490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_12
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 750
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659be0695a0d16ec0800000000000000
+      internalID: -3575347219549734570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_13
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 750
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a40874a32736afb0800000000000000
+      internalID: -4636958140108634973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_14
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 750
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d96184706c17030800000000000000
+      internalID: 3490788920765357431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed910d1f6dea2f10800000000000000
+      internalID: 2245868425681411567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 500
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5febb0fbb655f7a00800000000000000
+      internalID: 756417183676612341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_17
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 500
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2090845b0a0ae40800000000000000
+      internalID: 5665705031690158796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_18
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 500
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f081d82e0036740800000000000000
+      internalID: 5143956172417011600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_19
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 500
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23c5b79967a71c90800000000000000
+      internalID: -7199101407369772242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 244
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c44a7f41449d6f0800000000000000
+      internalID: -659421013588292528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef50e9361063ef80800000000000000
+      internalID: -8078507657995984914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_22
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7277b7d940123050800000000000000
+      internalID: 5778699181207548538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_23
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff186294e8e683cb0800000000000000
+      internalID: -4884032238491631105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freeze_flamethrower_spritesheet_transparent_24
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 250
+        width: 290
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e1496d1606172c0800000000000000
+      internalID: -4435658184655102330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 75863f030f4c7ce48baca965fb3c5163
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
