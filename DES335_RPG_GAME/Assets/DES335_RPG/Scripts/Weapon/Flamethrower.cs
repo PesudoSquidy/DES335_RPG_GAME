@@ -11,10 +11,18 @@ public class Flamethrower : MonoBehaviour
 
     void Start()
     {
+        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
+    }
 
-        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+    void Update()
+    {
+        if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Burn)
+            anim.SetBool("isCyro", false);
+        else if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Freeze)
+            anim.SetBool("isCyro", true);
     }
 
     void OnTriggerStay2D(Collider2D col2D)

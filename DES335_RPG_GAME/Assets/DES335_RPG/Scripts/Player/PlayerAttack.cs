@@ -56,7 +56,7 @@ public class PlayerAttack : MonoBehaviour
         // Left Mouse Click
         if (playerSkill.isDigging == false)
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetButtonDown("Attack"))
             {
                 if (equipmentManager.MainEquipment().name == "Bow")
                 {
@@ -71,7 +71,7 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.J))
+            if (Input.GetButton("Attack"))
             {
                 isAttacking = true;
 
@@ -90,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
                     }
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.J))
+            else if (Input.GetButtonUp("Attack"))
             {
                 isAttacking = false;
 
@@ -105,7 +105,7 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
-            if (weaponDirection && Input.GetKey(KeyCode.J))
+            if (weaponDirection && Input.GetButton("Attack"))
                 UpdateWeaponDirection();
         }
         else if (playerSkill.isDigging && isAttacking)

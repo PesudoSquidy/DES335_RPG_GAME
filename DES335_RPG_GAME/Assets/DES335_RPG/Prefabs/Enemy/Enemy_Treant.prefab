@@ -175,7 +175,7 @@ MonoBehaviour:
   burnDuration: 5
   burnTick: 1
   burnDamage: 1
-  freezeDuration: 3
+  freezeDuration: 1
   burnStatusAnim: {fileID: 3557698841635158165}
   freezeStatusAnim: {fileID: 8956548991477753196}
 --- !u!114 &4578094172686579867

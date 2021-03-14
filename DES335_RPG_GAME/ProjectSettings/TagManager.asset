@@ -12,6 +12,7 @@ TagManager:
   - FlyingEnemy
   - Tunnel
   - Obstacle
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Obstacle
   - Enemy
   - Player
-  - 
+  - FlyingEnemy
   - 
   - 
   - 

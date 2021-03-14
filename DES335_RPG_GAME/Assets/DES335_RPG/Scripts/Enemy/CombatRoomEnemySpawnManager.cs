@@ -16,17 +16,7 @@ public class CombatRoomEnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (enemyPrefabs.Length > 0)
-        {
-            enemies = new GameObject[enemyAmount];
-            for (int i = 0; i < enemyAmount; ++i)
-            {
-                int randNo = Random.Range(0, enemyPrefabs.Length);
-                int randSP = Random.Range(0, spawnPoints.Length);
-
-                enemies[i] = Instantiate(enemyPrefabs[randNo], spawnPoints[randSP].transform.position, Quaternion.identity);
-            }
-        }
+        SpawnEnemy(enemyAmount);
     }
 
     void Update()
@@ -39,4 +29,20 @@ public class CombatRoomEnemySpawnManager : MonoBehaviour
 
         LockRoom.SetActive(false);
     }
+
+    public void SpawnEnemy(int spawnAmount = 4)
+    {
+         if (enemyPrefabs.Length > 0)
+        {
+            enemies = new GameObject[enemyAmount];
+            for (int i = 0; i < enemyAmount; ++i)
+            {
+                int randNo = Random.Range(0, enemyPrefabs.Length);
+                int randSP = Random.Range(0, spawnPoints.Length);
+
+                enemies[i] = Instantiate(enemyPrefabs[randNo], spawnPoints[randSP].transform.position, Quaternion.identity);
+            }
+        }
+    }
+
 }

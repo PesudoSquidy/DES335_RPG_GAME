@@ -9,25 +9,23 @@ public abstract class Enemy_AI : MonoBehaviour
 
     public Transform target;
     public float speed = 200f;
-
     public float nextWaypointDistance = 3;
 
-    Path path;
-    int curretWaypoint = 0;
+    protected Path path;
+    protected int curretWaypoint = 0;
     //bool reachedEndOfPath = false;
 
-    Seeker seeker;
-    Rigidbody2D rb;
+    protected Seeker seeker;
+    protected Rigidbody2D rb;
 
     protected Animator anim;
-    private bool canMove;
+    protected bool canMove;
 
-    private EnemyHealth enemyHealth;
+    protected EnemyHealth enemyHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-
         if (anim == null)
             anim = GetComponent<Animator>();
 
@@ -64,7 +62,7 @@ public abstract class Enemy_AI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (path == null)
             return;
@@ -82,6 +80,10 @@ public abstract class Enemy_AI : MonoBehaviour
         if (canMove && enemyHealth.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
         {
             Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
+
+            // Accumulating speed
+
+
             Vector2 force = direction * speed * Time.deltaTime;
 
             rb.AddForce(force);

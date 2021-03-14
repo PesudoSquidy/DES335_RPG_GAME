@@ -38,7 +38,7 @@ public class PlayerSkill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetButtonDown("Digging"))
         {
             if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
             {
@@ -64,7 +64,8 @@ public class PlayerSkill : MonoBehaviour
                 stamina.bStaminaDrain = false;
                 isDigging = false;
 
-                Physics2D.IgnoreLayerCollision(11, 12, false);
+                Physics2D.IgnoreLayerCollision(12, 11, false);
+                Physics2D.IgnoreLayerCollision(12, 13, false);
             }
         }
         else if(stamina.bStaminaDrain == false)
@@ -78,7 +79,8 @@ public class PlayerSkill : MonoBehaviour
 
             sprRender.enabled = true;
 
-            Physics2D.IgnoreLayerCollision(11, 12, false);
+            Physics2D.IgnoreLayerCollision(12, 11, false);
+            Physics2D.IgnoreLayerCollision(12, 13, false);
             isDigging = false;
         }
     }

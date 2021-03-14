@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8015146119826842785}
   - component: {fileID: 8015146119826842791}
   - component: {fileID: 1254960325}
-  - component: {fileID: 1254960326}
-  - component: {fileID: 865497327}
   - component: {fileID: 5522848121618790664}
   - component: {fileID: 1154346045}
   - component: {fileID: 1154346044}
-  m_Layer: 11
+  - component: {fileID: -3997642632759597482}
+  - component: {fileID: -5373163289606734459}
+  m_Layer: 13
   m_Name: Enemy_Eagle
   m_TagString: FlyingEnemy
   m_Icon: {fileID: 0}
@@ -105,43 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1254960326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015146119826842786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f2523ff5174c243b42da2273dc6f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 400
-  nextWaypointDistance: 3
---- !u!114 &865497327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015146119826842786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b86432b7e430c4b8a0d26c99777b06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 5
-  anim: {fileID: 1154346044}
-  lootDrop: {fileID: 5522848121618790664}
-  currStatusCondition: 0
-  burnDuration: 3
-  burnTick: 1
-  burnDamage: 1
-  freezeDuration: 3
-  burnStatusAnim: {fileID: 3945451663626462273}
-  freezeStatusAnim: {fileID: 2008051338684725929}
 --- !u!114 &5522848121618790664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +190,43 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3997642632759597482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015146119826842786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f2523ff5174c243b42da2273dc6f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 200
+  nextWaypointDistance: 3
+--- !u!114 &-5373163289606734459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015146119826842786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b86432b7e430c4b8a0d26c99777b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  anim: {fileID: 1154346044}
+  lootDrop: {fileID: 5522848121618790664}
+  currStatusCondition: 0
+  burnDuration: 2
+  burnTick: 1
+  burnDamage: 1
+  freezeDuration: 1
+  burnStatusAnim: {fileID: 3945451663626462273}
+  freezeStatusAnim: {fileID: 2008051338684725929}
 --- !u!1001 &466756395843199319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ PrefabInstance:
     - target: {fileID: 3511487308795594006, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fa31c91d4ced3e40a2c67a3724a974e, type: 3}
@@ -429,6 +429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Freeze_Status_Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905061732989726447, guid: ca0c390ca819c1f4b97fb25f1a511687,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0c390ca819c1f4b97fb25f1a511687, type: 3}
