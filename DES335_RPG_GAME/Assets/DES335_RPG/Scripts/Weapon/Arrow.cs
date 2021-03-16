@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-
-    [SerializeField]
-    private float speed;
+    [SerializeField] private float speed;
 
     private Rigidbody2D rb;
 
-    [SerializeField]
-    private float lifeTime;
+    [SerializeField] private float lifeTime;
 
-    [SerializeField]
-    private int damage;
+    [SerializeField] private int damage;
+
+    [SerializeField] private int hitAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +29,15 @@ public class Arrow : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D hitInfo)
     {
-        //Debug.Log(hitInfo.gameObject.name);
-
         if(hitInfo.gameObject.CompareTag("Enemy") || hitInfo.gameObject.CompareTag("FlyingEnemy"))
         {
-            //Debug.Log(hitInfo.gameObject.name);
-
             if (hitInfo.gameObject.GetComponent<EnemyHealth>() != null)
                 hitInfo.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+
+            --hitAmount;
         }
 
-        Destroy(gameObject);
+        if(hitAmount <= 0)
+            Destroy(gameObject);
     }
 }

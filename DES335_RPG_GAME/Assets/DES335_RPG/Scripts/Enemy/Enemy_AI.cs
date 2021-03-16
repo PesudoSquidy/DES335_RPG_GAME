@@ -19,7 +19,7 @@ public abstract class Enemy_AI : MonoBehaviour
     protected Rigidbody2D rb;
 
     protected Animator anim;
-    protected bool canMove;
+    public bool canMove;
 
     protected EnemyHealth enemyHealth;
 
@@ -80,10 +80,6 @@ public abstract class Enemy_AI : MonoBehaviour
         if (canMove && enemyHealth.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
         {
             Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
-
-            // Accumulating speed
-
-
             Vector2 force = direction * speed * Time.deltaTime;
 
             rb.AddForce(force);

@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3}
+  m_Size: {x: 0.4, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &3140307680809883110
 MonoBehaviour:
@@ -216,6 +216,7 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 40000
   nextWaypointDistance: 3
+  canMove: 0
   cameraShake: {fileID: 0}
   linearDrag: 1.5
 --- !u!114 &8015146120082026481
@@ -300,12 +301,12 @@ PrefabInstance:
     - target: {fileID: 3905061732989726445, guid: ca0c390ca819c1f4b97fb25f1a511687,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3905061732989726445, guid: ca0c390ca819c1f4b97fb25f1a511687,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3905061732989726445, guid: ca0c390ca819c1f4b97fb25f1a511687,
         type: 3}
@@ -325,7 +326,7 @@ PrefabInstance:
     - target: {fileID: 3905061732989726445, guid: ca0c390ca819c1f4b97fb25f1a511687,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3905061732989726445, guid: ca0c390ca819c1f4b97fb25f1a511687,
         type: 3}
@@ -376,12 +377,12 @@ PrefabInstance:
     - target: {fileID: 3511487308795594005, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015
+      value: 0.057
       objectReference: {fileID: 0}
     - target: {fileID: 3511487308795594005, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3511487308795594005, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
@@ -431,12 +432,12 @@ PrefabInstance:
     - target: {fileID: 3511487308795594005, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3511487308795594005, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3511487308795594006, guid: 4fa31c91d4ced3e40a2c67a3724a974e,
         type: 3}

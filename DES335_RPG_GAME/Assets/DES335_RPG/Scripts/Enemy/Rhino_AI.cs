@@ -54,6 +54,10 @@ public class Rhino_AI : Enemy_AI
             // Increase drag
             rb.drag = linearDrag;
         }
+        else if(canMove == false)
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
 
@@ -88,6 +92,20 @@ public class Rhino_AI : Enemy_AI
 
             StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
             anim.SetTrigger("isCollision");
+        }
+        else if(col.gameObject.tag == "Player")
+        {
+            // Transfer force
+            // Debug.Log("Force XFer: " + rb.velocity * rb.mass);
+            Debug.Log("Rhino collides with player");
+            col.gameObject.GetComponent<PlayerMovement>().SpecialPhysics(rb.velocity * rb.mass);
+            //col.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(rb.velocity * rb.mass);
+
+
+            //col.gameObject.GetComponent<Rigidbody2D>().AddForce(rb.velocity * speed);
+            //col.gameObject.GetComponent<Rigidbody2D>().AddForce(rb.velocity * rb.mass, ForceMode2D.Impulse);
+            
+            rb.velocity = Vector3.zero;
         }
     }
 }

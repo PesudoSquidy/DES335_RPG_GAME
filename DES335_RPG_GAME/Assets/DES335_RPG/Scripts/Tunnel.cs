@@ -82,12 +82,22 @@ public class Tunnel : MonoBehaviour
         bActive = false;
         bBlocked = false;
         otherEnd = null;
+
+        if (stuckedObject != null)
+            stuckedObject.GetComponent<Enemy_AI>().canMove = true;
     }
 
     // Collided Enemy
     void TrapEnemy(GameObject enemy)
     {
         stuckedObject = enemy;
+
+        if (enemy != null)
+        {
+            if (enemy.GetComponent<Enemy_AI>() != null)
+                enemy.GetComponent<Enemy_AI>().canMove = false;
+        }
+
         bBlocked = true;
     }
 
@@ -146,9 +156,7 @@ public class Tunnel : MonoBehaviour
         if (!stuckedObject)
         {
             if (col.CompareTag("Enemy"))
-            {
                 TrapEnemy(col.gameObject);
-            }
         }
     }
 

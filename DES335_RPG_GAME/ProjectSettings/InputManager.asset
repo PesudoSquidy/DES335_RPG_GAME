@@ -297,8 +297,8 @@ InputManager:
     m_Name: Inventory
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left shift
+    negativeButton: right ctrl
+    positiveButton: left ctrl
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -329,8 +329,8 @@ InputManager:
     m_Name: Digging
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: d
+    negativeButton: right shift
+    positiveButton: left shift
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

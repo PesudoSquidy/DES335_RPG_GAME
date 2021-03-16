@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera cam;
 
     [SerializeField]
-    private float moveSpeed = 5;
+    private float moveSpeed = 10;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField][Range(0,1)]
     public float slowSpeed;
+
+    [HideInInspector] public Vector2 incomingForce;
+    [HideInInspector] public bool collecteralForce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -104,8 +107,43 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log("FixedUpdate " + rb.velocity.magnitude);
+
         // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        //if (Mathf.Abs(rb.velocity.magnitude) == 0)
+        if (!collecteralForce)
+        {
+            //Debug.Log("Velocity: " + rb.velocity);
+            //Debug.Log("Velocity magnitude: " + rb.velocity.magnitude);
+            Debug.Log("Normal Movement");
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
+        //else if(rb.velocity.magnitude < 0.01f)
+        //{
+        //    collecteralForce = false;
+        //    Debug.Log("Revert back to normal movement");
+        //}
+        //else
+        //{
+        //    //Debug.Log("Moving Velocity: " + rb.velocity);
+        //    //Debug.Log("Moving Velocity magnitude: " + rb.velocity.magnitude);
+        //    Debug.Log("Collecteral force movement");
+        //}
+    }
+
+    public void SpecialPhysics(Vector2 incomingForce)
+    {
+        // Add force to the player
+        collecteralForce = true;
+        rb.AddRelativeForce(incomingForce);
+        Debug.LogWarning("Incoming force " + incomingForce);
+        Debug.Log("Got hit by rhino " + rb.velocity.magnitude);
+    }
+
+    IEnumerator CollecteralForceOff(float stunTime)
+    {
+        yield return new WaitForSeconds(stunTime);
+        collecteralForce = false;
     }
 
     void SetDirectionFacing(string str)
@@ -135,6 +173,24 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetInteger("faceDir", 4);
             playerFaceDir = faceDir.Down;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.LogWarning("Collided");
+
+        if (collecteralForce)
+        {
+            if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("FlyingEnemy"))
+            {
+
+            }
+            else
+            {
+                Debug.Log(col.gameObject.name);
+                StartCoroutine(CollecteralForceOff(2.0f));
+            }
         }
     }
 }
