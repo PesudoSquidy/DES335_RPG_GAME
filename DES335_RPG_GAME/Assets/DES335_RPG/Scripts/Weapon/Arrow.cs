@@ -35,8 +35,6 @@ public class Arrow : MonoBehaviour
     {
         if(col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy"))
         {
-            Debug.Log(col.name);
-
             EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
 
             enemyHP_Script.TakeDamage(damage);

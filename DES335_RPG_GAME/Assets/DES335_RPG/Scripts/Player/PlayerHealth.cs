@@ -21,8 +21,15 @@ public class PlayerHealth : MonoBehaviour
 
     public Status statusCondition = Status.None;
 
-    public bool isStun = false;
+    public GameObject stunAnim;
 
+    void Update()
+    {
+        if (statusCondition == Status.Stun)
+            stunAnim.SetActive(true);
+        else
+            stunAnim.SetActive(false);
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "FlyingEnemy")
