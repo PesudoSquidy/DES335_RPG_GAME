@@ -14,6 +14,8 @@ public class Arrow : MonoBehaviour
 
     [SerializeField] private int hitAmount;
 
+    private Augment equipmentAugment;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +26,36 @@ public class Arrow : MonoBehaviour
 
         if(lifeTime >= 0)
             Destroy(gameObject, lifeTime);
+
+        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
     }
 
     
-    void OnCollisionEnter2D(Collision2D hitInfo)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if(hitInfo.gameObject.CompareTag("Enemy") || hitInfo.gameObject.CompareTag("FlyingEnemy"))
+        if(col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy"))
         {
-            if (hitInfo.gameObject.GetComponent<EnemyHealth>() != null)
-                hitInfo.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            Debug.Log(col.name);
+
+            EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
+
+            enemyHP_Script.TakeDamage(damage);
+
+            if (equipmentAugment != null)
+            {
+                Debug.Log(col.name);
+
+                if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Burn)
+                {
+                    if (enemyHP_Script != null && enemyHP_Script.currStatusCondition != EnemyHealth.StatusCondition.Burn)
+                        enemyHP_Script.TakeDamage(0, EnemyHealth.StatusCondition.Burn);
+                }
+                else if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Freeze)
+                {
+                    if (enemyHP_Script != null && enemyHP_Script.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
+                        enemyHP_Script.TakeDamage(0, EnemyHealth.StatusCondition.Freeze);
+                }
+            }
 
             --hitAmount;
         }

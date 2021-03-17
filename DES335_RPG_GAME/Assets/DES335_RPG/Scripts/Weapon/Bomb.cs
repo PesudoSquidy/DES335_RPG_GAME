@@ -17,13 +17,14 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    private Augment equipmentAugment;
+
     void Start() 
     {
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
 
-        //if (anim != null)
-        //    anim.enabled = false;
+        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
     }
 
     void Update()
@@ -34,16 +35,29 @@ public class Bomb : MonoBehaviour
             anim.SetTrigger("boom");
     }
 
-    void OnTriggerStay2D(Collider2D collider2D)
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (collider2D.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Enemy"))
         {
             if (timeBeforeExplosion <= 0)
             {
-                EnemyHealth enemyHP_Script = collider2D.GetComponent<EnemyHealth>();
+                EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
 
-                if (enemyHP_Script != null)
-                    enemyHP_Script.TakeDamage(damage);
+                enemyHP_Script.TakeDamage(damage);
+
+                if (equipmentAugment != null)
+                {
+                    if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Burn)
+                    {
+                        if (enemyHP_Script != null && enemyHP_Script.currStatusCondition != EnemyHealth.StatusCondition.Burn)
+                            enemyHP_Script.TakeDamage(0, EnemyHealth.StatusCondition.Burn);
+                    }
+                    else if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Freeze)
+                    {
+                        if (enemyHP_Script != null && enemyHP_Script.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
+                            enemyHP_Script.TakeDamage(0, EnemyHealth.StatusCondition.Freeze);
+                    }
+                }
             }
         }
     }

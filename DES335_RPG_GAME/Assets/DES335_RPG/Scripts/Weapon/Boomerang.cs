@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boomerang : MonoBehaviour
 {
+    [SerializeField] private int damage;
 
     public float distance;
     public float toSpeed;
@@ -18,11 +19,15 @@ public class Boomerang : MonoBehaviour
 
     private PlayerMovement playerMovement;
 
+    private Augment equipmentAugment;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
         playerMovement = player.GetComponent<PlayerMovement>();
+
+        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
 
         //Up
         //if (transform.localRotation.z <= 0)
@@ -83,8 +88,9 @@ public class Boomerang : MonoBehaviour
         }
         else if(col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("FlyingEnemy"))
         {
-            Augment equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
             EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
+
+            enemyHP_Script.TakeDamage(damage);
 
             if (equipmentAugment != null)
             {
