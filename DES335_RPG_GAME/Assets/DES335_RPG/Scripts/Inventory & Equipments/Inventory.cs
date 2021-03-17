@@ -32,22 +32,14 @@ public class Inventory : MonoBehaviour
     #endregion
 
     //Testing Purpose
-    public Item testEquipment;
-    public Item testEquipment2;
-    public Item testEquipment3;
+    public Item[] testEquipments;
 
     public Item nullItem;
 
     void Start()
     {
-        if (testEquipment != null)
-            Add(testEquipment);
-
-        if (testEquipment2 != null)
-            Add(testEquipment2);
-
-        if (testEquipment3 != null)
-            Add(testEquipment3);
+        for (int i = 0; i < testEquipments.Length; ++i)
+            Add(testEquipments[i]);
 
         // Fill inventory with null item
         //for(int i = 0; i < space; ++i)

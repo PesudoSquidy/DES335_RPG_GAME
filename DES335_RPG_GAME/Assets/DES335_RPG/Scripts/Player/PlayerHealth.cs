@@ -17,9 +17,11 @@ public class PlayerHealth : MonoBehaviour
     //[SerializeField] private Sprite Half_Heart_Sprite;  // 1
     //[SerializeField] private Sprite Empty_Heart_Sprite; // 0
 
-    void Awake()
-    {
-    }
+    public enum Status { None, Stun };
+
+    public Status statusCondition = Status.None;
+
+    public bool isStun = false;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -66,5 +68,13 @@ public class PlayerHealth : MonoBehaviour
     void Death()
     {
         //Debug.Log("Player dies");
+    }
+
+    public IEnumerator ChangeStatusCondition(Status newStatus, float duration)
+    {
+        //Debug.Log("Change player's status");
+        statusCondition = newStatus;
+        yield return new WaitForSeconds(duration);
+        statusCondition = Status.None;
     }
 }

@@ -22,7 +22,6 @@ public class PlayerAttack : MonoBehaviour
 
     public EquipmentManager equipmentManager;
 
-
     //Weapon - Cooldown
     public float bombCooldown;
     public bool isAttacking;
@@ -56,12 +55,19 @@ public class PlayerAttack : MonoBehaviour
         // Left Mouse Click
         if (playerSkill.isDigging == false)
         {
+            //Debug.Log(equipmentManager.MainEquipment().name);
+
             if (Input.GetButtonDown("Attack"))
             {
                 if (equipmentManager.MainEquipment().name == "Bow")
                 {
                     anim.SetTrigger("isAttacking");
                     SpawnRangedProjectile(arrow);
+                }
+                else if(equipmentManager.MainEquipment().name == "Boomerang")
+                {
+                    GameObject boomerang = equipmentManager.MainEquipment().prefab;
+                    SpawnRangedProjectile(boomerang);
                 }
                 else if (equipmentManager.MainEquipment().name == "Bomb" && bombCooldown <= 0)
                 {
@@ -149,15 +155,18 @@ public class PlayerAttack : MonoBehaviour
 
         if (firePoint != null && rangedProjectile != null)
         {
-            if (rangedProjectile.name == arrow.name)
-                Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
-            else if (rangedProjectile.name == flamethrower.name)
-            {
-                if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Left)
-                    Instantiate(rangedProjectile, firePoint.position, firePoint.rotation).GetComponent<Transform>().localScale = new Vector2(-Mathf.Abs(rangedProjectile.transform.localScale.x), rangedProjectile.transform.localScale.y);
-                else
-                    Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
-            }
+            Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
+
+            //if (rangedProjectile.name == arrow.name)
+            //    Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
+
+            //else if (rangedProjectile.name == flamethrower.name)
+            //{
+            //    if (playerMovement.playerFaceDir == PlayerMovement.faceDir.Left)
+            //        Instantiate(rangedProjectile, firePoint.position, firePoint.rotation).GetComponent<Transform>().localScale = new Vector2(-Mathf.Abs(rangedProjectile.transform.localScale.x), rangedProjectile.transform.localScale.y);
+            //    else
+            //        Instantiate(rangedProjectile, firePoint.position, firePoint.rotation);
+            //}
         }
     }
 

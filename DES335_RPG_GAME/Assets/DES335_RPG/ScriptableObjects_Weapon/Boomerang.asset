@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e810083f9b963974f97cbd01e9b6ab56, type: 3}
-  m_Name: Bomb
+  m_Name: Boomerang
   m_EditorClassIdentifier: 
-  name: Bomb
-  icon: {fileID: 21300000, guid: 14b69e3ee353a574abd9c882593e74ea, type: 3}
-  prefab: {fileID: 6656126214236512463, guid: 3d9cddc15e12fda43ade20879ea9c482, type: 3}
-  coolDown: 2
+  name: Boomerang
+  icon: {fileID: 2703662378954127606, guid: bbfdb0ecd9d0fd7498a0685b0341b365, type: 3}
+  prefab: {fileID: 8184692822852937924, guid: 978720361b989a240b9b78d555ec180e, type: 3}
+  isEquipment: 1
+  isAugment: 0
+  coolDown: 0
   equipSlot: 0
-  damageModifier: 2
+  damageModifier: 0
   armourModifier: 0
+  augment: {fileID: 0}

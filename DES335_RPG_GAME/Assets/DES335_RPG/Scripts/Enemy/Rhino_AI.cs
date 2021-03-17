@@ -97,13 +97,10 @@ public class Rhino_AI : Enemy_AI
         {
             // Transfer force
             // Debug.Log("Force XFer: " + rb.velocity * rb.mass);
-            Debug.Log("Rhino collides with player");
+            //Debug.Log("Rhino collides with player");
+
+            StartCoroutine(col.gameObject.GetComponent<PlayerHealth>().ChangeStatusCondition(PlayerHealth.Status.Stun, 2.0f));
             col.gameObject.GetComponent<PlayerMovement>().SpecialPhysics(rb.velocity * rb.mass);
-            //col.gameObject.GetComponent<Rigidbody2D>().AddRelativeForce(rb.velocity * rb.mass);
-
-
-            //col.gameObject.GetComponent<Rigidbody2D>().AddForce(rb.velocity * speed);
-            //col.gameObject.GetComponent<Rigidbody2D>().AddForce(rb.velocity * rb.mass, ForceMode2D.Impulse);
             
             rb.velocity = Vector3.zero;
         }

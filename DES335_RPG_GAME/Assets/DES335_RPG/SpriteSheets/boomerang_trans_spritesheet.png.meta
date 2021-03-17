@@ -1,0 +1,740 @@
+fileFormatVersion: 2
+guid: bbfdb0ecd9d0fd7498a0685b0341b365
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2703662378954127606
+    second: boomerang_trans_spritesheet_0
+  - first:
+      213: 7017202443799497036
+    second: boomerang_trans_spritesheet_1
+  - first:
+      213: -1119522220933271712
+    second: boomerang_trans_spritesheet_2
+  - first:
+      213: -4835531396960642145
+    second: boomerang_trans_spritesheet_3
+  - first:
+      213: -8798883914419731960
+    second: boomerang_trans_spritesheet_4
+  - first:
+      213: -7841227948865514145
+    second: boomerang_trans_spritesheet_5
+  - first:
+      213: -614719125917722863
+    second: boomerang_trans_spritesheet_6
+  - first:
+      213: -1662463623870843287
+    second: boomerang_trans_spritesheet_7
+  - first:
+      213: -5757846972801723198
+    second: boomerang_trans_spritesheet_8
+  - first:
+      213: -4615701571000250587
+    second: boomerang_trans_spritesheet_9
+  - first:
+      213: 249480647104974115
+    second: boomerang_trans_spritesheet_10
+  - first:
+      213: 3519674757849988860
+    second: boomerang_trans_spritesheet_11
+  - first:
+      213: -1049728790996501866
+    second: boomerang_trans_spritesheet_12
+  - first:
+      213: -233263846598594802
+    second: boomerang_trans_spritesheet_13
+  - first:
+      213: 3488448614895986592
+    second: boomerang_trans_spritesheet_14
+  - first:
+      213: 3437052983298838650
+    second: boomerang_trans_spritesheet_15
+  - first:
+      213: 7319994307280006292
+    second: boomerang_trans_spritesheet_16
+  - first:
+      213: 1428928100598435621
+    second: boomerang_trans_spritesheet_17
+  - first:
+      213: 1720085323113135053
+    second: boomerang_trans_spritesheet_18
+  - first:
+      213: 6568586102359505725
+    second: boomerang_trans_spritesheet_19
+  - first:
+      213: 6939964831699923290
+    second: boomerang_trans_spritesheet_20
+  - first:
+      213: 5639838489392927125
+    second: boomerang_trans_spritesheet_21
+  - first:
+      213: 1821654880275691938
+    second: boomerang_trans_spritesheet_22
+  - first:
+      213: 1490485503690846655
+    second: boomerang_trans_spritesheet_23
+  - first:
+      213: -3742030500694460684
+    second: boomerang_trans_spritesheet_24
+  - first:
+      213: 7470514421780288671
+    second: boomerang_trans_spritesheet_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 112
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8f52aeb96558520800000000000000
+      internalID: 2703662378954127606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 121
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c490ca3a17c126160800000000000000
+      internalID: 7017202443799497036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 122
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fad17b878a670f0800000000000000
+      internalID: -1119522220933271712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 112
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b99ef60ddb4ecb0800000000000000
+      internalID: -4835531396960642145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 112
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8020d15c2b514e580800000000000000
+      internalID: -8798883914419731960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 117
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f559101a9bc5e2390800000000000000
+      internalID: -7841227948865514145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 117
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117190f36341877f0800000000000000
+      internalID: -614719125917722863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 114
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9667b27642ebde8e0800000000000000
+      internalID: -1662463623870843287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 47
+        width: 23
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c458134fa40810b0800000000000000
+      internalID: -5757846972801723198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 64
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f415f40ebb1ffb0800000000000000
+      internalID: -4615701571000250587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 67
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32dc605a355567300800000000000000
+      internalID: 249480647104974115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 49
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfebe825b8568d030800000000000000
+      internalID: 3519674757849988860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 48
+        width: 23
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a372ee93d9e61f0800000000000000
+      internalID: -1049728790996501866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 59
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0fac8474c743ccf0800000000000000
+      internalID: -233263846598594802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 61
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7241c5885796030800000000000000
+      internalID: 3488448614895986592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 51
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7059bf5a7dd2bf20800000000000000
+      internalID: 3437052983298838650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 17
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c6e4b1a08d59560800000000000000
+      internalID: 7319994307280006292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 17
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f4eb5698294d310800000000000000
+      internalID: 1428928100598435621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 11
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb758bec78fed710800000000000000
+      internalID: 1720085323113135053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 17
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bb4bb124e482b50800000000000000
+      internalID: 6568586102359505725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 11
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a517d23be35bf4060800000000000000
+      internalID: 6939964831699923290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 17
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59157d6993bb44e40800000000000000
+      internalID: 5639838489392927125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 17
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9703a4671d74910800000000000000
+      internalID: 1821654880275691938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 17
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1bc5e2ba44fa410800000000000000
+      internalID: 1490485503690846655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 17
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6fd63f513a11cc0800000000000000
+      internalID: -3742030500694460684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomerang_trans_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 17
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9495af39499ca760800000000000000
+      internalID: 7470514421780288671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1475dd8fa00665f41b05b6f7d3c0ad5d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

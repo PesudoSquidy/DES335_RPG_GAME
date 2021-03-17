@@ -22,23 +22,23 @@ public class Bomb : MonoBehaviour
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
 
-        if (anim != null)
-            anim.enabled = false;
+        //if (anim != null)
+        //    anim.enabled = false;
     }
 
     void Update()
     {
-        if(timeBeforeExplosion > 0)
+        if (timeBeforeExplosion > 0)
             timeBeforeExplosion -= Time.deltaTime;
         else if (timeBeforeExplosion <= 0 && anim != null)
-            anim.enabled = true;
+            anim.SetTrigger("boom");
     }
 
     void OnTriggerStay2D(Collider2D collider2D)
     {
         if (collider2D.gameObject.CompareTag("Enemy"))
         {
-            if (anim.enabled)
+            if (timeBeforeExplosion <= 0)
             {
                 EnemyHealth enemyHP_Script = collider2D.GetComponent<EnemyHealth>();
 
