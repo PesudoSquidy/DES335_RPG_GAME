@@ -126,6 +126,7 @@ public class TunnelManager : MonoBehaviour
         if (tunnel_Passage != null)
         {
             tunnelPassageEnd = Instantiate(tunnel_Passage, player.transform.position, Quaternion.identity);
+            tunnelPassageEnd.GetComponent<TunnelPassage>().SetTunnelPassageID(IDs);
             tunnelPassageHandler.Enqueue(tunnelPassageEnd);
             ++(tunnelPassageID[IDs]);
         }
@@ -143,5 +144,10 @@ public class TunnelManager : MonoBehaviour
     {
         if(inactiveTunnels[id].GetComponent<Tunnel>() != null)
             inactiveTunnels[id+1].GetComponent<Tunnel>().SpawnTunnel(id, tunnelTime, player.GetComponent<Transform>().position);
+    }
+
+    public int GetID()
+    {
+        return IDs;
     }
 }

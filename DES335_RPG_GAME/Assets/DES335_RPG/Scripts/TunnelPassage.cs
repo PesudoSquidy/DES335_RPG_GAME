@@ -9,6 +9,17 @@ public class TunnelPassage : MonoBehaviour
 
     public bool bActive = false;
 
+    bool intersect = false;
+
+    int tunnelPassageID = 0;
+
+    private TunnelManager tunnelManager;
+
+    void Start()
+    {
+        tunnelManager = TunnelManager.instance;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,4 +33,25 @@ public class TunnelPassage : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player") && col.GetComponent<PlayerSkill>().isDigging && tunnelManager.GetID() == tunnelPassageID && intersect)
+        {
+            Debug.Log("Hello: ");
+            intersect = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            intersect = true;
+        }
+    }
+
+    public void SetTunnelPassageID(int id)
+    {
+        tunnelPassageID = id;
+    }
 }
