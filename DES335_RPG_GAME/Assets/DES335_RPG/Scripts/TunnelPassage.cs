@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class TunnelPassage : MonoBehaviour
 {
@@ -37,6 +38,27 @@ public class TunnelPassage : MonoBehaviour
     {
         if (col.CompareTag("Player") && col.GetComponent<PlayerSkill>().isDigging && tunnelManager.GetID() == tunnelPassageID && intersect)
         {
+            PolygonTester test = PolygonTester.instance;
+            Queue<GameObject> queue = tunnelManager.GetQueue();
+
+            var list = queue.ToList();
+
+            while(list.Count() > 0)
+            {
+                if (gameObject.GetComponent<Transform>().position == list[0].GetComponent<Transform>().position)
+                    break;
+                list.RemoveAt(0);
+            }
+
+            // Create Vector2 vertices
+            Vector2[] vertices2D = new Vector2[list.Count()];
+
+            for (int i = 0; i < list.Count(); ++i)
+            {
+                vertices2D[i] = list[i].GetComponent<Transform>().position;
+            }
+
+            test.GenerateMesh(vertices2D);
             Debug.Log("Hello: ");
             intersect = false;
         }

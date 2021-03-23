@@ -150,4 +150,9 @@ public class TunnelManager : MonoBehaviour
     {
         return IDs;
     }
+
+    public Queue<GameObject> GetQueue()
+    {
+        return tunnelPassageHandler;
+    }
 }
