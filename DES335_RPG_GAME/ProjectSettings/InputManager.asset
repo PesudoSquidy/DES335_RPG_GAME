@@ -300,7 +300,7 @@ InputManager:
     negativeButton: right ctrl
     positiveButton: left ctrl
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: i
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -313,8 +313,8 @@ InputManager:
     m_Name: SwapEquipment
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: s
-    positiveButton: a
+    negativeButton: z
+    positiveButton: x
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
