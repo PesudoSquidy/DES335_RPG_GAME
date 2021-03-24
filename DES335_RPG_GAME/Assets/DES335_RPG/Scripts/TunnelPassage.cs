@@ -59,7 +59,7 @@ public class TunnelPassage : MonoBehaviour
             }
 
             test.GenerateMesh(vertices2D);
-            Debug.Log("Hello: ");
+            Debug.Log("Generate Mesh: ");
             intersect = false;
         }
     }

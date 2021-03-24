@@ -6,16 +6,8 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
 
-    [SerializeField] private int health;
+    public int health;
     private bool death = false;
-
-    // Handles the player Health UI
-    [SerializeField] private GameObject[] healthUI;
-
-    // The sprite for the Health UI
-    //[SerializeField] private Sprite Full_Heart_Sprite;  // 2
-    //[SerializeField] private Sprite Half_Heart_Sprite;  // 1
-    //[SerializeField] private Sprite Empty_Heart_Sprite; // 0
 
     public enum Status { None, Stun };
 
@@ -41,11 +33,6 @@ public class PlayerHealth : MonoBehaviour
                 // Calculate where to update the health UI
                 //int hp_UI = health % 2;
 
-                if(healthUI.Length > health)
-                {
-                    healthUI[health].SetActive(false);
-                }
-
                 //if(hp_UI > 0)
                 //{
                 //    hp_UI = health / 2;
@@ -58,8 +45,6 @@ public class PlayerHealth : MonoBehaviour
                 //    healthUI[hp_UI].GetComponent<RawImage>().texture = Empty_Heart_Sprite;
                 //}
             }
-
-            healthUI[health].SetActive(false);
 
             if (health <= 0)
             {

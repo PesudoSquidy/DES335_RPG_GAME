@@ -56,7 +56,9 @@ public class PolygonTester : MonoBehaviour
         filter.mesh = msh;
         bSpawnOnce = true;
 
+        gameObject.AddComponent(typeof(MeshCollider));
         gameObject.GetComponent<MeshRenderer>().material = material;
+        gameObject.transform.position = Vector3.zero;
     }
 }
 
