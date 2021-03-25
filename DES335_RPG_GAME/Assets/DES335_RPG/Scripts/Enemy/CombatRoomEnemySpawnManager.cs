@@ -16,18 +16,19 @@ public class CombatRoomEnemySpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy(enemyAmount);
+        //SpawnEnemy(enemyAmount);
     }
 
     void Update()
     {
-        for (int i = 0; i < enemyAmount; ++i)
-        {
-            if (enemies[i] != null)
-                return;
-        }
+        //for (int i = 0; i < enemyAmount; ++i)
+        //{
+        //    if (enemies[i] != null)
+        //        return;
+        //}
 
-        LockRoom.SetActive(false);
+        if(LockRoom != null)
+            LockRoom.SetActive(false);
     }
 
     public void SpawnEnemy(int spawnAmount = 4)

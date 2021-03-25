@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DES335_RPG/Scenes/DES335_RPG_2D_PROTOTYPE.unity
+    path: Assets/DES335_RPG/Scripts/Scenes/DES335_RPG_2D_PROTOTYPE.unity
     guid: b1dd20339466ba942844a3cee9e744ac
   m_configObjects: {}

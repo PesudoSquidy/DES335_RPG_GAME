@@ -30,7 +30,12 @@ public class TunnelPassage : MonoBehaviour
 
             // Destroy Tunnel
             if (fActiveTime < 0)
+            {
+                PolygonTester test = PolygonTester.instance;
+                if(test.iID == tunnelPassageID)
+                    PolygonTester.instance.DestoryMesh();
                 Destroy(gameObject);
+            }
         }
     }
 
@@ -58,8 +63,8 @@ public class TunnelPassage : MonoBehaviour
                 vertices2D[i] = list[i].GetComponent<Transform>().position;
             }
 
-            test.GenerateMesh(vertices2D);
-            Debug.Log("Generate Mesh: ");
+            test.GenerateMesh(vertices2D, tunnelPassageID);
+            //Debug.Log("Generate Mesh: ");
             intersect = false;
         }
     }

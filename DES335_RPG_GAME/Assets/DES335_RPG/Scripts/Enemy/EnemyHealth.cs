@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private float health;
+    public int health;
     [SerializeField] protected Animator anim;
     [SerializeField] private LootDrop lootDrop;
 
@@ -16,7 +16,7 @@ public abstract class EnemyHealth : MonoBehaviour
 
     [SerializeField] private float burnDuration;
     [SerializeField] private float burnTick;
-    [SerializeField] private float burnDamage;
+    [SerializeField] private int burnDamage;
 
     private float statusConditionTimer;
 
@@ -66,7 +66,7 @@ public abstract class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage = 0, StatusCondition newStatus = StatusCondition.None)
+    public void TakeDamage(int damage = 0, StatusCondition newStatus = StatusCondition.None)
     {
         if(newStatus == StatusCondition.None)
             health -= damage;

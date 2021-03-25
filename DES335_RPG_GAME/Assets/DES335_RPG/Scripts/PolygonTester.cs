@@ -19,6 +19,8 @@ public class PolygonTester : MonoBehaviour
 
     public Material material;
 
+    public int iID = -1;
+
     void Start()
     {
     }
@@ -27,10 +29,35 @@ public class PolygonTester : MonoBehaviour
     {
     }
 
-    public void GenerateMesh(Vector2[] vertices2D)
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Generate Mesh: ");
+
+        if (!bSpawnOnce)
+            return;
+        if (col.CompareTag("Enemy"))
+            col.GetComponent<EnemyHealth>().Die();
+
+    }
+
+    public void DestoryMesh()
+    {
+        if (!bSpawnOnce)
+            return;
+
+        Destroy(gameObject.GetComponent<PolygonCollider2D>());
+        Destroy(gameObject.GetComponent<MeshRenderer>());
+        Destroy(gameObject.GetComponent<MeshFilter>());
+        bSpawnOnce = false;
+        iID = -1;
+    }
+
+    public void GenerateMesh(Vector2[] vertices2D, int ID)
     {
         if (bSpawnOnce)
             return;
+
+        iID = ID;
 
         // Use the triangulator to get indices for creating triangles
         Triangulator tr = new Triangulator(vertices2D);
@@ -56,7 +83,10 @@ public class PolygonTester : MonoBehaviour
         filter.mesh = msh;
         bSpawnOnce = true;
 
-        gameObject.AddComponent(typeof(MeshCollider));
+        gameObject.AddComponent(typeof(PolygonCollider2D));
+
+        gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+        gameObject.GetComponent<PolygonCollider2D>().points = vertices2D;
         gameObject.GetComponent<MeshRenderer>().material = material;
         gameObject.transform.position = Vector3.zero;
     }
