@@ -6,7 +6,7 @@ public class Enemy_Heart_HUD_Manager : MonoBehaviour
 {
     [SerializeField] private Enemy_Heart_HUD[] heart_HUD;
 
-    public EnemyHealth enemyHealth;
+    [SerializeField] private EnemyHealth enemyHealth;
 
     private int prevEnemyHealth;
 
@@ -21,10 +21,14 @@ public class Enemy_Heart_HUD_Manager : MonoBehaviour
     {
         countdownTimer = 0.0f;
 
+        if (enemyHealth == null)
+            enemyHealth = transform.parent.gameObject.GetComponent<EnemyHealth>();
+
         if (enemyHealth != null)
             prevEnemyHealth = enemyHealth.health;
         
         parentObj = transform.parent.transform;
+
     }
 
     // Update is called once per frame
