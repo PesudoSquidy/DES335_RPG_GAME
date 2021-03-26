@@ -23,7 +23,7 @@ public class PlayerAttack : MonoBehaviour
     public EquipmentManager equipmentManager;
 
     //Weapon - Cooldown
-    public float bombCooldown;
+    public float equipmentCooldown;
     public bool isAttacking;
 
     GameObject weaponDirection;
@@ -43,14 +43,14 @@ public class PlayerAttack : MonoBehaviour
             playerSkill = GetComponent<PlayerSkill>();
 
         isAttacking = false;
-        bombCooldown = 0;
+        equipmentCooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (bombCooldown > 0)
-            bombCooldown -= Time.deltaTime;
+        if (equipmentCooldown > 0)
+            equipmentCooldown -= Time.deltaTime;
 
         // Left Mouse Click
         if (playerSkill.isDigging == false)
@@ -59,30 +59,33 @@ public class PlayerAttack : MonoBehaviour
 
             if (Input.GetButtonDown("Attack"))
             {
-                if (equipmentManager.MainEquipment().name == "Bow")
+                if (equipmentCooldown <= 0)
                 {
-                    anim.SetTrigger("isAttacking");
-                    SpawnRangedProjectile(arrow);
-                }
-                else if(equipmentManager.MainEquipment().name == "Boomerang")
-                {
-                    GameObject boomerang = equipmentManager.MainEquipment().prefab;
-                    SpawnRangedProjectile(boomerang);
-                }
-                else if (equipmentManager.MainEquipment().name == "Bomb" && bombCooldown <= 0)
-                {
-                    GameObject bomb = equipmentManager.MainEquipment().prefab;
-                    bombCooldown = equipmentManager.MainEquipment().coolDown;
-                    Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+                    if (equipmentManager.MainEquipment().name == "Bow")
+                    {
+                        anim.SetTrigger("isAttacking");
+                        SpawnRangedProjectile(arrow);
+                    }
+                    else if (equipmentManager.MainEquipment().name == "Boomerang")
+                    {
+                        GameObject boomerang = equipmentManager.MainEquipment().prefab;
+                        equipmentCooldown = equipmentManager.MainEquipment().coolDown;
+                        SpawnRangedProjectile(boomerang);
+                    }
+                    else if (equipmentManager.MainEquipment().name == "Bomb")
+                    {
+                        GameObject bomb = equipmentManager.MainEquipment().prefab;
+                        equipmentCooldown = equipmentManager.MainEquipment().coolDown;
+                        Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
+                    }
                 }
             }
 
             if (Input.GetButton("Attack"))
             {
-                isAttacking = true;
-
                 if (equipmentManager.MainEquipment().name == "Flamethrower")
                 {
+                    isAttacking = true;
                     playerMovement.lockFaceDir = true;
 
                     if (weaponDirection == null)

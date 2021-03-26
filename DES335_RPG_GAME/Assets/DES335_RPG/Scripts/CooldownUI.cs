@@ -46,14 +46,26 @@ public class CooldownUI : MonoBehaviour
             //    isCooldown = true;
             //}
 
-            if (equipment.name == "Bomb" && playerAttack.bombCooldown > 0)
+            if (playerAttack.equipmentCooldown > 0)
             {
-                if (playerAttack.bombCooldown == equipment.coolDown)
-                    imageCooldown.fillAmount = 1;
-                else
+                if (equipment.name == "Bomb")
                 {
-                    imageCooldown.fillAmount = playerAttack.bombCooldown / cooldown;
-                    //imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+                    if (playerAttack.equipmentCooldown == equipment.coolDown)
+                        imageCooldown.fillAmount = 1;
+                    else
+                    {
+                        imageCooldown.fillAmount = playerAttack.equipmentCooldown / cooldown;
+                        //imageCooldown.fillAmount -= 1 / cooldown * Time.deltaTime;
+                    }
+                }
+                else if (equipment.name == "Boomerang")
+                {
+                    if (playerAttack.equipmentCooldown == equipment.coolDown)
+                        imageCooldown.fillAmount = 1;
+                    else
+                    {
+                        imageCooldown.fillAmount = playerAttack.equipmentCooldown / cooldown;
+                    }
                 }
             }
             else

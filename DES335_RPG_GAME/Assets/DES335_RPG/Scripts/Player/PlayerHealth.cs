@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject stunAnim;
 
+    public Coroutine StatusCheckCoroutine;
+
     void Update()
     {
         if (statusCondition == Status.Stun)
@@ -29,21 +31,6 @@ public class PlayerHealth : MonoBehaviour
             if (health > 0)
             {
                 --health;
-
-                // Calculate where to update the health UI
-                //int hp_UI = health % 2;
-
-                //if(hp_UI > 0)
-                //{
-                //    hp_UI = health / 2;
-                //    healthUI[[hp_UI].GetComponent<RawImage>().texture = Half_Heart_Sprite;
-                //}
-                //else
-                //{
-                //    hp_UI = health / 2;
-                //    //healthUI[hp_UI].SetActive(false);
-                //    healthUI[hp_UI].GetComponent<RawImage>().texture = Empty_Heart_Sprite;
-                //}
             }
 
             if (health <= 0)
@@ -62,7 +49,19 @@ public class PlayerHealth : MonoBehaviour
         //Debug.Log("Player dies");
     }
 
-    public IEnumerator ChangeStatusCondition(Status newStatus, float duration)
+    public void AfflictStatusCondition(Status newStatus, float duration)
+    {
+        if(StatusCheckCoroutine == null)
+            StatusCheckCoroutine = StartCoroutine(ChangeStatusCondition(newStatus, duration));
+        else
+        {
+            StopCoroutine(StatusCheckCoroutine);
+            StatusCheckCoroutine = StartCoroutine(ChangeStatusCondition(newStatus, duration));
+        }
+
+    }
+
+    private IEnumerator ChangeStatusCondition(Status newStatus, float duration)
     {
         //Debug.Log("Change player's status");
         statusCondition = newStatus;

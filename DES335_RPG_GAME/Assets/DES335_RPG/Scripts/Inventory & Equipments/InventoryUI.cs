@@ -31,8 +31,12 @@ public class InventoryUI : MonoBehaviour
     {
         if(Input.GetButtonDown("Inventory"))
         {
-            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            if(inventoryUI != null && !CombatRoomEnemySpawnManager.combatInProgress)
+                inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
+
+        if (inventoryUI != null && CombatRoomEnemySpawnManager.combatInProgress)
+            inventoryUI.SetActive(false);
     }
 
     void UpdateUI()
