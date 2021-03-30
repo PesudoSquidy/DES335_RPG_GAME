@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Transportable : MonoBehaviour
 {
-    public int objTransported;
+    //public int objTransported;
 
-    void Awake()
-    {
-        objTransported = 0;
-    }
+    //void Awake()
+    //{
+    //    objTransported = 0;
+    //}
 }

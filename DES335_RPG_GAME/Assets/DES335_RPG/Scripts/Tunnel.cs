@@ -102,21 +102,31 @@ public class Tunnel : MonoBehaviour
     }
 
     // Transport Object
-    public void Transport(GameObject obj)
-    {
-        if (obj.GetComponent<Transportable>() != null && obj.GetComponent<Transportable>().objTransported == 0)
-        {
-            if(otherEnd != null && otherEnd.GetComponent<Tunnel>().bActive)
-                obj.GetComponent<Transform>().position = otherEnd.transform.position;
+    //public void Transport(GameObject obj)
+    //{
+    //    if (obj.GetComponent<Transportable>() != null && obj.GetComponent<Transportable>().objTransported == 0)
+    //    {
+    //        if(otherEnd != null && otherEnd.GetComponent<Tunnel>().bActive)
+    //            obj.GetComponent<Transform>().position = otherEnd.transform.position;
 
-            FinishTransport(obj);
-        }
-    }
+    //        FinishTransport(obj);
+    //    }
+    //}
 
     public void Transport_2(GameObject obj)
     {
-        if (obj.GetComponent<Transportable>() != null)
-            obj.GetComponent<Transform>().position = otherEnd.transform.position;
+        Debug.Log("Teleport player to: " + otherEnd.transform.position);
+        obj.GetComponent<Transform>().position = otherEnd.transform.position;
+
+        //if (obj.GetComponent<Transportable>() != null)
+        //{
+
+        //    if (otherEnd != null)
+        //    {
+        //        Debug.Log("Teleport player");
+        //        obj.GetComponent<Transform>().position = otherEnd.transform.position;
+        //    }
+        //}
     }
 
     public void PrepareTransport(GameObject obj)
@@ -125,17 +135,17 @@ public class Tunnel : MonoBehaviour
             obj.AddComponent<Transportable>();
     }
 
-    void FinishTransport(GameObject obj)
-    {
-        ++obj.GetComponent<Transportable>().objTransported;
-        ++obj.GetComponent<Transportable>().objTransported;
-    }
+    //void FinishTransport(GameObject obj)
+    //{
+    //    ++obj.GetComponent<Transportable>().objTransported;
+    //    ++obj.GetComponent<Transportable>().objTransported;
+    //}
 
-    public void ResetTransport(GameObject obj)
-    {
-        if (obj.GetComponent<Transportable>() !=null && obj.GetComponent<Transportable>().objTransported > 0)
-            --obj.GetComponent<Transportable>().objTransported;
-    }
+    //public void ResetTransport(GameObject obj)
+    //{
+    //    if (obj.GetComponent<Transportable>() !=null && obj.GetComponent<Transportable>().objTransported > 0)
+    //        --obj.GetComponent<Transportable>().objTransported;
+    //}
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -149,7 +159,7 @@ public class Tunnel : MonoBehaviour
             else if (col.CompareTag("Bomb"))
             {
                 PrepareTransport(col.gameObject);
-                Transport(col.gameObject);
+                //Transport(col.gameObject);
             }
         }
 
@@ -160,11 +170,11 @@ public class Tunnel : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
-        {
-            ResetTransport(col.gameObject);
-        }
-    }
+    //void OnTriggerExit2D(Collider2D col)
+    //{
+    //    if (col.CompareTag("Player"))
+    //    {
+    //        ResetTransport(col.gameObject);
+    //    }
+    //}
 }

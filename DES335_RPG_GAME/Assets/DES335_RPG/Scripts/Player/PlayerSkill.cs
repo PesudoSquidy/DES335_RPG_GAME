@@ -42,7 +42,8 @@ public class PlayerSkill : MonoBehaviour
         {
             if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
             {
-                tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
+                Debug.Log("Player wants to teleport");
+                //tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
                 tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
             }
             else if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
@@ -52,7 +53,8 @@ public class PlayerSkill : MonoBehaviour
                 stamina.bStaminaDrain = true;
                 isDigging = true;
 
-                Physics2D.IgnoreLayerCollision(11, 12, true);
+                Physics2D.IgnoreLayerCollision(12, 11, true);
+                Physics2D.IgnoreLayerCollision(12, 13, true);
             }
             else
             {

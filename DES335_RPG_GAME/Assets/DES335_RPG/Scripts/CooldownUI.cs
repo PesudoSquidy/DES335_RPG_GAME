@@ -19,7 +19,7 @@ public class CooldownUI : MonoBehaviour
     //private Item item;
 
     private Equipment equipment;
-
+    
     void Start()
     {
         if(playerAttack == null)

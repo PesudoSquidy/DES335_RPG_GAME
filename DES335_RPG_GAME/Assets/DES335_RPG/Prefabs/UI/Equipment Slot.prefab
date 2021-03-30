@@ -495,7 +495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageCooldown: {fileID: 8470703601138471497}
-  cooldown: 5
+  cooldown: 0
   playerAttack: {fileID: 0}
-  inventorySlot: {fileID: 0}
   equipmentSlot: {fileID: 4448316547036740538}
