@@ -75,8 +75,8 @@ public class TunnelManager : MonoBehaviour
                     inactiveTunnels[IDs].GetComponent<Tunnel>().bActive = true;
 
                 // CancelInvoke("SpawnTunnelPassage");
-
-                    // Activate all tunnel passage
+                
+                // Activate all tunnel passage
                 for (int i = 0; i < tunnelPassageID[IDs]; ++i)
                 {
                     TunnelPassage tempScript = tunnelPassageHandler.Dequeue().GetComponent<TunnelPassage>();
@@ -117,8 +117,6 @@ public class TunnelManager : MonoBehaviour
             if (Vector3.Distance(player.GetComponent<Transform>().position, tunnelPassageEnd.GetComponent<Transform>().position) > 1)
                 SpawnTunnelPassage();
         }
-
-
     }
 
     void SpawnTunnelPassage()

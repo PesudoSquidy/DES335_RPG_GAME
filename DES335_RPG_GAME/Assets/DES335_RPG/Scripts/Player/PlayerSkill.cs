@@ -10,7 +10,8 @@ public class PlayerSkill : MonoBehaviour
 
     private TunnelManager tunnelManager;
 
-    private PlayerStamina stamina;
+    //private PlayerStamina stamina;
+    private PlayerStamina_2 playerStamina;
 
     [SerializeField]
     private int diggingStaminaCost;
@@ -28,7 +29,10 @@ public class PlayerSkill : MonoBehaviour
         tunnelManager = TunnelManager.instance;
 
         anim = GetComponent<Animator>();
-        stamina = GetComponent<PlayerStamina>();
+
+        //stamina = GetComponent<PlayerStamina>();
+        playerStamina = GetComponent<PlayerStamina_2>();
+
         //boxCol2D = GetComponent<BoxCollider2D>();
         sprRender = GetComponent<SpriteRenderer>();
 
@@ -40,38 +44,52 @@ public class PlayerSkill : MonoBehaviour
     {
         if(Input.GetButtonDown("Digging"))
         {
+            // If player is on the tunnel
             if (tunnel != null && tunnel.gameObject.GetComponent<Tunnel>().otherEnd && tunnel.gameObject.GetComponent<Tunnel>().otherEnd.GetComponent<Tunnel>().bActive)
             {
-                Debug.Log("Player wants to teleport");
                 //tunnel.gameObject.GetComponent<Tunnel>().PrepareTransport(gameObject);
                 tunnel.gameObject.GetComponent<Tunnel>().Transport_2(gameObject);
             }
-            else if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
-            {
-                sprRender.enabled = false;
-                
-                stamina.bStaminaDrain = true;
-                isDigging = true;
+            //else if (stamina.bStaminaDrain == false && stamina.SpendStamina(diggingStaminaCost))
 
+            // Player starts diggin
+            else if (playerStamina.currPickaxeStamina >= 0 && playerStamina.bStaminaDrain == false)
+            {
                 Physics2D.IgnoreLayerCollision(12, 11, true);
                 Physics2D.IgnoreLayerCollision(12, 13, true);
+                Physics2D.IgnoreLayerCollision(12, 14, true);
+
+                sprRender.enabled = false;
+
+                //stamina.bStaminaDrain = true;
+
+                playerStamina.bStaminaDrain = true;
+                isDigging = true;
             }
             else
             {
+                Physics2D.IgnoreLayerCollision(12, 11, false);
+                Physics2D.IgnoreLayerCollision(12, 13, false);
+                Physics2D.IgnoreLayerCollision(12, 14, false);
+
                 if (isUnderObject && tunnel != null)
                     gameObject.transform.position = tunnel.transform.position;
 
                 sprRender.enabled = true;
 
-                stamina.bStaminaDrain = false;
-                isDigging = false;
+                //stamina.bStaminaDrain = false;
+                playerStamina.bStaminaDrain = false;
 
-                Physics2D.IgnoreLayerCollision(12, 11, false);
-                Physics2D.IgnoreLayerCollision(12, 13, false);
+                isDigging = false;
             }
         }
-        else if(stamina.bStaminaDrain == false)
+        //else if(stamina.bStaminaDrain == false)
+        else if(playerStamina.bStaminaDrain == false)
         {
+            Physics2D.IgnoreLayerCollision(12, 11, false);
+            Physics2D.IgnoreLayerCollision(12, 13, false);
+            Physics2D.IgnoreLayerCollision(12, 14, false);
+
             if (isUnderObject && tunnel != null)
             {
                 gameObject.transform.position = tunnel.transform.position;
@@ -80,32 +98,39 @@ public class PlayerSkill : MonoBehaviour
             }
 
             sprRender.enabled = true;
-
-            Physics2D.IgnoreLayerCollision(12, 11, false);
-            Physics2D.IgnoreLayerCollision(12, 13, false);
             isDigging = false;
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Tunnel") && !tunnel)
-        {
-            //Debug.Log("On Tunnel");
-            tunnel = col.gameObject;
-        }
-        else if(col.CompareTag("Obstacle") && isDigging)
+        //if (col.CompareTag("Tunnel") && !tunnel)
+        //{
+        //    Debug.Log("On Tunnel");
+        //    tunnel = col.gameObject;
+        //}
+        if(col.CompareTag("Obstacle") && isDigging)
         {
             //Debug.Log("On Obstacle");
             isUnderObject = true;
         }
     }
 
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.CompareTag("Tunnel") && isDigging == false)
+        {
+            // Debug.Log("On Tunnel");
+            tunnel = col.gameObject;
+        }
+    }
+
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Tunnel") && isDigging == false)
         {
-            //Debug.Log("Off Tunnel");
+            // Debug.Log("Off Tunnel");
             tunnel = null;
         }
         else if (col.CompareTag("Obstacle") && isDigging)

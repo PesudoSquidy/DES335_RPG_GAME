@@ -115,8 +115,13 @@ public class Tunnel : MonoBehaviour
 
     public void Transport_2(GameObject obj)
     {
-        Debug.Log("Teleport player to: " + otherEnd.transform.position);
-        obj.GetComponent<Transform>().position = otherEnd.transform.position;
+        // Debug.Log("Tries Teleport player to: " + otherEnd.transform.position);
+
+        if (obj.GetComponent<Transform>() != null)
+        {
+            // Debug.Log("Actually managed to teleport");
+            obj.GetComponent<Transform>().position = otherEnd.transform.position;
+        }
 
         //if (obj.GetComponent<Transportable>() != null)
         //{

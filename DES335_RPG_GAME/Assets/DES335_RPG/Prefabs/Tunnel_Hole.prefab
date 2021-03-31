@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8422984313222837325}
   - component: {fileID: -1035694240171055746}
   - component: {fileID: 4504806776797130054}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Tunnel_Hole
   m_TagString: Tunnel
   m_Icon: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   fActiveTime: 0
   bActive: 0
   tunnelID: 0
+  otherEnd: {fileID: 0}
 --- !u!61 &4504806776797130054
 BoxCollider2D:
   m_ObjectHideFlags: 0
