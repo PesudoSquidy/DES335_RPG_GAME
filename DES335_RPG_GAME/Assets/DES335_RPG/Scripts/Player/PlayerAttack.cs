@@ -17,8 +17,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private PlayerMovement playerMovement;
 
-    [SerializeField]
-    private PlayerSkill playerSkill;
+    [SerializeField] private PlayerSkill playerSkill;
+    [SerializeField] private GeneralGameManager gameManager;
+
 
     public EquipmentManager equipmentManager;
 
@@ -53,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
             equipmentCooldown -= Time.deltaTime;
 
         // Left Mouse Click
-        if (playerSkill.isDigging == false)
+        if (playerSkill.isDigging == false && !gameManager.ui_active)
         {
             //Debug.Log(equipmentManager.MainEquipment().name);
 

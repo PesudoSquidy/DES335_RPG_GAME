@@ -5709,6 +5709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatRoomManager: {fileID: 512350575}
+  inventory_UI: {fileID: 2117721054}
+  ui_active: 0
 --- !u!1 &254248031
 GameObject:
   m_ObjectHideFlags: 0
@@ -80918,6 +80920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 2114701233}
   inventoryUI: {fileID: 795350945}
+  ui_active: 0
 --- !u!114 &2117721055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81589,6 +81592,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612568212, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: equipmentManager
+      value: 
+      objectReference: {fileID: 245353715}
+    - target: {fileID: 612568212, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 245353721}
     - target: {fileID: 926060666, guid: f1ed99d1f0d15854691355c658cf91e3, type: 3}
       propertyPath: healthUI.Array.data[0]
       value: 

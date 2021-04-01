@@ -12,6 +12,8 @@ public class InventoryUI : MonoBehaviour
 
     public GameObject inventoryUI;
 
+    public bool ui_active;
+
     void Awake()
     {
         inventory = Inventory.instance;
@@ -19,6 +21,8 @@ public class InventoryUI : MonoBehaviour
 
         // Do in update if slots are non static
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+
+        ui_active = false;
     }
 
     // Start is called before the first frame update
@@ -31,12 +35,18 @@ public class InventoryUI : MonoBehaviour
     {
         if(Input.GetButtonDown("Inventory"))
         {
-            if(inventoryUI != null && !CombatRoomEnemySpawnManager.combatInProgress)
+            if (inventoryUI != null && !CombatRoomEnemySpawnManager.combatInProgress)
+            {
+                ui_active = !ui_active;
                 inventoryUI.SetActive(!inventoryUI.activeSelf);
+            }
         }
 
         if (inventoryUI != null && CombatRoomEnemySpawnManager.combatInProgress)
+        {
+            ui_active = false;
             inventoryUI.SetActive(false);
+        }
     }
 
     void UpdateUI()
