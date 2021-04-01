@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     PlayerHealth playerHealth;
 
+    public GeneralGameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,55 +57,58 @@ public class PlayerMovement : MonoBehaviour
         //Vector3 mousePosition = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
         //Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
 
-        // Input
-        if (playerAttack.isAttacking)
+        if (!gameManager.ui_active)
         {
-            movement.x = Input.GetAxisRaw("Horizontal") * slowSpeed;
-            movement.y = Input.GetAxisRaw("Vertical") * slowSpeed;
+            // Input
+            if (playerAttack.isAttacking)
+            {
+                movement.x = Input.GetAxisRaw("Horizontal") * slowSpeed;
+                movement.y = Input.GetAxisRaw("Vertical") * slowSpeed;
+            }
+            else
+            {
+                movement.x = Input.GetAxisRaw("Horizontal");
+                movement.y = Input.GetAxisRaw("Vertical");
+            }
+
+            if (lockFaceDir == false)
+            {
+                anim.SetFloat("horizontalSpeed", movement.x);
+                anim.SetFloat("verticalSpeed", movement.y);
+
+                if (movement.x > 0)
+                    SetDirectionFacing("Right");
+                else if (movement.x < 0)
+                    SetDirectionFacing("Left");
+                if (movement.y > 0)
+                    SetDirectionFacing("Up");
+                else if (movement.y < 0)
+                    SetDirectionFacing("Down");
+            }
+            else
+            {
+                if (playerFaceDir == faceDir.Left)
+                    anim.SetFloat("horizontalSpeed", -1f);
+                else if (playerFaceDir == faceDir.Right)
+                    anim.SetFloat("horizontalSpeed", 1f);
+                else if (playerFaceDir == faceDir.Up)
+                    anim.SetFloat("verticalSpeed", 1f);
+                else if (playerFaceDir == faceDir.Right)
+                    anim.SetFloat("vericalSpeed", -1f);
+            }
+
+            anim.SetFloat("speed", movement.sqrMagnitude);
+
+
+            //if (Input.GetButtonDown("Horizontal"))
+            //{
+            //    //anim.SetBool("faceHorizontal", true);
+            //}
+            //else if (Input.GetButtonDown("Vertical"))
+            //{
+            //    //anim.SetBool("faceHorizontal", false);
+            //}
         }
-        else
-        {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
-        }
-
-        if (lockFaceDir == false)
-        {
-            anim.SetFloat("horizontalSpeed", movement.x);
-            anim.SetFloat("verticalSpeed", movement.y);
-
-            if (movement.x > 0)
-                SetDirectionFacing("Right");
-            else if (movement.x < 0)
-                SetDirectionFacing("Left");
-            if (movement.y > 0)
-                SetDirectionFacing("Up");
-            else if (movement.y < 0)
-                SetDirectionFacing("Down");
-        }
-        else
-        {
-            if(playerFaceDir == faceDir.Left)
-                anim.SetFloat("horizontalSpeed", -1f);
-            else if (playerFaceDir == faceDir.Right)
-                anim.SetFloat("horizontalSpeed", 1f);
-            else if (playerFaceDir == faceDir.Up)
-                anim.SetFloat("verticalSpeed", 1f);
-            else if (playerFaceDir == faceDir.Right)
-                anim.SetFloat("vericalSpeed", -1f);
-        }
-
-        anim.SetFloat("speed", movement.sqrMagnitude);
-
-
-        //if (Input.GetButtonDown("Horizontal"))
-        //{
-        //    //anim.SetBool("faceHorizontal", true);
-        //}
-        //else if (Input.GetButtonDown("Vertical"))
-        //{
-        //    //anim.SetBool("faceHorizontal", false);
-        //}
     }
 
     void FixedUpdate()
