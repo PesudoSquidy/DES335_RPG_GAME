@@ -1,0 +1,710 @@
+fileFormatVersion: 2
+guid: e483381494ac4514dbcff236a6515438
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 377623600478733915
+    second: Sandworm_SURFACING_0
+  - first:
+      213: 7165174515346344939
+    second: Sandworm_SURFACING_1
+  - first:
+      213: -1344086048407458945
+    second: Sandworm_SURFACING_2
+  - first:
+      213: -8669198813645743601
+    second: Sandworm_SURFACING_3
+  - first:
+      213: -1468707722352674567
+    second: Sandworm_SURFACING_4
+  - first:
+      213: 4539209141827563962
+    second: Sandworm_SURFACING_5
+  - first:
+      213: -3653112304115412577
+    second: Sandworm_SURFACING_6
+  - first:
+      213: -4370247056959923227
+    second: Sandworm_SURFACING_7
+  - first:
+      213: 8783886538718597486
+    second: Sandworm_SURFACING_8
+  - first:
+      213: 1630519696847507957
+    second: Sandworm_SURFACING_9
+  - first:
+      213: -126883350463657408
+    second: Sandworm_SURFACING_10
+  - first:
+      213: 6524028698347732347
+    second: Sandworm_SURFACING_11
+  - first:
+      213: 1366093574636612378
+    second: Sandworm_SURFACING_12
+  - first:
+      213: -6201612934177162313
+    second: Sandworm_SURFACING_13
+  - first:
+      213: 6697844701642406883
+    second: Sandworm_SURFACING_14
+  - first:
+      213: -6428568719020028780
+    second: Sandworm_SURFACING_15
+  - first:
+      213: 6654686527970721898
+    second: Sandworm_SURFACING_16
+  - first:
+      213: 4526115002520672885
+    second: Sandworm_SURFACING_17
+  - first:
+      213: 2288122530868508532
+    second: Sandworm_SURFACING_18
+  - first:
+      213: -1217851009478072365
+    second: Sandworm_SURFACING_19
+  - first:
+      213: 3662955587987322881
+    second: Sandworm_SURFACING_20
+  - first:
+      213: -8984269340599346941
+    second: Sandworm_SURFACING_21
+  - first:
+      213: 8669628909021951333
+    second: Sandworm_SURFACING_0
+  - first:
+      213: -8554610178980355506
+    second: Sandworm_SURFACING_1
+  - first:
+      213: -7035735708488978965
+    second: Sandworm_SURFACING_2
+  - first:
+      213: -2468916169802563675
+    second: Sandworm_SURFACING_3
+  - first:
+      213: 5939541455456395464
+    second: Sandworm_SURFACING_4
+  - first:
+      213: 3725022754360365800
+    second: Sandworm_SURFACING_5
+  - first:
+      213: -4556652487751174795
+    second: Sandworm_SURFACING_6
+  - first:
+      213: -5326479636521786916
+    second: Sandworm_SURFACING_7
+  - first:
+      213: 7422212236196775224
+    second: Sandworm_SURFACING_8
+  - first:
+      213: 2805084096481583918
+    second: Sandworm_SURFACING_9
+  - first:
+      213: -2787932529491987855
+    second: Sandworm_SURFACING_10
+  - first:
+      213: 877359881355961032
+    second: Sandworm_SURFACING_11
+  - first:
+      213: -9069571771509327945
+    second: Sandworm_SURFACING_12
+  - first:
+      213: -6316207633736447073
+    second: Sandworm_SURFACING_13
+  - first:
+      213: -1861971309113096694
+    second: Sandworm_SURFACING_14
+  - first:
+      213: 7446701793315923118
+    second: Sandworm_SURFACING_15
+  - first:
+      213: 6970088591687885639
+    second: Sandworm_SURFACING_16
+  - first:
+      213: 8242048341572982847
+    second: Sandworm_SURFACING_17
+  - first:
+      213: -5998849220317881059
+    second: Sandworm_SURFACING_18
+  - first:
+      213: -4306338964394096558
+    second: Sandworm_SURFACING_19
+  - first:
+      213: 4305056817024315168
+    second: Sandworm_SURFACING_20
+  - first:
+      213: -8869655815670366151
+    second: Sandworm_SURFACING_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565f5b02f85b05870800000000000000
+      internalID: 8669628909021951333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e426fe1dd5be74980800000000000000
+      internalID: -8554610178980355506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedabf966ab0c5e90800000000000000
+      internalID: -7035735708488978965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_3
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af33be03d5acbdd0800000000000000
+      internalID: -2468916169802563675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_4
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c06f251c7d7d6250800000000000000
+      internalID: 5939541455456395464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_5
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e295e58570f1b330800000000000000
+      internalID: 3725022754360365800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_6
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575f0be54b483c0c0800000000000000
+      internalID: -4556652487751174795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_7
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd164c1ddfa8416b0800000000000000
+      internalID: -5326479636521786916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_8
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835011a44bef00760800000000000000
+      internalID: 7422212236196775224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_9
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23e1efaf19ade620800000000000000
+      internalID: 2805084096481583918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_10
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172bfd1b2264f49d0800000000000000
+      internalID: -2787932529491987855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_11
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2a664e9220d2c00800000000000000
+      internalID: 877359881355961032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_12
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7b646c688622280800000000000000
+      internalID: -9069571771509327945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_13
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b478f2f925858a0800000000000000
+      internalID: -6316207633736447073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a064852a5f2f826e0800000000000000
+      internalID: -1861971309113096694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_15
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea42cd2a3dff75760800000000000000
+      internalID: 7446701793315923118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_16
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7432f8025aabab060800000000000000
+      internalID: 6970088591687885639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_17
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f381e056c43a16270800000000000000
+      internalID: 8242048341572982847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_18
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1dd2d9da6ecfbca0800000000000000
+      internalID: -5998849220317881059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_19
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258cdd0278fcc34c0800000000000000
+      internalID: -4306338964394096558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_20
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fab9cad52aebb30800000000000000
+      internalID: 4305056817024315168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SURFACING_21
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 13
+        width: 71
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9308df27707a8e480800000000000000
+      internalID: -8869655815670366151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

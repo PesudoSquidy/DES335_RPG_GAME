@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: c2e42d03c0cefab4eb9376166856e460
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1598875637112684375
+    second: Sandworm_SENSING_0
+  - first:
+      213: 6208012410410974653
+    second: Sandworm_SENSING_1
+  - first:
+      213: -8245964030469028665
+    second: Sandworm_SENSING_2
+  - first:
+      213: -7564300384163027552
+    second: Sandworm_SENSING_3
+  - first:
+      213: -5106355404724375751
+    second: Sandworm_SENSING_4
+  - first:
+      213: 3768358243121426728
+    second: Sandworm_SENSING_5
+  - first:
+      213: -6921840206008688372
+    second: Sandworm_SENSING_6
+  - first:
+      213: -4256144632116471710
+    second: Sandworm_SENSING_7
+  - first:
+      213: -493256658153119485
+    second: Sandworm_SENSING_8
+  - first:
+      213: -8036181592967278777
+    second: Sandworm_SENSING_9
+  - first:
+      213: 5733803487801950468
+    second: Sandworm_SENSING_10
+  - first:
+      213: -1120817505027191737
+    second: Sandworm_SENSING_11
+  - first:
+      213: -1472174337290992470
+    second: Sandworm_SENSING_12
+  - first:
+      213: 7847035693758945108
+    second: Sandworm_SENSING_13
+  - first:
+      213: -362912187503624340
+    second: Sandworm_SENSING_14
+  - first:
+      213: -6193398186153427979
+    second: Sandworm_SENSING_15
+  - first:
+      213: 632534959317669716
+    second: Sandworm_SENSING_16
+  - first:
+      213: -7764306367856823012
+    second: Sandworm_SENSING_17
+  - first:
+      213: -6931465566251223915
+    second: Sandworm_SENSING_18
+  - first:
+      213: -6506300262675355379
+    second: Sandworm_SENSING_19
+  - first:
+      213: -7942011211845732435
+    second: Sandworm_SENSING_20
+  - first:
+      213: -1913123519611704462
+    second: Sandworm_SENSING_21
+  - first:
+      213: 8216581924381461124
+    second: Sandworm_SENSING_22
+  - first:
+      213: 5035500111553575698
+    second: Sandworm_SENSING_23
+  - first:
+      213: -8078009793649386569
+    second: Sandworm_SENSING_24
+  - first:
+      213: 2527639010649993180
+    second: Sandworm_SENSING_25
+  - first:
+      213: 8063375412824677638
+    second: Sandworm_SENSING_26
+  - first:
+      213: -4508713048545352579
+    second: Sandworm_SENSING_27
+  - first:
+      213: -8660081425390968852
+    second: Sandworm_SENSING_28
+  - first:
+      213: 5548100047811246051
+    second: Sandworm_SENSING_29
+  - first:
+      213: 5254481744270620427
+    second: Sandworm_SENSING_30
+  - first:
+      213: -7251949336256109036
+    second: Sandworm_SENSING_31
+  - first:
+      213: -4973706410147086393
+    second: Sandworm_SENSING_32
+  - first:
+      213: 6119899445976497258
+    second: Sandworm_SENSING_33
+  - first:
+      213: 4880784059370592806
+    second: Sandworm_SENSING_34
+  - first:
+      213: -5030578166176355010
+    second: Sandworm_SENSING_35
+  - first:
+      213: -682706796390367618
+    second: Sandworm_SENSING_36
+  - first:
+      213: 5472029907966659739
+    second: Sandworm_SENSING_37
+  - first:
+      213: 4725337411634176263
+    second: Sandworm_SENSING_38
+  - first:
+      213: -1928589023065164777
+    second: Sandworm_SENSING_39
+  - first:
+      213: -4090091398083891320
+    second: Sandworm_SENSING_40
+  - first:
+      213: 3340286967240578962
+    second: Sandworm_SENSING_41
+  - first:
+      213: 7193529425716768104
+    second: Sandworm_SENSING_42
+  - first:
+      213: -5269673613923771881
+    second: Sandworm_SENSING_43
+  - first:
+      213: 9111732125816131716
+    second: Sandworm_SENSING_44
+  - first:
+      213: 5001425667569451980
+    second: Sandworm_SENSING_45
+  - first:
+      213: -6470647016496280555
+    second: Sandworm_SENSING_46
+  - first:
+      213: 7598611256091796125
+    second: Sandworm_SENSING_47
+  - first:
+      213: 6754234196148210032
+    second: Sandworm_SENSING_48
+  - first:
+      213: -1292318124729512376
+    second: Sandworm_SENSING_49
+  - first:
+      213: -6938869163800248419
+    second: Sandworm_SENSING_50
+  - first:
+      213: 6259613052661344209
+    second: Sandworm_SENSING_0
+  - first:
+      213: 699681916147372765
+    second: Sandworm_SENSING_1
+  - first:
+      213: 7636906471162481888
+    second: Sandworm_SENSING_2
+  - first:
+      213: -5770797380341654864
+    second: Sandworm_SENSING_3
+  - first:
+      213: 8970464340264616992
+    second: Sandworm_SENSING_4
+  - first:
+      213: -6935007883753939520
+    second: Sandworm_SENSING_5
+  - first:
+      213: 4774030668810483044
+    second: Sandworm_SENSING_6
+  - first:
+      213: -1614020938398240971
+    second: Sandworm_SENSING_7
+  - first:
+      213: -6274390010585177379
+    second: Sandworm_SENSING_8
+  - first:
+      213: 8342202354767146055
+    second: Sandworm_SENSING_9
+  - first:
+      213: 7065668162989278454
+    second: Sandworm_SENSING_10
+  - first:
+      213: 5232894121419230507
+    second: Sandworm_SENSING_11
+  - first:
+      213: -3656792856700456433
+    second: Sandworm_SENSING_12
+  - first:
+      213: -4906707725894817522
+    second: Sandworm_SENSING_13
+  - first:
+      213: -1034614107557351436
+    second: Sandworm_SENSING_14
+  - first:
+      213: -4763787545905746518
+    second: Sandworm_SENSING_15
+  - first:
+      213: 6632585486461917129
+    second: Sandworm_SENSING_16
+  - first:
+      213: 2476113392260512572
+    second: Sandworm_SENSING_17
+  - first:
+      213: -6183643224958874945
+    second: Sandworm_SENSING_18
+  - first:
+      213: 8913680371595419898
+    second: Sandworm_SENSING_19
+  - first:
+      213: -6806731924149244901
+    second: Sandworm_SENSING_20
+  - first:
+      213: -1044301638852744090
+    second: Sandworm_SENSING_21
+  - first:
+      213: 817785379394823157
+    second: Sandworm_SENSING_22
+  - first:
+      213: -468420719132174020
+    second: Sandworm_SENSING_23
+  - first:
+      213: -7140215515920728478
+    second: Sandworm_SENSING_24
+  - first:
+      213: 9201266329230611869
+    second: Sandworm_SENSING_25
+  - first:
+      213: -6866695309780632440
+    second: Sandworm_SENSING_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sandworm_SENSING_1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd29ab3eef4c5b900800000000000000
+      internalID: 699681916147372765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec858439fdbbf960800000000000000
+      internalID: 7636906471162481888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_3
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba1bf98b520aefa0800000000000000
+      internalID: -5770797380341654864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_4
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02408c73acd7d7c70800000000000000
+      internalID: 8970464340264616992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_5
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd105ea217e1cf90800000000000000
+      internalID: -6935007883753939520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_6
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465f4417993c04240800000000000000
+      internalID: 4774030668810483044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_7
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53feaba0288d999e0800000000000000
+      internalID: -1614020938398240971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_8
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2afcc4783ece8a0800000000000000
+      internalID: -6274390010585177379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_9
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ca250c7d475c370800000000000000
+      internalID: 8342202354767146055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_10
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f443cb32cb4e0260800000000000000
+      internalID: 7065668162989278454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_11
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d4c667a79fe9840800000000000000
+      internalID: 5232894121419230507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_12
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02fe277546704dc0800000000000000
+      internalID: -3656792856700456433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_13
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09ef55f15fd7ebb0800000000000000
+      internalID: -4906707725894817522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_14
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ffaf6763ff44a1f0800000000000000
+      internalID: -1034614107557351436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_15
+      rect:
+        serializedVersion: 2
+        x: 1613
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadabd47770a3edb0800000000000000
+      internalID: -4763787545905746518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_16
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c759f6eb5dab0c50800000000000000
+      internalID: 6632585486461917129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_17
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b7641e20cec5220800000000000000
+      internalID: 2476113392260512572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_18
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba439ecf394f2aa0800000000000000
+      internalID: -6183643224958874945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_19
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0215e3211c3bb70800000000000000
+      internalID: 8913680371595419898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_20
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ce5cbe061a981a0800000000000000
+      internalID: -6806731924149244901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_21
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ce2d14135e181f0800000000000000
+      internalID: -1044301638852744090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_22
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f32651487b595b00800000000000000
+      internalID: 817785379394823157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_23
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3991b676d5df79f0800000000000000
+      internalID: -468420719132174020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_24
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26effc991dbd8ec90800000000000000
+      internalID: -7140215515920728478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_25
+      rect:
+        serializedVersion: 2
+        x: 2763
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d959d8dd9f671bf70800000000000000
+      internalID: 9201266329230611869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_26
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c3faf3ff894b0a0800000000000000
+      internalID: -6866695309780632440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_SENSING_27
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 0
+        width: 110
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d74294bde55dd61c0800000000000000
+      internalID: -4508713048545352579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cfe2304b756b92842bb1685b13c1d50b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

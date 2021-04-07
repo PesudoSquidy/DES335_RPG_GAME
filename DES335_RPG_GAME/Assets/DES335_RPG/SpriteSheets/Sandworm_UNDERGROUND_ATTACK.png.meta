@@ -1,0 +1,557 @@
+fileFormatVersion: 2
+guid: 7e0b6d0ff4b2ed443a99e4fbec513738
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8480947915899599565
+    second: Sandworm_UNDERGROUND_ATTACK_0
+  - first:
+      213: -2099946103446285633
+    second: Sandworm_UNDERGROUND_ATTACK_1
+  - first:
+      213: 7517172235857963354
+    second: Sandworm_UNDERGROUND_ATTACK_2
+  - first:
+      213: 2460431687326959420
+    second: Sandworm_UNDERGROUND_ATTACK_3
+  - first:
+      213: 6945343185819892890
+    second: Sandworm_UNDERGROUND_ATTACK_4
+  - first:
+      213: -3940837523710306261
+    second: Sandworm_UNDERGROUND_ATTACK_5
+  - first:
+      213: 8833897741130191400
+    second: Sandworm_UNDERGROUND_ATTACK_6
+  - first:
+      213: 3112514204107655476
+    second: Sandworm_UNDERGROUND_ATTACK_7
+  - first:
+      213: 5373838386208864422
+    second: Sandworm_UNDERGROUND_ATTACK_8
+  - first:
+      213: 4165187082342888386
+    second: Sandworm_UNDERGROUND_ATTACK_9
+  - first:
+      213: 3554260876677224090
+    second: Sandworm_UNDERGROUND_ATTACK_10
+  - first:
+      213: -5018962125520261775
+    second: Sandworm_UNDERGROUND_ATTACK_11
+  - first:
+      213: 5753675245287034571
+    second: Sandworm_UNDERGROUND_ATTACK_12
+  - first:
+      213: 5082681148662467702
+    second: Sandworm_UNDERGROUND_ATTACK_13
+  - first:
+      213: -8252550482423844032
+    second: Sandworm_UNDERGROUND_ATTACK_14
+  - first:
+      213: -2132982995346479233
+    second: Sandworm_UNDERGROUND_ATTACK_15
+  - first:
+      213: 8324347939481503598
+    second: Sandworm_UNDERGROUND_ATTACK_16
+  - first:
+      213: 4274012630518419807
+    second: Sandworm_UNDERGROUND_ATTACK_17
+  - first:
+      213: -7281233415806056954
+    second: Sandworm_UNDERGROUND_ATTACK_18
+  - first:
+      213: -8317815832153743985
+    second: Sandworm_UNDERGROUND_ATTACK_0
+  - first:
+      213: -5104078109863483077
+    second: Sandworm_UNDERGROUND_ATTACK_1
+  - first:
+      213: 3799608694343443273
+    second: Sandworm_UNDERGROUND_ATTACK_2
+  - first:
+      213: 8251430064283794046
+    second: Sandworm_UNDERGROUND_ATTACK_3
+  - first:
+      213: -2251915213093874249
+    second: Sandworm_UNDERGROUND_ATTACK_4
+  - first:
+      213: -3599094924720207088
+    second: Sandworm_UNDERGROUND_ATTACK_5
+  - first:
+      213: -6333614575787621603
+    second: Sandworm_UNDERGROUND_ATTACK_6
+  - first:
+      213: -1412149301877722901
+    second: Sandworm_UNDERGROUND_ATTACK_7
+  - first:
+      213: -2461788134753606148
+    second: Sandworm_UNDERGROUND_ATTACK_8
+  - first:
+      213: 7228465278618234073
+    second: Sandworm_UNDERGROUND_ATTACK_9
+  - first:
+      213: -2790881379827654978
+    second: Sandworm_UNDERGROUND_ATTACK_10
+  - first:
+      213: -3349228928928806953
+    second: Sandworm_UNDERGROUND_ATTACK_11
+  - first:
+      213: 3999764954719399446
+    second: Sandworm_UNDERGROUND_ATTACK_12
+  - first:
+      213: -7897501572458715976
+    second: Sandworm_UNDERGROUND_ATTACK_13
+  - first:
+      213: 2651164636447890757
+    second: Sandworm_UNDERGROUND_ATTACK_14
+  - first:
+      213: 6551290288469803517
+    second: Sandworm_UNDERGROUND_ATTACK_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d1b51029e219c80800000000000000
+      internalID: -8317815832153743985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b396dbb600caa29b0800000000000000
+      internalID: -5104078109863483077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943a3dfe9fbeab430800000000000000
+      internalID: 3799608694343443273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_3
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a3d9eece7f28270800000000000000
+      internalID: 8251430064283794046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_4
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5dd3b7b079fb0e0800000000000000
+      internalID: -2251915213093874249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_5
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b042b1c327d0ec0800000000000000
+      internalID: -3599094924720207088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_6
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1341f9a91b7a18a0800000000000000
+      internalID: -6333614575787621603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_7
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be033cb11b9076ce0800000000000000
+      internalID: -1412149301877722901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_8
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf56dbb0cb8f5ddd0800000000000000
+      internalID: -2461788134753606148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_9
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dce8437fdaa05460800000000000000
+      internalID: 7228465278618234073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_10
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebede19fb2cc449d0800000000000000
+      internalID: -2790881379827654978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_11
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d78cbbb8062581d0800000000000000
+      internalID: -3349228928928806953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_12
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e2b1fd805028730800000000000000
+      internalID: 3999764954719399446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_13
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b46280a920766290800000000000000
+      internalID: -7897501572458715976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_14
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ddd8cb034dac420800000000000000
+      internalID: 2651164636447890757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sandworm_UNDERGROUND_ATTACK_15
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 0
+        width: 88
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df185b0aecbdaea50800000000000000
+      internalID: 6551290288469803517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
