@@ -7,22 +7,39 @@ public class Flamethrower : MonoBehaviour
 
     private Animator anim;
 
+    private PlayerAttack playerAttack;
+
     private Augment equipmentAugment;
+
 
     void Start()
     {
-        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
-
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
+
+        if (playerAttack == null)
+            playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+
+        if (playerAttack.eq_Name == "Flamethrower")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Flamethrower")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
     }
 
     void Update()
     {
-        if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Burn)
-            anim.SetBool("isCyro", false);
-        else if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Freeze)
-            anim.SetBool("isCyro", true);
+        if (playerAttack.eq_Name == "Flamethrower")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if(playerAttack.eq_Name_2 == "Flamethrower")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
+
+        if (equipmentAugment != null)
+        {
+            if (equipmentAugment.augmentStatus != Augment.AugmentStatus.Freeze)
+                anim.SetBool("isCyro", false);
+            else if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Freeze)
+                anim.SetBool("isCyro", true);
+        }
     }
 
     void OnTriggerStay2D(Collider2D col2D)

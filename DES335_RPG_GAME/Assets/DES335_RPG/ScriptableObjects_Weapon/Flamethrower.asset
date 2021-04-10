@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Flamethrower
   icon: {fileID: 21300000, guid: 80e159dab3e6f1142bc5062eb184ccaf, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 5429407679164346440, guid: e8bfee347b33fdb448e7f6ce9bcf49ab, type: 3}
   isEquipment: 1
   isAugment: 0
   coolDown: 0

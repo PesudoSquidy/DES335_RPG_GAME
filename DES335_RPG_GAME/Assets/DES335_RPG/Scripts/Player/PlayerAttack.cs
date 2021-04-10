@@ -29,6 +29,16 @@ public class PlayerAttack : MonoBehaviour
 
     GameObject weaponDirection;
 
+    // Weapon_1
+    public string eq_Name = "Null";
+    GameObject eq_GO = null;
+    public float eq_CD = 0.0f;
+
+    // Weapon_2
+    public string eq_Name_2 = "Null";
+    GameObject eq_GO_2 = null;
+    public float eq_CD_2 = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,62 +60,64 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (equipmentCooldown > 0)
-            equipmentCooldown -= Time.deltaTime;
+        if (eq_CD > 0)
+            eq_CD -= Time.deltaTime;
 
-        // Left Mouse Click
+        if (eq_CD_2 > 0)
+            eq_CD_2 -= Time.deltaTime;
+
+        // Reset value at start - can be changed later
+        isAttacking = false;
+
         if (playerSkill.isDigging == false && !gameManager.ui_active)
         {
-            //Debug.Log(equipmentManager.MainEquipment().name);
-
-            if (Input.GetButtonDown("Attack"))
+            // Update the equipment data
+            if(Input.GetButtonDown("Attack"))
             {
-                if (equipmentCooldown <= 0)
+                eq_Name = equipmentManager.MainEquipment().name;
+                eq_GO = equipmentManager.MainEquipment().prefab;
+
+                //Debug.Log("Set 1st Weapon: " + eq_Name);
+            }
+            else if(Input.GetButtonDown("Attack_2"))
+            {
+                eq_Name_2 = equipmentManager.SideEquipment().name;
+                eq_GO_2 = equipmentManager.SideEquipment().prefab;
+
+                //Debug.Log("Set 2nd Weapon: " + eq_Name_2);
+            }
+
+            // Set the cooldown of the weapon
+            //if (equipmentCooldown <= 0)
+            {
+                if (Input.GetButtonDown("Attack") && eq_CD <= 0)
                 {
-                    if (equipmentManager.MainEquipment().name == "Bow")
-                    {
-                        anim.SetTrigger("isAttacking");
-                        SpawnRangedProjectile(arrow);
-                    }
-                    else if (equipmentManager.MainEquipment().name == "Boomerang")
-                    {
-                        GameObject boomerang = equipmentManager.MainEquipment().prefab;
-                        equipmentCooldown = equipmentManager.MainEquipment().coolDown;
-                        SpawnRangedProjectile(boomerang);
-                    }
-                    else if (equipmentManager.MainEquipment().name == "Bomb")
-                    {
-                        GameObject bomb = equipmentManager.MainEquipment().prefab;
-                        equipmentCooldown = equipmentManager.MainEquipment().coolDown;
-                        Instantiate(bomb, gameObject.transform.position, Quaternion.identity);
-                    }
+                    UtiliseWeapon(eq_Name, eq_GO);
+                    eq_CD = equipmentManager.MainEquipment().coolDown;
+
+                    //Debug.Log("Set 1st CD");
+                }
+                else if (Input.GetButtonDown("Attack_2") && eq_CD_2 <= 0)
+                {
+                    UtiliseWeapon(eq_Name_2, eq_GO_2);
+                    eq_CD_2 = equipmentManager.SideEquipment().coolDown;
+
+                    //Debug.Log("Set 2nd CD");
                 }
             }
 
-            if (Input.GetButton("Attack"))
+            // Set the continuous weapon attack
+            if(Input.GetButton("Attack"))
             {
-                if (equipmentManager.MainEquipment().name == "Flamethrower")
-                {
-                    isAttacking = true;
-                    playerMovement.lockFaceDir = true;
-
-                    if (weaponDirection == null)
-                        weaponDirection = Instantiate(flamethrower);
-                    else
-                    {
-                        for (int i = 0; i < weaponDirection.transform.childCount; ++i)
-                            weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
-
-                        weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", true);
-                    }
-                }
+                if (eq_Name == "Flamethrower")
+                    UtiliseWeapon(eq_Name, eq_GO);
             }
-            else if (Input.GetButtonUp("Attack"))
+            else if(Input.GetButtonUp("Attack"))
             {
-                isAttacking = false;
-
-                if (equipmentManager.MainEquipment().name == "Flamethrower")
+                if (eq_Name == "Flamethrower")
                 {
+                    Debug.Log("Turn off Flamethrower_1");
+
                     playerMovement.lockFaceDir = false;
 
                     for (int i = 0; i < weaponDirection.transform.childCount; ++i)
@@ -115,15 +127,81 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
-            if (weaponDirection && Input.GetButton("Attack"))
+            if (Input.GetButton("Attack_2"))
+            {
+                if (eq_Name_2 == "Flamethrower")
+                    UtiliseWeapon(eq_Name_2, eq_GO_2);
+            }
+            else if (Input.GetButtonUp("Attack_2"))
+            {
+                if (eq_Name_2 == "Flamethrower")
+                {
+                    Debug.Log("Turn off Flamethrower_2");
+
+                    playerMovement.lockFaceDir = false;
+
+                    for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+                        weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+                    weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", false);
+                }
+            }
+
+            //if (Input.GetButton("Attack"))
+            //{
+            //    if (eq_Name == "Flamethrower")
+            //        UtiliseWeapon(eq_Name, eq_GO);
+            //}
+            //else if (Input.GetButton("Attack_2"))
+            //{
+            //    if (eq_Name_2 == "Flamethrower")
+            //    {
+            //        if (eq_Name_2 == "Flamethrower")
+            //        {
+            //            isAttacking = true;
+            //            playerMovement.lockFaceDir = true;
+
+            //            if (weaponDirection == null)
+            //            {
+            //                Debug.Log("weaponDir: " + weaponDirection);
+            //                weaponDirection = Instantiate(flamethrower);
+            //            }
+            //            else
+            //            {
+            //                for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+            //                    weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+            //                weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", true);
+            //            }
+            //        }
+            //    }
+            //    //UtiliseWeapon(eq_Name_2, eq_GO_2);
+            //}
+
+            //else if (Input.GetButtonUp("Attack") || Input.GetButtonUp("Attack_2"))
+            //{
+            //    isAttacking = false;
+
+            //    if (eq_Name == "Flamethrower" || eq_Name_2 == "Flamethrower")
+            //    {
+            //        playerMovement.lockFaceDir = false;
+
+            //        for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+            //            weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+            //        weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", false);
+            //    }
+            //}
+
+            if (weaponDirection && Input.GetButton("Attack") || weaponDirection && Input.GetButton("Attack_2"))
                 UpdateWeaponDirection();
         }
         else if (playerSkill.isDigging && isAttacking)
         {
             // Turn off any variable related to attacking - Diggging takes priority
-            isAttacking = false;
+            //isAttacking = false;
 
-            if (equipmentManager.MainEquipment().name == "Flamethrower")
+            if (eq_Name == "Flamethrower" || eq_Name_2 == "Flamethrower")
             {
                 playerMovement.lockFaceDir = false;
 
@@ -135,6 +213,35 @@ public class PlayerAttack : MonoBehaviour
 
             if (weaponDirection)
                 UpdateWeaponDirection();
+        }
+    }
+
+    void UtiliseWeapon(string eqName, GameObject eqGO)
+    {
+        if (eqName == "Bow")
+        {
+            anim.SetTrigger("isAttacking");
+            SpawnRangedProjectile(arrow);
+        }
+        else if (eqName == "Boomerang")
+            SpawnRangedProjectile(eqGO);
+        else if (eqName == "Bomb")
+            Instantiate(eqGO, gameObject.transform.position, Quaternion.identity);
+
+        if (eqName == "Flamethrower")
+        {
+            isAttacking = true;
+            playerMovement.lockFaceDir = true;
+
+            if (weaponDirection == null)
+                weaponDirection = Instantiate(flamethrower);
+            else
+            {
+                for (int i = 0; i < weaponDirection.transform.childCount; ++i)
+                    weaponDirection.transform.GetChild(i).gameObject.SetActive(true);
+
+                weaponDirection.GetComponentInChildren<Animator>().SetBool("isAlive", true);
+            }
         }
     }
 

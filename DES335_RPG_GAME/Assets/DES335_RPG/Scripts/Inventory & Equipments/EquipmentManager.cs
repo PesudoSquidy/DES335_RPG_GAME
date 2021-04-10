@@ -110,6 +110,11 @@ public class EquipmentManager : MonoBehaviour
         return currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
     }
 
+    public Equipment SideEquipment()
+    {
+        return currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon];
+    }
+
     public void SwapMainEquipment()
     {
         Equipment tempEquipment = currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon];
