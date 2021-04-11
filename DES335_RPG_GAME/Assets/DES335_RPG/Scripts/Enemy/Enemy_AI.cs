@@ -24,7 +24,7 @@ public abstract class Enemy_AI : MonoBehaviour
     protected EnemyHealth enemyHealth;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         if (anim == null)
             anim = GetComponent<Animator>();

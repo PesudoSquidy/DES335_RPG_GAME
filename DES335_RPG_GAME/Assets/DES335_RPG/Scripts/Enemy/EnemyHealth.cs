@@ -19,12 +19,15 @@ public abstract class EnemyHealth : MonoBehaviour
     [SerializeField] private int burnDamage;
 
     private float statusConditionTimer;
+    private float tickCounter;
 
     [SerializeField] private float freezeDuration;
 
     // Health Status Condition Part - To be seperated
     [SerializeField] private GameObject burnStatusAnim;
     [SerializeField] private GameObject freezeStatusAnim;
+
+    private Coroutine statusDamageCor;
 
     void Awake()
     {
@@ -36,7 +39,8 @@ public abstract class EnemyHealth : MonoBehaviour
 
         dieOnce = false;
         currStatusCondition = StatusCondition.None;
-        statusConditionTimer = 0;
+        statusConditionTimer = 0.0f;
+        tickCounter = 0.0f;
 
         if (burnStatusAnim != null)
             burnStatusAnim.SetActive(false);
@@ -50,12 +54,19 @@ public abstract class EnemyHealth : MonoBehaviour
         if(currStatusCondition != StatusCondition.None && statusConditionTimer > 0)
         {
             statusConditionTimer -= Time.deltaTime;
+            tickCounter += Time.deltaTime;
+
+            if(tickCounter >= burnTick)
+            {
+                tickCounter -= burnTick;
+                StatusDamage();
+            }
 
             if (statusConditionTimer <= 0)
             {
                 currStatusCondition = StatusCondition.None;
                 statusConditionTimer = 0;
-                CancelInvoke("TakeDamage");
+                tickCounter = 0.0f;
 
                 if(burnStatusAnim != null)
                     burnStatusAnim.SetActive(false);
@@ -77,8 +88,6 @@ public abstract class EnemyHealth : MonoBehaviour
 
             if (burnStatusAnim != null)
                 burnStatusAnim.SetActive(true);
-
-            InvokeRepeating("StatusDamage", 0.0f, burnTick);
         }
         else if(newStatus == StatusCondition.Freeze && currStatusCondition != StatusCondition.Freeze)
         {

@@ -46,7 +46,11 @@ public class Flamethrower : MonoBehaviour
     {
         if (col2D.gameObject.CompareTag("Enemy") || col2D.gameObject.CompareTag("FlyingEnemy"))
         {
-            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+            if (playerAttack.eq_Name == "Flamethrower")
+                equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+            else if (playerAttack.eq_Name_2 == "Flamethrower")
+                equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
+
             EnemyHealth enemyHP_Script = col2D.GetComponent<EnemyHealth>();
 
             if (equipmentAugment != null)

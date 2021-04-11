@@ -13,71 +13,93 @@ public class Rhino_AI : Enemy_AI
     public CameraShake cameraShake;
     public float linearDrag = 0f;
 
+    PlayerSkill playerSkill;
+    public override void Start()
+    {
+        base.Start();
+        playerSkill = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkill>();
+    }
+
     public override void FixedUpdate()
     {
-
-        if (path == null)
-            return;
-
-        if (curretWaypoint >= path.vectorPath.Count)
+        if (playerSkill.isDigging == false)
         {
-            //reachedEndOfPath = true;
-            return;
-        }
-        //else
-        //{
-        //    reachedEndOfPath = false;
-        //}
+            if (path == null)
+                return;
 
-        if (canMove && enemyHealth.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
-        {
-            // Decrease drag
-            rb.drag = 0.0f;
-
-            Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
-            Vector2 force = direction * speed * Time.deltaTime;
-
-            //rb.AddForce(force, ForceMode2D.Force);
-            rb.AddForce(force);
-
-            float distance = Vector2.Distance(rb.position, path.vectorPath[curretWaypoint]);
-
-            if (distance < nextWaypointDistance)
+            if (curretWaypoint >= path.vectorPath.Count)
             {
-                ++curretWaypoint;
+                //reachedEndOfPath = true;
+                return;
             }
+            //else
+            //{
+            //    reachedEndOfPath = false;
+            //}
 
-            Animation(force);
+            if (canMove && enemyHealth.currStatusCondition != EnemyHealth.StatusCondition.Freeze)
+            {
+                // Decrease drag
+                rb.drag = 0.0f;
+
+                Vector2 direction = ((Vector2)path.vectorPath[curretWaypoint] - rb.position).normalized;
+                Vector2 force = direction * speed * Time.deltaTime;
+
+                //rb.AddForce(force, ForceMode2D.Force);
+                rb.AddForce(force);
+
+                float distance = Vector2.Distance(rb.position, path.vectorPath[curretWaypoint]);
+
+                if (distance < nextWaypointDistance)
+                {
+                    ++curretWaypoint;
+                }
+
+                Animation(force);
+            }
+            else if (enemyHealth.currStatusCondition == EnemyHealth.StatusCondition.Freeze)
+            {
+                // Increase drag
+                rb.drag = linearDrag;
+            }
+            else if (canMove == false)
+            {
+                rb.velocity = Vector3.zero;
+            }
         }
-        else if(enemyHealth.currStatusCondition == EnemyHealth.StatusCondition.Freeze)
+        else
         {
-            // Increase drag
             rb.drag = linearDrag;
-        }
-        else if(canMove == false)
-        {
-            rb.velocity = Vector3.zero;
+            //rb.velocity = Vector3.zero;
+
+            if(rb.velocity.magnitude <= 1.0f)
+                Animation(Vector2.zero);
         }
     }
 
 
     public override void Animation(Vector2 force)
     {
-        // Set animation 
-        anim.SetBool("isMoving", canMove);
-
-        // Moving toward to the right
-        //if (force.x >= 0.01f)
-        if(rb.velocity.x >= 0.01f)
+        if (force.magnitude <= 0)
+            anim.SetBool("isMoving", false);
+        else
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }
+            // Set animation 
+            anim.SetBool("isMoving", canMove);
 
-        // Moving towards left
-        //else if (force.x <= -0.01f)
-        else if (rb.velocity.x <= -0.01f)
-        {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            // Moving toward to the right
+            //if (force.x >= 0.01f)
+            if (rb.velocity.x >= 0.01f)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+
+            // Moving towards left
+            //else if (force.x <= -0.01f)
+            else if (rb.velocity.x <= -0.01f)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
         }
     }
 
