@@ -18,6 +18,7 @@ public class Boomerang : MonoBehaviour
     private float approximateThreshold = 0.1f;
 
     private PlayerMovement playerMovement;
+    private PlayerAttack playerAttack;
 
     private Augment equipmentAugment;
 
@@ -27,7 +28,13 @@ public class Boomerang : MonoBehaviour
 
         playerMovement = player.GetComponent<PlayerMovement>();
 
-        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        if (playerAttack == null)
+            playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+
+        if (playerAttack.eq_Name == "Boomerang")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Boomerang")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
 
         //Up
         //if (transform.localRotation.z <= 0)
@@ -88,6 +95,11 @@ public class Boomerang : MonoBehaviour
         }
         else if(col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("FlyingEnemy"))
         {
+            if (playerAttack.eq_Name == "Boomerang")
+                equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+            else if (playerAttack.eq_Name_2 == "Boomerang")
+                equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
+
             EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
 
             enemyHP_Script.TakeDamage(damage);

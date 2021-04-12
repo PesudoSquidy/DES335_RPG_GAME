@@ -11,12 +11,14 @@ public class Sandworm_AI : MonoBehaviour
 
     [SerializeField] private float movementForce;
 
-    private bool move;
-
     [SerializeField] private float distThreshold;
     [SerializeField] private float moveTime;
 
     private float currMoveTime;
+
+    enum Sandworm_State { IDLE, SENSING, DIGGING, ATTACK}
+
+    Sandworm_State currState;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +29,6 @@ public class Sandworm_AI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         // Initialise values
-        move = false;
         currMoveTime = 0.0f;
 
         // Guard & Defaulted Values
@@ -36,15 +37,33 @@ public class Sandworm_AI : MonoBehaviour
 
         if (moveTime <= 0)
             moveTime = 3.0f;
+
+        // Default state at the start
+        currState = Sandworm_State.IDLE;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Testing purposess
-        FaceDirection(playerGO.transform);
+        switch(currState)
+        {
+            case Sandworm_State.IDLE:
+                {
+                    FaceDirection(playerGO.transform);
+                    break;
+                }
+            case Sandworm_State.DIGGING:
+                {
+                    Move(playerGO.transform);
+                    break;
+                }
+        }
 
-        if(Input.GetKeyDown(KeyCode.P))
+        
+        
+
+        // Testing purposess
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Resurfacing();
         }
@@ -54,12 +73,8 @@ public class Sandworm_AI : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.I))
         {
-            move = true;
-        }
-
-        if(move)
-        {
-            move = Move(playerGO.transform);
+            Desurfacing();
+            currState = Sandworm_State.DIGGING;
         }
     }
 
@@ -88,14 +103,13 @@ public class Sandworm_AI : MonoBehaviour
 
     void Desurfacing()
     {
-        anim.SetTrigger("Desurface");
+        //anim.SetTrigger("Desurface");
+        anim.SetBool("Desurface", true);
     }
 
     // Move towards target
     bool Move(Transform target)
     {
-        
-
         //yield return new WaitForSeconds(timer);
 
         // Physics Handling
@@ -110,6 +124,8 @@ public class Sandworm_AI : MonoBehaviour
 
         // Distance 
         float distance = Vector3.Distance(target.position, transform.position);
+
+        Debug.Log("Distance: " + distance);
 
         // Move towards the player
         if (movementForce > 0 && distance > distThreshold && currMoveTime < moveTime)
@@ -127,14 +143,23 @@ public class Sandworm_AI : MonoBehaviour
             distance = Vector2.Distance(target.position, transform.position);
 
             //Debug.Log("Distance: " + distance);
-            Debug.Log("currMoveTime: " + currMoveTime);
-
+            //Debug.Log("currMoveTime: " + currMoveTime);
             return true;
         }
         else
         {
+            // Reset the rb force
             rb.velocity = Vector3.zero;
+
+            // Reset the moveTime
             currMoveTime = 0.0f;
+
+            // Change the state
+            currState = Sandworm_State.IDLE;
+
+            // Change animation
+            anim.SetBool("Desurface", false);
+
             return false;
         }
     }

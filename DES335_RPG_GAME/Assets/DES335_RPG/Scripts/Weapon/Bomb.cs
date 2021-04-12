@@ -17,6 +17,7 @@ public class Bomb : MonoBehaviour
     [SerializeField]
     private Animator anim;
 
+    private PlayerAttack playerAttack;
     private Augment equipmentAugment;
 
     void Start() 
@@ -24,7 +25,14 @@ public class Bomb : MonoBehaviour
         if (anim == null)
             anim = gameObject.GetComponent<Animator>();
 
-        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+
+        if (playerAttack == null)
+            playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+
+        if (playerAttack.eq_Name == "Bomb")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Bomb")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
     }
 
     void Update()
@@ -37,6 +45,11 @@ public class Bomb : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
+        if (playerAttack.eq_Name == "Bomb")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Bomb")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
+
         if (col.gameObject.CompareTag("Enemy"))
         {
             if (timeBeforeExplosion <= 0)

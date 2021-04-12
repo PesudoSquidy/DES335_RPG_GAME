@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8184692822852937927}
   - component: {fileID: 736719380723872237}
   m_Layer: 0
-  m_Name: Booomerang
+  m_Name: Boomerang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1641917169
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 2703662378954127606, guid: bbfdb0ecd9d0fd7498a0685b0341b365,
     type: 3}

@@ -14,6 +14,7 @@ public class Arrow : MonoBehaviour
 
     [SerializeField] private int hitAmount;
 
+    private PlayerAttack playerAttack;
     private Augment equipmentAugment;
 
     // Start is called before the first frame update
@@ -27,13 +28,24 @@ public class Arrow : MonoBehaviour
         if(lifeTime >= 0)
             Destroy(gameObject, lifeTime);
 
-        equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        if (playerAttack == null)
+            playerAttack = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAttack>();
+
+        if (playerAttack.eq_Name == "Bow")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Bow")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
     }
 
     
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy"))
+        if (playerAttack.eq_Name == "Bow")
+            equipmentAugment = EquipmentManager.instance.MainEquipment().augment;
+        else if (playerAttack.eq_Name_2 == "Bow")
+            equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
+
+        if (col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy"))
         {
             EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
 
