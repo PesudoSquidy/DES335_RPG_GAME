@@ -3569,36 +3569,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &165323971
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 165323972}
-  m_Layer: 15
-  m_Name: rangedAttackPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &165323972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165323971}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 787625477}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &169383126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15693,12 +15663,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &787625477 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9096712767630577329, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-    type: 3}
-  m_PrefabInstance: {fileID: 6243625399732833437}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &787967161
 GameObject:
   m_ObjectHideFlags: 0
@@ -27137,36 +27101,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1124935705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1124935706}
-  m_Layer: 15
-  m_Name: spawnTunnelPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1124935706
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124935705}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 787625477}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1125666063
 GameObject:
   m_ObjectHideFlags: 0
@@ -81417,118 +81351,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: movementSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: distThreshold
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: movementForce
-      value: 40000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: moveTime
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: tunnelPassage
-      value: 
-      objectReference: {fileID: 1553802221868310010, guid: ca9e6463ff7624241a33a50512a878f5,
-        type: 3}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: spawnTunnelPos
-      value: 
-      objectReference: {fileID: 1124935705}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: attackRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: tunnelPassageAliveTime
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackSpawnPos
-      value: 
-      objectReference: {fileID: 165323972}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackObject
-      value: 
-      objectReference: {fileID: 5612646429971406308, guid: d1793be6b5d4dc54fb9354d4f85ee0a6,
-        type: 3}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackCooldown
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackForce
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091374831, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
-      propertyPath: rangedAttackDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 423883105718493483, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 782369539421393083, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1108363134353778576, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1226528304481011415, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2865573165334875731, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4984578356035790796, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7300467306234164790, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7426085475292662406, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 9096712767630577328, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
         type: 3}
       propertyPath: m_Name
       value: Enemy_Sandworm
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096712767630577328, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9096712767630577328, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9096712767630577329, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
         type: 3}
@@ -81584,11 +81410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124756093697978327, guid: b58a62e6101b8bb4dbaa86ec74a1407b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b58a62e6101b8bb4dbaa86ec74a1407b, type: 3}
