@@ -17,11 +17,44 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     [SerializeField] private Button itemButton;
 
+    private GameObject swapEquipmentUI;
+    private GameObject swapAugmentUI;
+
     private Inventory inventory;
 
     private void Awake()
     {
         inventory = GameObject.Find("GameManager").GetComponent<Inventory>();
+
+        swapEquipmentUI = GameObject.Find("SwapEquipmentUI");
+        swapAugmentUI = GameObject.Find("SwapAugmentUI");
+    }
+
+    public void ShowSwapEquipmentUI()
+    {
+        if(item is Equipment)
+        {
+            swapEquipmentUI.SetActive(true);
+            swapEquipmentUI.transform.position = Input.mousePosition;
+            swapEquipmentUI.GetComponent<SwapEquipmentUI>().tempEQ = (Equipment)item;
+        }
+        else
+        {
+            swapEquipmentUI.GetComponent<SwapEquipmentUI>().tempEQ = null;
+            swapEquipmentUI.SetActive(false);
+        }
+
+        if(item is Augment)
+        {
+            swapAugmentUI.SetActive(true);
+            swapAugmentUI.transform.position = Input.mousePosition;
+            swapAugmentUI.GetComponent<SwapEquipmentUI>().tempAugment = (Augment)item;
+        }
+        else
+        {
+            swapAugmentUI.GetComponent<SwapEquipmentUI>().tempAugment = null;
+            swapAugmentUI.SetActive(false);
+        }
     }
 
     public void AddItem(Item newItem, int newItemCount)

@@ -41,19 +41,19 @@ public class EquipmentManagerUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("SwapEquipment"))
-        {
-            //equipmentUI.SetActive(!equipmentUI.activeSelf);
+        //if (Input.GetButtonDown("SwapEquipment"))
+        //{
+        //    //equipmentUI.SetActive(!equipmentUI.activeSelf);
 
-            // Swap Equipment
-            if (equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon] != null && equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon] != null)
-            {
-                equipmentManager.SwapMainEquipment();
-            }
-        }
+        //    // Swap Equipment
+        //    if (equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Main_Weapon] != null && equipmentManager.currEquipment[(int)Equipment.EquipmentSlot.Side_Weapon] != null)
+        //    {
+        //        equipmentManager.SwapMainEquipment();
+        //    }
+        //}
     }
 
-    public void UpdateEquipmentUI(Equipment newItem, Equipment oldItem)
+    public void UpdateEquipmentUI(Equipment newItem = null, Equipment oldItem = null)
     {
         for (int i = 0; i < slots.Length; ++i)
         {

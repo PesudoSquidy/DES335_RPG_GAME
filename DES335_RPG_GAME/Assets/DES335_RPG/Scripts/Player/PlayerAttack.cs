@@ -116,8 +116,6 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (eq_Name == "Flamethrower")
                 {
-                    Debug.Log("Turn off Flamethrower_1");
-
                     playerMovement.lockFaceDir = false;
 
                     for (int i = 0; i < weaponDirection.transform.childCount; ++i)

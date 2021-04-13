@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//using UnityEngine.UI;
+//using UnityEngine.EventSystems;
+
 public class InventoryUI : MonoBehaviour
 {
     Inventory inventory;
@@ -14,6 +17,9 @@ public class InventoryUI : MonoBehaviour
 
     public bool ui_active;
 
+    private GameObject swapEquipmentUI;
+    private GameObject swapAugmentUI;
+
     void Awake()
     {
         inventory = Inventory.instance;
@@ -23,11 +29,21 @@ public class InventoryUI : MonoBehaviour
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
         ui_active = false;
+
+        swapEquipmentUI = GameObject.Find("SwapEquipmentUI");
+        swapAugmentUI = GameObject.Find("SwapAugmentUI");
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        swapEquipmentUI.GetComponent<SwapEquipmentUI>().tempEQ = null;
+        swapEquipmentUI.SetActive(false);
+
+        swapAugmentUI.GetComponent<SwapEquipmentUI>().tempAugment = null;
+        swapAugmentUI.SetActive(false);
+
+        inventoryUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,11 +63,20 @@ public class InventoryUI : MonoBehaviour
             ui_active = false;
             inventoryUI.SetActive(false);
         }
+
+        // Right mouse click
+        if(Input.GetMouseButtonDown(1))
+        {
+            swapEquipmentUI.GetComponent<SwapEquipmentUI>().tempEQ = null;
+            swapEquipmentUI.SetActive(false);
+
+            swapAugmentUI.GetComponent<SwapEquipmentUI>().tempAugment = null;
+            swapAugmentUI.SetActive(false);
+        }
     }
 
     void UpdateUI()
     {
-        //Debug.Log("Update Inventory UI");
         for(int i = 0; i < slots.Length; ++i)
         {
             if(i < inventory.items.Count)
