@@ -53,7 +53,7 @@ public class Arrow : MonoBehaviour
 
             if (equipmentAugment != null)
             {
-                Debug.Log(col.name);
+                //Debug.Log(col.name);
 
                 if (equipmentAugment.augmentStatus == Augment.AugmentStatus.Burn)
                 {
