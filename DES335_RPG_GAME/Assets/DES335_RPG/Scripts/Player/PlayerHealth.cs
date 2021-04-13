@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     private bool death = false;
 
-    public enum Status { None, Stun };
+    public enum Status { None, Stun, Rhino_Stun };
 
     public Status statusCondition = Status.None;
 
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (statusCondition == Status.Stun)
+        if (statusCondition == Status.Stun || statusCondition == Status.Rhino_Stun)
             stunAnim.SetActive(true);
         else
             stunAnim.SetActive(false);
@@ -42,6 +42,12 @@ public class PlayerHealth : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (health > 0)
+            health -= damage;
     }
 
     void Death()

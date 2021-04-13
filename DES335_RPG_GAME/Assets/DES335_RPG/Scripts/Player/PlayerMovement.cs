@@ -114,22 +114,27 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log("FixedUpdate " + rb.velocity.magnitude);
+        //Debug.Log("Player vel: " + GetComponent<Rigidbody2D>().velocity);
+        //Debug.Log("Player move: " + movement);
+        //Debug.Log("Player Mspeed: " + moveSpeed);
 
         // Movement
         //if (Mathf.Abs(rb.velocity.magnitude) == 0)
         //if (!collecteralForce)
-        if(playerHealth.statusCondition == PlayerHealth.Status.None)
+        if (playerHealth.statusCondition == PlayerHealth.Status.None)
         {
             //Debug.Log("Velocity: " + rb.velocity);
             //Debug.Log("Velocity magnitude: " + rb.velocity.magnitude);
             //Debug.Log("Normal Movement");
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
-        else
+        else if (playerHealth.statusCondition == PlayerHealth.Status.Rhino_Stun)
         {
             //Debug.Log("Moving Velocity: " + rb.velocity);
             //Debug.Log("Moving Velocity magnitude: " + rb.velocity.magnitude);
+
             rb.AddRelativeForce(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            
             //Debug.Log("Player is unwell");
         }
     }

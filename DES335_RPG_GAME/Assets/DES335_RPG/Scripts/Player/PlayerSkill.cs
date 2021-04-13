@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
-
     private Animator anim;
     private SpriteRenderer sprRender;
 
@@ -55,6 +54,7 @@ public class PlayerSkill : MonoBehaviour
             // Player starts diggin
             else if (playerStamina.currPickaxeStamina >= 0 && playerStamina.bStaminaDrain == false)
             {
+                Physics2D.IgnoreLayerCollision(12, 10, true);
                 Physics2D.IgnoreLayerCollision(12, 11, true);
                 Physics2D.IgnoreLayerCollision(12, 13, true);
                 Physics2D.IgnoreLayerCollision(12, 14, true);
@@ -68,6 +68,7 @@ public class PlayerSkill : MonoBehaviour
             }
             else
             {
+                Physics2D.IgnoreLayerCollision(12, 10, false);
                 Physics2D.IgnoreLayerCollision(12, 11, false);
                 Physics2D.IgnoreLayerCollision(12, 13, false);
                 Physics2D.IgnoreLayerCollision(12, 14, false);

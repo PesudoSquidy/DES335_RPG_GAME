@@ -121,7 +121,7 @@ public class Rhino_AI : Enemy_AI
             // Debug.Log("Force XFer: " + rb.velocity * rb.mass);
             //Debug.Log("Rhino collides with player");
 
-            col.gameObject.GetComponent<PlayerHealth>().AfflictStatusCondition(PlayerHealth.Status.Stun, 2.0f);
+            col.gameObject.GetComponent<PlayerHealth>().AfflictStatusCondition(PlayerHealth.Status.Rhino_Stun, 2.0f);
             col.gameObject.GetComponent<PlayerMovement>().SpecialPhysics(rb.velocity * rb.mass);
             
             rb.velocity = Vector3.zero;

@@ -30,7 +30,7 @@ public class Treant_AI : Enemy_AI
     {
         if (playerSkill.isDigging == false)
         {
-            Debug.Log("Chase Player");
+            //Debug.Log("Chase Player");
             base.FixedUpdate();
         }
         else

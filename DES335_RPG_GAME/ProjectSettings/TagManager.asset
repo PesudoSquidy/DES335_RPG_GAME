@@ -13,6 +13,7 @@ TagManager:
   - Tunnel
   - Obstacle
   - Wall
+  - Boss
   layers:
   - Default
   - TransparentFX

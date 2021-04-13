@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &165323971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165323972}
+  m_Layer: 15
+  m_Name: rangedAttackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165323972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165323971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9096712767630577329}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1124935705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124935706}
+  m_Layer: 15
+  m_Name: spawnTunnelPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1124935706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124935705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9096712767630577329}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423883105718493483
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +71,7 @@ GameObject:
   - component: {fileID: 9211155645855847050}
   - component: {fileID: 5200900575411525541}
   - component: {fileID: 5110806667740751221}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: heart_HUD (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +170,7 @@ GameObject:
   - component: {fileID: 782369539421393081}
   - component: {fileID: 782369539421393080}
   - component: {fileID: 1021650863149954014}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Freeze_Status_Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +271,7 @@ GameObject:
   - component: {fileID: 5919549069897573021}
   - component: {fileID: 568221590634428539}
   - component: {fileID: 5135787152928095835}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: heart_HUD (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +370,7 @@ GameObject:
   - component: {fileID: 2865573165334875728}
   - component: {fileID: 2865573165334875729}
   - component: {fileID: 2865573165334875730}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Burn_Status_Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +471,7 @@ GameObject:
   - component: {fileID: 2633443947297930277}
   - component: {fileID: 8432006412938082741}
   - component: {fileID: 25228017440431987}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: heart_HUD (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2505015302647596874}
   - component: {fileID: 774289429965740140}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Health_HUD_Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +627,7 @@ GameObject:
   - component: {fileID: 581593460259884548}
   - component: {fileID: 3692958928172760374}
   - component: {fileID: 5539158569923209247}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: heart_HUD (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +732,7 @@ GameObject:
   - component: {fileID: 1226528304514549294}
   - component: {fileID: 1921809611509942966}
   - component: {fileID: 1091374831}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Enemy_Sandworm
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -693,6 +753,8 @@ Transform:
   - {fileID: 2865573165334875728}
   - {fileID: 782369539421393081}
   - {fileID: 2505015302647596874}
+  - {fileID: 1124935706}
+  - {fileID: 165323972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -732,7 +794,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9096712767630577328}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -890,9 +952,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca178295089fd04a96b043e21b6fcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementForce: 0
-  distThreshold: 0
-  moveTime: 0
+  rangedAttackRadius: 20
+  rangedAttackObject: {fileID: 5612646429971406308, guid: d1793be6b5d4dc54fb9354d4f85ee0a6,
+    type: 3}
+  rangedAttackSpawnPos: {fileID: 165323972}
+  rangedAttackCooldown: 3
+  rangedAttackForce: 1
+  rangedAttackDamage: 1
+  attackRadius: 2
+  movementForce: 40000
+  distThreshold: 1
+  moveTime: 10
+  spawnTunnelPos: {fileID: 1124935705}
+  tunnelPassage: {fileID: 1553802221868310010, guid: ca9e6463ff7624241a33a50512a878f5,
+    type: 3}
+  tunnelPassageAliveTime: 6
 --- !u!1 &9124756093697978327
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +978,7 @@ GameObject:
   - component: {fileID: 4765293174853464619}
   - component: {fileID: 2862764766509020990}
   - component: {fileID: 5569300495108082613}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: heart_HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
