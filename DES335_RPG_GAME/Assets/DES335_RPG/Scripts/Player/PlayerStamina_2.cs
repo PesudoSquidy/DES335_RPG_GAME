@@ -39,7 +39,7 @@ public class PlayerStamina_2 : MonoBehaviour
         if (bStaminaDrain == false)
         {
             //Check if the last pickaxe is full
-            if (maxPickaxe[0].slider.value >= 100)
+            if (maxPickaxe[0].slider.value >= 100 || maxPickaxe[1].slider.value >= 100 || maxPickaxe[2].slider.value >= 100)
             {
                 // Find the first full pickaxe
                 for (int i = maxPickaxe.Length - 1; i >= 0; --i)
