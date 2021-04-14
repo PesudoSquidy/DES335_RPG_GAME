@@ -6,8 +6,9 @@ public class GeneralGameManager : MonoBehaviour
 {
 
     public CombatRoomEnemySpawnManager combatRoomManager;
-
     public InventoryUI inventory_UI;
+
+    public PlayerHealth playerHP;
 
     // Game Status for other obj to use
     public bool ui_active;
@@ -46,6 +47,10 @@ public class GeneralGameManager : MonoBehaviour
         {
             if (combatRoomManager != null)
                 combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 3);
+        }
+        else if(Input.GetKeyDown(KeyCode.F))
+        {
+            playerHP.health = 6;
         }
 
         // Update inventory status
