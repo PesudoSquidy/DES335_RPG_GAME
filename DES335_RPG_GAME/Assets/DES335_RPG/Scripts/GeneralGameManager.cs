@@ -31,22 +31,22 @@ public class GeneralGameManager : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (combatRoomManager != null)
-                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 0);
+                combatRoomManager.SpawnEnemy(4, 0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (combatRoomManager != null)
-                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 1);
+                combatRoomManager.SpawnEnemy(4, 1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (combatRoomManager != null)
-                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 2);
+                combatRoomManager.SpawnEnemy(4, 2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             if (combatRoomManager != null)
-                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 3);
+                combatRoomManager.SpawnEnemy(1, 3);
         }
         else if(Input.GetKeyDown(KeyCode.F))
         {

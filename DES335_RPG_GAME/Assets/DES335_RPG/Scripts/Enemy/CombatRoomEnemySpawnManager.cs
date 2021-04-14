@@ -50,11 +50,11 @@ public class CombatRoomEnemySpawnManager : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy(int spawnAmount, int spawnType = -1)
+    public void SpawnEnemy(int spawnAmount = 0, int spawnType = -1)
     {
          if (enemyPrefabs.Length > 0)
         {
-            for (int i = 0; i < enemyAmount; ++i)
+            for (int i = 0; i < spawnAmount; ++i)
             {
                 int randNo = spawnType;
                 int randSP = Random.Range(0, spawnPoints.Length);

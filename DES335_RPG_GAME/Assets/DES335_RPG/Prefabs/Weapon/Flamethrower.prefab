@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5429407679164346441}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5429407679214358250}
   - component: {fileID: 5569910704943866528}
   - component: {fileID: 460511228187862825}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Flamethrower_Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
