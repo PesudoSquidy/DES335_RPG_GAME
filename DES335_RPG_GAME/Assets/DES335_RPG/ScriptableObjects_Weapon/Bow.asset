@@ -17,8 +17,8 @@ MonoBehaviour:
   prefab: {fileID: 0}
   isEquipment: 1
   isAugment: 0
-  coolDown: 0
+  coolDown: 2
   equipSlot: 0
   damageModifier: 0
   armourModifier: 0
-  augment: {fileID: 0}
+  augment: {fileID: 11400000, guid: 795d11cd82f06b44ba37c4fc3cda953d, type: 2}

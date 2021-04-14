@@ -44,7 +44,7 @@ public class Flamethrower : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col2D)
     {
-        if (col2D.gameObject.CompareTag("Enemy") || col2D.gameObject.CompareTag("FlyingEnemy"))
+        if (col2D.gameObject.CompareTag("Enemy") || col2D.gameObject.CompareTag("FlyingEnemy") || col2D.gameObject.CompareTag("Boss"))
         {
             if (playerAttack.eq_Name == "Flamethrower")
                 equipmentAugment = EquipmentManager.instance.MainEquipment().augment;

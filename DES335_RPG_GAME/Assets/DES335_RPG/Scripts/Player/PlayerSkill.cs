@@ -58,6 +58,8 @@ public class PlayerSkill : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(12, 11, true);
                 Physics2D.IgnoreLayerCollision(12, 13, true);
                 Physics2D.IgnoreLayerCollision(12, 14, true);
+                Physics2D.IgnoreLayerCollision(12, 15, true);
+                Physics2D.IgnoreLayerCollision(12, 16, true);
 
                 sprRender.enabled = false;
 
@@ -72,6 +74,8 @@ public class PlayerSkill : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(12, 11, false);
                 Physics2D.IgnoreLayerCollision(12, 13, false);
                 Physics2D.IgnoreLayerCollision(12, 14, false);
+                Physics2D.IgnoreLayerCollision(12, 15, false);
+                Physics2D.IgnoreLayerCollision(12, 16, false);
 
                 if (isUnderObject && tunnel != null)
                     gameObject.transform.position = tunnel.transform.position;
@@ -85,11 +89,14 @@ public class PlayerSkill : MonoBehaviour
             }
         }
         //else if(stamina.bStaminaDrain == false)
-        else if(playerStamina.bStaminaDrain == false)
+        else if(playerStamina.bStaminaDrain == false || isDigging == false)
         {
+            Physics2D.IgnoreLayerCollision(12, 10, false);
             Physics2D.IgnoreLayerCollision(12, 11, false);
             Physics2D.IgnoreLayerCollision(12, 13, false);
             Physics2D.IgnoreLayerCollision(12, 14, false);
+            Physics2D.IgnoreLayerCollision(12, 15, false);
+            Physics2D.IgnoreLayerCollision(12, 16, false);
 
             if (isUnderObject && tunnel != null)
             {
@@ -98,6 +105,7 @@ public class PlayerSkill : MonoBehaviour
                 isUnderObject = false;
             }
 
+            playerStamina.bStaminaDrain = false;
             sprRender.enabled = true;
             isDigging = false;
         }

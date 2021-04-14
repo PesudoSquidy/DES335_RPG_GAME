@@ -27,6 +27,26 @@ public class GeneralGameManager : MonoBehaviour
             if (combatRoomManager != null)
                 combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount);
         }
+        else if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (combatRoomManager != null)
+                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (combatRoomManager != null)
+                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (combatRoomManager != null)
+                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (combatRoomManager != null)
+                combatRoomManager.SpawnEnemy(combatRoomManager.spawnAmount, 3);
+        }
 
         // Update inventory status
         ui_active = inventory_UI.ui_active;

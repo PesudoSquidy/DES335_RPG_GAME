@@ -45,7 +45,7 @@ public class Arrow : MonoBehaviour
         else if (playerAttack.eq_Name_2 == "Bow")
             equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
 
-        if (col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy"))
+        if (col.CompareTag("Enemy") || col.CompareTag("FlyingEnemy") || col.gameObject.CompareTag("Boss"))
         {
             EnemyHealth enemyHP_Script = col.GetComponent<EnemyHealth>();
 

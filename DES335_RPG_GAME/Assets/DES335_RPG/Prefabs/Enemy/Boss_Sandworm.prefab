@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 1091374831}
   m_Layer: 15
   m_Name: Enemy_Sandworm
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -963,10 +963,12 @@ MonoBehaviour:
   movementForce: 40000
   distThreshold: 1
   moveTime: 10
+  isDigging: 0
   spawnTunnelPos: {fileID: 1124935705}
   tunnelPassage: {fileID: 1553802221868310010, guid: ca9e6463ff7624241a33a50512a878f5,
     type: 3}
   tunnelPassageAliveTime: 6
+  rangeStateTimer: 13
 --- !u!1 &9124756093697978327
 GameObject:
   m_ObjectHideFlags: 0

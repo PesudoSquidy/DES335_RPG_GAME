@@ -50,7 +50,7 @@ public class Bomb : MonoBehaviour
         else if (playerAttack.eq_Name_2 == "Bomb")
             equipmentAugment = EquipmentManager.instance.SideEquipment().augment;
 
-        if (col.gameObject.CompareTag("Enemy"))
+        if (col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("Boss"))
         {
             if (timeBeforeExplosion <= 0)
             {

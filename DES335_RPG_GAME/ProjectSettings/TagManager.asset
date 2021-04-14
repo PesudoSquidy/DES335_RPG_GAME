@@ -31,7 +31,7 @@ TagManager:
   - FlyingEnemy
   - Tunnel
   - SandwormBoss
-  - 
+  - EnemyAttack
   - 
   - 
   - 
@@ -72,7 +72,7 @@ TagManager:
   - name: New Layer
     uniqueID: 845475853
     locked: 0
-  - name: New Layer
+  - name: Obstacle
     uniqueID: 2834703561
     locked: 0
   - name: Weapon

@@ -64,4 +64,9 @@ public class SwapEquipmentUI : MonoBehaviour
             //inventory.Remove(tempEQ);
         }
     }
+
+    public void SetUI_Off(GameObject UI)
+    {
+        UI.SetActive(false);
+    }
 }

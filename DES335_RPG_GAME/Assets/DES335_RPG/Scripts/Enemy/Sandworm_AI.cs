@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sandworm_AI : MonoBehaviour
 {
     private GameObject playerGO;
+    private PlayerSkill playerSkill;
 
     private SpriteRenderer spriteRen;
     private Animator anim;
@@ -23,6 +24,7 @@ public class Sandworm_AI : MonoBehaviour
     [SerializeField] private float movementForce;
     [SerializeField] private float distThreshold;
     [SerializeField] private float moveTime;
+    [SerializeField] private bool isDigging;
 
     private float currMoveTime;
 
@@ -34,19 +36,28 @@ public class Sandworm_AI : MonoBehaviour
     enum Sandworm_State { IDLE, SENSING, DIGGING, RANGE_ATTACK}
     Sandworm_State currState;
 
+    [SerializeField] private float rangeStateTimer;
+    private float stateTimeTracker;
+
+    // Health affects Sandworm State
+    SandwormHealth sandworm_HP;
+    private int healthTracker;
+
     // Start is called before the first frame update
     void Start()
     {
         playerGO = GameObject.FindGameObjectWithTag("Player");
+        playerSkill = playerGO.GetComponent<PlayerSkill>();
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         spriteRen = GetComponent<SpriteRenderer>();
+        sandworm_HP = GetComponent<SandwormHealth>();
 
         // Initialise values
         currMoveTime = 0.0f;
         rangedAttackTimer = 0.0f;
-
+        stateTimeTracker = 0.0f;
         // Guard & Defaulted Values
         if (distThreshold <= 0)
             distThreshold = 1.0f;
@@ -56,29 +67,54 @@ public class Sandworm_AI : MonoBehaviour
 
         // Default state at the start
         currState = Sandworm_State.IDLE;
+
+        healthTracker = sandworm_HP.health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(currState)
+        // Sandworm got damaged
+        if(healthTracker > sandworm_HP.health)
+        {
+            healthTracker = sandworm_HP.health;
+
+            // Change sandworm state
+            currState = Sandworm_State.DIGGING;
+        }
+
+        if (stateTimeTracker > 0)
+            stateTimeTracker -= Time.deltaTime;
+
+        switch (currState)
         {
             case Sandworm_State.IDLE:
                 {
                     // Reset all attack relevant data
                     rangedAttackTimer = 0.0f;
 
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
                     FaceDirection(playerGO.transform);
                     break;
                 }
             case Sandworm_State.DIGGING:
                 {
+                    rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
                     if (anim.GetBool("Desurface") == false)
+                    {
+                        // Reset status condition
+                        sandworm_HP.TakeDamage();
+                        isDigging = true;
                         Desurfacing();
+                    }
                     else if (anim.enabled == false && spriteRen.enabled == false)
                     {
-                        if (Move(playerGO.transform) == false)
+                        if (Move(playerGO.transform) == false || isDigging == false)
                         {
+                            isDigging = false;
+
                             // Re-render the sandworm
                             showSandworm();
 
@@ -96,15 +132,24 @@ public class Sandworm_AI : MonoBehaviour
                 }
             case Sandworm_State.RANGE_ATTACK:
                 {
+                    rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
                     FaceDirection(playerGO.transform);
 
+                    // Timing to shoot
                     if (rangedAttackTimer <= 0.0f)
                     {
-                        if(RangeAttack())
-                            Debug.Log("Shoot at player");
+                        RangeAttack();
+
+                        //if(RangeAttack())
+                        //    Debug.Log("Shoot at player");
                     }
                     else
                         rangedAttackTimer -= Time.deltaTime;
+
+                    if (stateTimeTracker < 0)
+                        currState = Sandworm_State.DIGGING;
+
                     break;
                 }
         }
@@ -130,6 +175,14 @@ public class Sandworm_AI : MonoBehaviour
         {
             Move(playerGO.transform);
         }
+    }
+
+    public void ChangeState(int newState)
+    {
+        currState = (Sandworm_State) newState;
+
+        if((Sandworm_State) newState == Sandworm_State.RANGE_ATTACK)
+            stateTimeTracker = rangeStateTimer;
     }
 
     void FaceDirection(Transform target)
@@ -193,19 +246,25 @@ public class Sandworm_AI : MonoBehaviour
     public void SurfaceHit()
     {
         Collider2D[] colInfo = Physics2D.OverlapCircleAll(transform.position, attackRadius);
+        
+        isDigging = false;
 
-        for(int i = 0; i < colInfo.Length; ++i)
+        for (int i = 0; i < colInfo.Length; ++i)
         {
             // One of the collided object is player
             if(colInfo[i].gameObject.CompareTag("Player"))
             {
                 colInfo[i].gameObject.GetComponent<PlayerHealth>().AfflictStatusCondition(PlayerHealth.Status.Stun, 2.0f);
                 colInfo[i].gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                colInfo[i].gameObject.GetComponent<PlayerSkill>().isDigging = false;
 
                 //Debug.Log("Sandworm vel: " + GetComponent<Rigidbody2D>().velocity);
                 //Debug.Log("Player vel: " + colInfo[i].gameObject.GetComponent<Rigidbody2D>().velocity);
             }
         }
+
+        // Reset the rb force of Sandworm
+        rb.velocity = Vector3.zero;
     }
 
     void hideSandworm()
@@ -227,9 +286,16 @@ public class Sandworm_AI : MonoBehaviour
 
         // Physics Handling
         Physics2D.IgnoreLayerCollision(15, 10, true);
-        Physics2D.IgnoreLayerCollision(15, 12, true);
+        Physics2D.IgnoreLayerCollision(15, 11, true);
+        Physics2D.IgnoreLayerCollision(15, 13, true);
         Physics2D.IgnoreLayerCollision(15, 14, true);
-        
+
+        // Counter Digging
+        if (playerSkill.isDigging == false)
+            Physics2D.IgnoreLayerCollision(15, 12, true);
+        else
+            Physics2D.IgnoreLayerCollision(15, 12, false);
+
         // Direction to move
         Vector2 dir = target.position - transform.position;
 
@@ -248,7 +314,6 @@ public class Sandworm_AI : MonoBehaviour
             dir = dir.normalized;
 
             currMoveTime += Time.fixedDeltaTime;
-
             //rb.MovePosition(rb.position + dir * movementSpeed * Time.fixedDeltaTime);
             //rb.AddRelativeForce(rb.position + dir * movementForce * Time.fixedDeltaTime);
 
@@ -273,6 +338,8 @@ public class Sandworm_AI : MonoBehaviour
 
             //Debug.Log("Distance: " + distance);
             //Debug.Log("currMoveTime: " + currMoveTime);
+            //SurfaceHit();
+
             return true;
         }
         else
@@ -280,6 +347,8 @@ public class Sandworm_AI : MonoBehaviour
             // Physics Handling
             Physics2D.IgnoreLayerCollision(15, 10, false);
             Physics2D.IgnoreLayerCollision(15, 12, false);
+            Physics2D.IgnoreLayerCollision(15, 11, false);
+            Physics2D.IgnoreLayerCollision(15, 13, false);
             Physics2D.IgnoreLayerCollision(15, 14, false);
 
             // Reset the rb force
@@ -289,5 +358,15 @@ public class Sandworm_AI : MonoBehaviour
             currMoveTime = 0.0f;
             return false;
         }
+    } 
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(isDigging && col.gameObject.CompareTag("Player"))
+        {
+            //SurfaceHit();
+            col.gameObject.GetComponent<PlayerHealth>().AfflictStatusCondition(PlayerHealth.Status.Stun, 2.0f);
+        }
     }
 }
+

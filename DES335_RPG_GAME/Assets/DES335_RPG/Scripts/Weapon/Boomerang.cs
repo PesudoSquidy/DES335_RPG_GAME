@@ -93,7 +93,7 @@ public class Boomerang : MonoBehaviour
             toReturn = true;
             returnSpeed = toSpeed;
         }
-        else if(col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("FlyingEnemy"))
+        else if(col.gameObject.CompareTag("Enemy") || col.gameObject.CompareTag("FlyingEnemy") || col.gameObject.CompareTag("Boss"))
         {
             if (playerAttack.eq_Name == "Boomerang")
                 equipmentAugment = EquipmentManager.instance.MainEquipment().augment;

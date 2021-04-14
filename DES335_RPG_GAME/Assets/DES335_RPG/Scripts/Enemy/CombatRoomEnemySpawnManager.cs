@@ -50,14 +50,18 @@ public class CombatRoomEnemySpawnManager : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy(int spawnAmount)
+    public void SpawnEnemy(int spawnAmount, int spawnType = -1)
     {
          if (enemyPrefabs.Length > 0)
         {
             for (int i = 0; i < enemyAmount; ++i)
             {
-                int randNo = Random.Range(0, enemyPrefabs.Length);
+                int randNo = spawnType;
                 int randSP = Random.Range(0, spawnPoints.Length);
+
+                if(randNo < 0)
+                    Random.Range(0, enemyPrefabs.Length);
+                
 
                 enemies.Add(Instantiate(enemyPrefabs[randNo], spawnPoints[randSP].transform.position, Quaternion.identity));
             }
