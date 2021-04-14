@@ -17,10 +17,10 @@ public class CharacterStats : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(10);
-        }
+        //if(Input.GetKeyDown(KeyCode.T))
+        //{
+        //    TakeDamage(10);
+        //}
     }
 
     public void TakeDamage(int damage)
@@ -30,7 +30,7 @@ public class CharacterStats : MonoBehaviour
 
         currHealth -= damage;
 
-        Debug.Log(transform.name + "takes " + damage + "damage.");
+        //Debug.Log(transform.name + "takes " + damage + "damage.");
 
         if(currHealth <= 0)
         {
