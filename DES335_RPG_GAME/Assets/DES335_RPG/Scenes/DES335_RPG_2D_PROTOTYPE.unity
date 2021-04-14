@@ -75559,7 +75559,8 @@ MonoBehaviour:
   maxStamina: 100
   currPickaxeStamina: 0
   staminaRegenRate: 5
-  staminaDrainRate: 20
+  staminaDrainRate: 10
+  staminaCost: 35
 --- !u!1 &1883917429
 GameObject:
   m_ObjectHideFlags: 0

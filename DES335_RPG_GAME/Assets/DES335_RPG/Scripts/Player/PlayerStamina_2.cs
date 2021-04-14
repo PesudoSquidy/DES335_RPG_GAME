@@ -5,15 +5,16 @@ using UnityEngine;
 public class PlayerStamina_2 : MonoBehaviour
 {
     public bool bStaminaDrain;
-    
+
     [SerializeField] private Pickaxe_Stamina_UI[] maxPickaxe;
     [SerializeField] public int maxStamina;
-    
+
     private float currStamina;
     public int currPickaxeStamina;
 
     [SerializeField] private float staminaRegenRate;
     [SerializeField] private float staminaDrainRate;
+    [SerializeField] private float staminaCost;
 
 
 
@@ -24,7 +25,7 @@ public class PlayerStamina_2 : MonoBehaviour
         currStamina = maxStamina;
         bStaminaDrain = false;
 
-        for(int i = 0; i < maxPickaxe.Length; ++i)
+        for (int i = 0; i < maxPickaxe.Length; ++i)
         {
             maxPickaxe[i].slider.maxValue = maxStamina;
             maxPickaxe[i].slider.value = maxStamina;
@@ -56,7 +57,7 @@ public class PlayerStamina_2 : MonoBehaviour
                 currPickaxeStamina = -1;
             }
         }
-        else if(bStaminaDrain)
+        else if (bStaminaDrain)
         {
             //Debug.Log("Deplete stamina: " + currPickaxeStamina);
             maxPickaxe[currPickaxeStamina].slider.value -= staminaDrainRate * Time.deltaTime;
@@ -73,5 +74,21 @@ public class PlayerStamina_2 : MonoBehaviour
             if (i != currPickaxeStamina)
                 maxPickaxe[i].slider.value += staminaRegenRate * Time.deltaTime;
         }
+    }
+
+    public void DrainOnce()
+    {
+        int i = -1;
+        if (maxPickaxe[2].slider.value >= 100)
+            i = 2;
+        else if (maxPickaxe[1].slider.value >= 100)
+            i = 1;
+        else if (maxPickaxe[0].slider.value >= 100)
+            i = 0;
+
+        if(i < 0)
+            return;
+
+        maxPickaxe[i].slider.value -= staminaCost;
     }
 }

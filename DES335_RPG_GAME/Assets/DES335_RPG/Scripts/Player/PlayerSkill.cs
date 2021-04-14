@@ -64,6 +64,7 @@ public class PlayerSkill : MonoBehaviour
                 sprRender.enabled = false;
 
                 //stamina.bStaminaDrain = true;
+                GetComponent<PlayerStamina_2>().DrainOnce();
 
                 playerStamina.bStaminaDrain = true;
                 isDigging = true;
